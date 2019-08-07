@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,500,500i,600,700&subset=latin-ext');
+* {
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+:root {
+    --padding: 3%;
+    --themeMain: #2196F3;
+    --theme: #384046;
+    --theme2: #FFFFFF;
+    --themeHighlight: #FF5613;
+    --themeGray: #93a1ac;
+    --border: 2px solid;
+    --transSmooth: cubic-bezier(.4, 0, 0, 1.01);
+    --stin: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+bImage {
+    position: absolute;
+    top: 0;
+    left: -10vw;
+    width: 100%;
+    height: 170%;
+    background-image: url("Untitled.svg");
+    background-repeat: no-repeat;
+    opacity: 0.4;
+    font-size: 3000%;
+    z-index: -10;
+}
+b {
+    color: #212121;
+    font-weight: 500;
+}
+h2 {
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    
+    color: var(--theme);
+    margin: 0;
+}
+body a {
+    color: #1d2ada;
+}
+
+bar {
+    position: relative;
+    display: flex;
+    
+    padding: 2vh 14vw;
+    border-top: 5px solid var(--themeMain);
+    
+    width: 100%;
+    align-items: center;
+}
+bar a {
+    margin: 1vw;
+    border-bottom: 2px solid;
+}
+
+header {
+    padding-left: 15vw;
+    padding-top: 9vh;
+    width: 100%;
+    height: 80%;
+}
+a[href^="mailto"], button, .buttonLike {
+    color: var(--themeHighlight);
+    display: inline-block;
+    font-size: 1.2rem;
+    background-color: #FF9A72;
+    color: #fff;
+    padding: 1vw;
+    border-radius: 5px;
+    border: var(--border) var(--themeHighlight);
+    z-index: 10;
+    transition: 0.3s var(--transSmooth);
+}
+a[href^="mailto"]:hover, button:hover, .buttonLike:hover {
+    background-color: #fcad7f;
+    transform: translateY(-0.2rem);
+}
+header h1 {
+    font-weight: 600;
+    margin-bottom: -1rem;
+}
+#jaz {
+    color: var(--themeGray);
+}
+/*header *:not(a) {
+    text-shadow: 0px 0px 10px #fff;
+}*/
+cenikContainer {
+    position: relative;
+    margin-left: 1.5vw;
+    padding: calc(1vw + 5px);
+}
+#cenik {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    z-index: 20;
+}
+#cenik-menu {
+	position: absolute;
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 0;
+    color: #fff;
+    
+    border-radius: 0.5rem;
+    box-shadow: 0 7px 65px rgba(15, 71, 113, 0.12);
+    
+    z-index: 10;
+    overflow: hidden;
+    white-space: nowrap;
+    
+    transition: 1s var(--transSmooth);
+}
+cenikContainer:hover #cenik-menu, .pinned {
+    height: 22em;
+    width: 18rem;
+    padding: 1rem;
+    left: 100%;
+    top: -16rem;
+    color: var(--theme1);
+    
+    border-radius: 10px;
+}
+
+.pinned {
+    border-left: 5px solid #f79256;
+}
+#cenik-menu h1 {
+    margin-bottom: 0rem;
+	font-size: 120%;
+}
+
+content, whoami:after {
+    background-color: #e5f3fd;
+}
+whoami, content, links {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    position: relative;
+    
+    padding: 0 10vw;
+    z-index: 2;
+}
+whoami h2 {
+    margin-bottom: 1rem !important;
+    margin-top: 0 !important;
+}
+whoami div {
+    display: flex;
+    text-align: left;
+}
+whoami li {
+    list-style-type: none;
+    margin-bottom: 1rem;
+}
+whoami li:before {
+    content: ""; 
+    display: inline-block;
+    margin-left: -1.3em; 
+    width: 1.3em; 
+    height: 1rem;
+    background: url(check-circle-solid.svg);
+    background-repeat: no-repeat;
+}
+whoami img {
+    margin-right: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 7px 30px rgba(15, 71, 113, 0.28);
+}
+
+karta {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    margin-top: 1rem;
+    flex-flow: row;
+    flex-wrap: wrap;
+    
+    position: relative;
+    
+    width: 100%;
+    margin: 2vw;
+    padding: 3vw 4vw;
+    background-color: #fff;
+    
+    border: 2px solid #aad7fa;
+    z-index: 1;
+    /*box-shadow: 0px 7px 73px -13px rgb(54, 48, 48);*/
+    border-radius: 10px;
+}
+whoami karta {
+    justify-content: center;
+}
+whoami {
+    position: relative;
+    text-align: center;
+    padding: 0 20vw;
+    margin-top: 15vh;
+}
+whoami:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    top: 50%;
+    left: 0;
+}
+kartaThumb {
+    position: absolute;
+    right: -2rem;
+    top: 15%;
+    
+    width: 15vw;
+    height: 15vw;
+    
+    background-size: cover !important;    
+    background-color: #000;
+    border-radius: .8rem;
+    
+    box-shadow: 0 7px 30px rgba(0, 0, 0, 0.28);
+    
+    z-index: 100;
+    transition: 0.35s var(--transSmooth);
+}
+kartaThumb:hover {
+    transform: scale(1.2) translateX(3rem);
+}
+#pak kartaThumb {
+    background: url(pakThumb_small.jpg);
+}
+#tl kartaThumb {
+    background: url(tlThumb_small.jpg);
+}
+
+karta h1, karta h2 {
+    font-weight: 600;
+    margin: 0;
+}
+karta h1 {
+    flex-grow: 2;
+    flex-basis: 100%;
+    font-size: 150%;
+    margin: 0;
+}
+
+section {
+    width: 45%;
+}
+section a, section h2 {
+    margin-top: 1rem;
+}
+section a {
+    display: block;
+    position: relative;
+}
+.konec {
+    display: block;
+    position: absolute;
+
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transform: translateY(-1rem);
+    opacity: 0;
+
+    background-color: var(--theme2);
+    box-shadow: 0 7px 65px rgba(15, 71, 113, 0.2);
+    transition: 0.5s var(--transSmooth);
+}
+karta section p:hover .konec {
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.5s var(--transSmooth);
+}
+whoami a:after, section a:after {
+    content: "⇀";
+    position: absolute;
+    color: #1d2ada;
+    font-weight: 600;
+    margin-left: 0.25rem;
+    transition: 0.3s ease-in-out;
+}
+whoami a:hover:after, section a:hover:after {
+    transform: translateX(0.5rem);
+    /*opacity: 1;*/
+}
+
+#pak h1 {
+    color: var(--themeMain/*--themeHighlight*/);
+}
+#tl h1 {
+    color: var(--themeMain);
+}
+container, odkazy {
+    display: flex;
+}
+container {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20vw;
+}
+container h2 {
+    text-align: center;
+}
+odkazy {
+    width: 100%;
+    justify-content: space-around;
+}
+odkazy a {
+    padding: 1vw;
+    border-bottom: 2px solid #1d2ada;
+}
+
+footer {
+    font-size: 0.9rem;
+    width: 100%;
+    margin-top: 30vh;
+}
+footer h1 {
+    text-align: center;
+}
+.subtitle {
+    margin-top: 0;
+    color: var(--themeGray);
+}
+
+@media screen and (max-device-width: 900px) {
+    bar a:last-child {
+        margin-left: 5vw;
+    }
+    header {
+        padding: 5vh 15vw;
+    }
+    header h1 {
+        font-size: 180%;
+    }
+    header a {
+        padding: 2vw;
+    }
+    content {
+        padding: 0;    
+    }
+    whoami {
+        margin-top: 2vh;
+    }
+    whoami img {
+        display: none;
+    }
+    section {
+        width: 100%;
+    }
+    whoami, karta {
+        padding: 7vw;
+    }
+    karta:last-of-type {
+        margin-bottom: 5vh;
+    }
+    kartaThumb {
+        display: none;
+    }
+    #cenik {
+        display: none;
+    }
+    #cenik-menu {
+        display: none;
+    }
+    #cenik:hover ~ #cenik-menu, .pinned {
+        transform: translateY(100%) !important;
+    }
+    odkazy {
+        flex-direction: column;
+        align-items: center;
+    }
+    odkazy a {
+        margin: 3vw;
+    }
+}

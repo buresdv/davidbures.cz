@@ -1,0 +1,76 @@
+html {
+    scroll-behavior: smooth;
+}
+bar {
+    position: absolute;
+    top: 0;
+    border: none;
+}
+h2 {
+    color: var(--theme);
+    font-size: 1.25rem;
+}
+knihy {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+kniha {
+    display: flex;
+    flex-direction: column;
+    margin: 3vw;
+    height: auto;
+    width: auto;
+    border-radius: 10px;
+    box-shadow: 0 7px 65px rgba(15, 71, 113, 0.12);
+    transition: 0.3s var(--transSmooth);
+    overflow: hidden;
+}
+kniha:hover {
+    transform: translateY(-10px);
+}
+img {
+    border-radius: 10px 10px 0 0;
+    max-height: 20vw;
+    width: auto;
+}
+info {
+    padding: 3vw;
+    background-color: var(--theme2);
+}
+
+kniha h2 {
+    margin-top: 0;
+    margin-bottom: 0.2rem;
+}
+kniha p, .popisShort {
+    color: var(--themeMain);
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.popisShort {
+    flex-basis: 100%;
+}
+karta p {
+    flex-basis: 100%;
+}
+
+button {
+    color: var(--themeHighlight);
+    display: inline-block;
+    background-color: #FF9A72;
+    color: #fff;
+    padding: 1vw;
+    border-radius: 5px;
+    border: var(--border) var(--themeHighlight);
+    z-index: 10;
+    transition: 0.3s var(--transSmooth);
+}
+ul {
+    margin: 0;
+}
+li a {
+    text-decoration: underline;
+}

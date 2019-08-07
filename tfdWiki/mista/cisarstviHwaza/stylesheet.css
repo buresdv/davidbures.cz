@@ -1,0 +1,38 @@
+@import url("/gradients.css");
+header:before {
+    background: linear-gradient(var(--hz));
+    
+}
+infoImage {
+    background: url(avat.jpg)
+}
+infoText p:first-of-type {
+    color: #969696;
+}
+table {
+    border: 1px solid #ebebeb;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+td {
+    text-align: center;
+    padding: 0.5vw;
+}
+td:first-child, tr:first-child td {
+    font-weight: 600;
+}
+td:first-child {
+    text-align: right;
+}
+#cons tr:last-child td {
+    border-top: 1px solid #ededed;
+}
+#cons tr:last-child td:last-child {
+    text-align: left;
+}
+
+@media screen and (max-device-width: 900px) {
+    #cons td {
+        padding: 0.1vw;
+    }
+}

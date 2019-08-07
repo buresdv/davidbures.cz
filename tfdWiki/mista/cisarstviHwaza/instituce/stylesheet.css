@@ -1,0 +1,21 @@
+@import url("/gradients.css");
+header:before {
+    background: linear-gradient(var(--hz));
+    
+}
+infoImage {
+    background: url(avat.jpg)
+}
+infoText p:first-of-type {
+    color: #969696;
+}
+
+.mestoImg {
+    display: none;
+}
+
+@media screen and (max-device-width: 900px) {
+    #cons td {
+        padding: 0.1vw;
+    }
+}
