@@ -104,6 +104,19 @@ infoImage {
     border-top-right-radius: var(--borderRadius);
     
 }
+#zobrazitSpoileryTlacitko {
+    color: var(--theme2);
+    font-weight: 600;
+    padding: 1rem;
+    margin-bottom: 10vh;
+    border: none;
+    background: linear-gradient(45deg, rgba(255,129,119,1) 0%, rgba(203,99,91,1) 100%);
+    box-shadow: 0 7px 30px rgba(0, 0, 0, 0.2);
+    border-radius: calc(var(--borderRadius)/2);
+}
+.spoiler {
+    display: none;
+}
 
 section {
     width: 80%;
