@@ -1,3 +1,3 @@
 function contactToggle() {
-    $('#tlacitkoObjednat').addClass('tlacitkoObjednatStisknuto');
+    $('#tlacitkoContact').addClass('tlacitkoContactStisknuto');
 }

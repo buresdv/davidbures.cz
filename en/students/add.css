@@ -49,3 +49,16 @@ tr:last-of-type td:nth-child(3) {
 discounts a {
     margin-top: 1rem;
 }
+
+@media screen and (max-device-width: 900px) {
+    .contact {
+        margin-top: 1rem;
+        padding: 1rem !important;
+    }
+    table td {
+        padding: 1rem;
+    }
+    tr td:nth-child(2) {
+        display: none;
+    }
+}
