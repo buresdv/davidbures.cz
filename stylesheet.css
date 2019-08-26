@@ -299,11 +299,46 @@ whoami a:hover:after, section a:hover:after {
     /*opacity: 1;*/
 }
 
-#pak h1 {
-    color: var(--themeMain/*--themeHighlight*/);
-}
-#tl h1 {
+.pak h1, td.pak {
     color: var(--themeMain);
+}
+.tl h1 {
+    color: var(--themeMain);
+}
+#cn {
+    display: block;
+}
+#cn table {
+    border-collapse: separate;
+    margin-top: 3rem;
+}
+#cn table:first-of-type {
+    margin-top: 1rem;
+}
+#cn span:not(.ns) {
+    font-size: 0.95rem;
+    color: var(--themeGray);
+}
+#cn table td {
+    padding: 1rem;
+    border: 1px solid blue;
+}
+#cn table td:first-child {
+    max-width: 15vw;
+}
+#cn table tr:first-of-type td:first-of-type {
+    font-weight: 600;
+    vertical-align: top;
+    border-right: 1px solid var(--themeGray);
+}
+#cn table tr:first-of-type td:first-of-type span {
+    font-weight: 300;
+}
+#referenced {
+    min-width: 15rem;
+}
+.ns {
+    font-size: 0.8rem;
 }
 container, odkazy {
     display: flex;
@@ -336,6 +371,31 @@ footer h1 {
 .subtitle {
     margin-top: 0;
     color: var(--themeGray);
+}
+
+#tlacitkoContact {
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+@keyframes tlacitkoContactStisknutoAnimace {
+    0% {
+        color: rgba(256, 256, 256, 1);
+        width: 12rem;
+        height: 4rem;
+    }
+    50% {
+        color: rgba(256, 256, 256, 0);
+        width: 70vw;
+        height: 20rem;
+    }
+    100% {
+        color: rgba(256, 256, 256, 0);
+        width: 70vw;
+        height: 20rem;
+    }
+}
+.tlacitkoContactStisknuto {
+    animation: tlacitkoContactStisknutoAnimace;
 }
 
 @media screen and (max-device-width: 900px) {
