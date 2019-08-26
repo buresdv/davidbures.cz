@@ -305,33 +305,47 @@ whoami a:hover:after, section a:hover:after {
 .tl h1 {
     color: var(--themeMain);
 }
+
+.spacer {
+    height: 2rem;
+}
 #cn {
     display: block;
 }
 #cn table {
+    width: 100%;
     border-collapse: separate;
-    margin-top: 3rem;
-}
-#cn table:first-of-type {
     margin-top: 1rem;
 }
 #cn span:not(.ns) {
     font-size: 0.95rem;
     color: var(--themeGray);
 }
+#cn table th {
+    font-size: 0.95rem;
+    padding-bottom: 0;
+    text-align: right;
+}
 #cn table td {
-    padding: 1rem;
-    border: 1px solid blue;
+    padding: 0.5vw;
+    line-height: 2.4rem;
+    vertical-align: top;
 }
 #cn table td:first-child {
     max-width: 15vw;
 }
-#cn table tr:first-of-type td:first-of-type {
-    font-weight: 600;
-    vertical-align: top;
-    border-right: 1px solid var(--themeGray);
+#cn table td {
+    padding-left: 1vw;
 }
-#cn table tr:first-of-type td:first-of-type span {
+#cn table td:nth-last-child(-n+2) {
+    text-align: right;
+}
+#cn table td[rowspan^="3"] {
+    font-weight: 600;
+    border-right: 1px solid var(--themeGray);
+    margin-top: 3rem;
+}
+#cn table td[rowspan^="3"] span {
     font-weight: 300;
 }
 #referenced {
