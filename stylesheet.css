@@ -125,8 +125,11 @@ cenikContainer {
     
     transition: 1s var(--transSmooth);
 }
+#cenik-menu a {
+    margin-top: 1rem;
+}
 cenikContainer:hover #cenik-menu, .pinned {
-    height: 22em;
+    height: 24em;
     width: 18rem;
     padding: 1rem;
     left: 100%;
@@ -286,7 +289,7 @@ karta section p:hover .konec {
     opacity: 1;
     transition: 0.5s var(--transSmooth);
 }
-whoami a:after, section a:after {
+whoami a:after, section a:after, #cenik-menu a {
     content: "⇀";
     position: absolute;
     color: #1d2ada;
@@ -324,7 +327,7 @@ whoami a:hover:after, section a:hover:after {
 #cn table th {
     font-size: 0.95rem;
     padding-bottom: 0;
-    text-align: right;
+    text-align: right; /* TODO: Dát to middle? Prý to má být middle, ale vypadá to divně */
 }
 #cn table td {
     padding: 0.5vw;
