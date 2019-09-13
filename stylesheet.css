@@ -12,12 +12,16 @@
     --theme2: #FFFFFF;
     --themeHighlight: #FF5613;
     --themeGray: #93a1ac;
+    --themeGrayInverted: #cdd3d8;
     --border: 2px solid;
     --transSmooth: cubic-bezier(.4, 0, 0, 1.01);
     --stin: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 ::placeholder {
-    color: #cdd3d8;
+    color: var(--themeGrayInverted);
+}
+.hidden {
+    display: none;
 }
 bImage {
     position: absolute;
@@ -414,8 +418,9 @@ objednaniModalOverlay {
     width: 100%;
     height: 100%;
 
-    background-color: rgba(100, 100, 100, 0.4);
     z-index: 1000;
+    transform: scale(0);
+    transition: 1s var(--transSmooth);
 }
 objednaniModal {
     display: flex;
@@ -425,7 +430,7 @@ objednaniModal {
     overflow: hidden;
 }
 objednaniModal h1 {
-    margin-top: 0;
+    margin: 0;
 }
 levaStrana, pravaStrana {
     padding: 3vw;
@@ -471,13 +476,76 @@ inlineContainer * {
     display: inline;
 }
 pravaStrana {
+    position: relative;
     color: var(--theme2);
     background-color: var(--themeMain);
 
     text-align: center;
 }
+pravaStrana zavritModal {
+    font-family: 'PT Mono', monospace;
+    position: absolute;
+    color: var(--themeMain);
+    top: 1vw;
+    right: 1vw;
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    border-radius: 50%;
+    background-color: var(--theme2);
+}
 pravaStrana p:first-of-type {
     margin: 0;
+}
+pravaStrana table {
+    font-family: 'PT Mono', monospace;
+    font-size: 75%;
+    width: 100%;
+    border-collapse: collapse;
+}
+pravaStrana tr td:nth-child(1n) {
+    color: var(--themeGrayInverted);
+    text-align: left;
+}
+pravaStrana tr td:nth-child(2n) {
+    color: var(--theme2);
+    text-align: right;
+}
+.rovnaSe {
+    border-top: 1px solid var(--themeGrayInverted);
+}
+.modalAktivni {
+    animation: modalOpen 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: var(--transSmooth);
+}
+@keyframes modalOpen {
+    1% {
+        display: flex;
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+transformer {
+    display: block;
+    transform-origin: top center;
+    transform: scale(1);
+    transition: 1s var(--transSmooth);
+}
+.transformerAktivni {
+    animation: zmenseniTransformera 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: var(--transSmooth);
+}
+@keyframes zmenseniTransformera {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0.95);
+    }
 }
 
 @media screen and (max-device-width: 900px) {

@@ -45,12 +45,13 @@
                         <input type="email" placeholder="vas@email.cz">
 
                         <inlineContainer>
-                            Vyberte si službu: <select name="sluzby" id="sluzby">
-                                    <option value="blank">-----</option>
-                                    <option value="preklad">Překlad</option>
-                                    <option value="korektura">Korektura</option>
-                                    <option value="tlumoceni">Tlumočení</option>
-                                </select>
+                            Vyberte si službu: 
+                            <select name="sluzby" id="sluzby">
+                                <option value="blank">-----</option>
+                                <option value="preklad">Překlad</option>
+                                <option value="korektura">Korektura</option>
+                                <option value="tlumoceni">Tlumočení</option>
+                            </select>
                         </inlineContainer>
                         <vybranPreklad class="vybrat">
                             Co chcete přeložit?
@@ -69,7 +70,7 @@
                             Čeho chcete provést korekturu?
                             <input type="text" placeholder="Vědecký text, rodný list apod." class="hledani">
                             Kolik normostran? <span class="normostrana">Normostrana = 1 800 znaků včetně mezer</span>
-                            <input type="number" placeholder="0-900">
+                            <input type="number" name="pocetNormostran" placeholder="0-900">
 
                             <inlineContainer>
                                 <input type="checkbox" name="grafickaUprava" value="zahrnoutGrafickouUpravu">Zahrnout grafickou úpravu
@@ -89,8 +90,33 @@
                     </form>
                 </levaStrana>
                 <pravaStrana>
+                    <zavritModal>
+                        <p>×</p>
+                    </zavritModal>
                     <p>Přibližná cena:</p>
-                    <h1>3000</h1>
+                    <h1 id="odhadCeny">3000</h1>
+                    <div id="vypocet">
+                        <table>
+                            <tr>
+                                <td id="vychoziCena">Výchozí cena za stránku:</td><td id="vychoziCenaValue"></td>
+                            </tr>
+                            <tr class="hidden" id="korekturaRow">
+                                <td id="korekturaCena">Korektura:</td><td id="korekturaCenaValue">+ 150</td>
+                            </tr>
+                            <tr class="hidden" id="grafickaUpravaRow">
+                                <td id="grafickaUpravaCena">Grafická úprava:</td><td id="grafickaUpravaCenaValue">+ 200</td>
+                            </tr>
+                            <tr class="rovnaSe">
+                                <td id="strankaCena">Cena za stránku:</td><td id="strankaCenaValue"></td>
+                            </tr>
+                            <tr>
+                                <td id="pocetStranek">Počet stránek:</td><td id="pocetStranekValue"></td>
+                            </tr>
+                            <tr class="rovnaSe">
+                                <td id="konecnaCena">Přibližná cena:</td><td id="konecnaCenaValue">3000</td>
+                            </tr>
+                        </table>
+                    </div>
                 </pravaStrana>
             </objednaniModal>
         </objednaniModalOverlay>
@@ -100,11 +126,12 @@
             <a href="https://blog.davidbures.cz" style="margin-left: auto;">Blog</a>
             <a href="/oMne/">O mně</a>
         </bar>
+        <transformer>
         <header>
             <h1>Tlumočník, překladatel, korektor</h1>
             <p id="jaz">Čeština, Angličtina, Japonština</p>
             <p>Překlad a korektura vědeckých článků, lokalizace softwaru,<br> tlumočení konferencí a prezentací</p>
-            <a id="tlacitkoContact">KONTAKTUJTE MĚ</a>
+            <a class="buttonLike" id="tlacitkoContact">KONTAKTUJTE MĚ</a>
             <cenikContainer>
                 <p id="cenik">CENÍK</p>
                 <div id="cenik-menu" class="">
@@ -237,5 +264,6 @@
                 <h1>2014-2019</h1>
             </footer>
         </links>
+    </transformer>
     </body>
 </html>
