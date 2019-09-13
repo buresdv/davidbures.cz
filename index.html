@@ -42,36 +42,46 @@
                 <levaStrana>
                     <form>
                         Váš email:
-                        <input type="email" placeholder="vas@email.cz"><br>
+                        <input type="email" placeholder="vas@email.cz">
 
-                        Vyberte si službu: <select name="sluzby" id="sluzby">
-                            <option value="blank">-----</option>
-                            <option value="preklad">Překlad</option>
-                            <option value="korektura">Korektura</option>
-                            <option value="tlumoceni">Tlumočení</option>
-                        </select>
+                        <inlineContainer>
+                            Vyberte si službu: <select name="sluzby" id="sluzby">
+                                    <option value="blank">-----</option>
+                                    <option value="preklad">Překlad</option>
+                                    <option value="korektura">Korektura</option>
+                                    <option value="tlumoceni">Tlumočení</option>
+                                </select>
+                        </inlineContainer>
                         <vybranPreklad class="vybrat">
                             Co chcete přeložit?
-                            <studentContainer>
+                            <input type="text" placeholder="Vědecký text, rodný list apod." class="hledani">
+                            Kolik normostran? <span class="normostrana">Normostrana = 1 800 znaků včetně mezer</span>
+                            <input type="number" placeholder="0-900">
+
+                            <inlineContainer>
                                 <input type="checkbox" name="zahrnoutKorekturu" value="zahrnoutKorekturu">Zahrnout korekturu
-                            </studentContainer>
-                            <studentContainer>
+                            </inlineContainer>
+                            <inlineContainer>
                                 <input type="checkbox" name="grafickaUprava" value="zahrnoutGrafickouUpravu">Zahrnout grafickou úpravu
-                            </studentContainer>
+                            </inlineContainer>
                         </vybranPreklad>
                         <vybranaKorektura class="vybrat">
-                            Čeho chcete udělat korekturu?
-                            <studentContainer>
+                            Čeho chcete provést korekturu?
+                            <input type="text" placeholder="Vědecký text, rodný list apod." class="hledani">
+                            Kolik normostran? <span class="normostrana">Normostrana = 1 800 znaků včetně mezer</span>
+                            <input type="number" placeholder="0-900">
+
+                            <inlineContainer>
                                 <input type="checkbox" name="grafickaUprava" value="zahrnoutGrafickouUpravu">Zahrnout grafickou úpravu
-                            </studentContainer>
+                            </inlineContainer>
                         </vybranaKorektura>
                         <vybranoTlumoceni class="vybrat">
                             Co chcete přetlumočit?
                         </vybranoTlumoceni>
 
-                        <studentContainer>
+                        <inlineContainer style="margin-top: 1.5vw;">
                             <input type="checkbox" name="student" value="jsemStudent">Jsem student
-                        </studentContainer>
+                        </inlineContainer>
                         <!--
                         <br>Číslo vaší ISIC karty:
                         <input type="text" placeholder="S 123 456 789 000 N">-->

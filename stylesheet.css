@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,500,500i,600,700&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=PT+Mono&display=swap&subset=latin-ext');
 * {
     text-decoration: none;
     box-sizing: border-box;
@@ -433,15 +434,25 @@ levaStrana {
     background-color: #f8f9fa;
     width: 35vw;
 }
-levaStrana input[type="email"] {
+levaStrana form {
+    display: flex;
+    flex-flow: column;
+}
+levaStrana form span {
+    color: var(--themeGray);
+    font-size: 75%;
+}
+.normostrana {
+    display: block;
+}
+levaStrana input[type="email"], levaStrana input[type="text"], levaStrana input[type="number"] {
+    width: 100%;
     padding: 1vw;
+    margin-bottom: 1.5vw;
 
     background-color: var(--theme2);
 
     border: 1px solid #dce1e4;
-}
-levaStrana input[type="email"] {
-    width: 100%;
 }
 input[type="checkbox"] {
     display: inline;
@@ -453,10 +464,10 @@ input[type="checkbox"] {
 .vybrano {
     display: block;
 }
-studentContainer {
+inlineContainer {
     display: inline-block;
 }
-studentContainer * {
+inlineContainer * {
     display: inline;
 }
 pravaStrana {

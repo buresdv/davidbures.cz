@@ -15,7 +15,14 @@ $(document).ready(function(){
             $('vybranoTlumoceni').addClass('vybrano');
             $('vybranPreklad').removeClass('vybrano');
             $('vybranaKorektura').removeClass('vybrano');
-        }
+        } else {
+            $('vybranoTlumoceni').removeClass('vybrano');
+            $('vybranPreklad').removeClass('vybrano');
+            $('vybranaKorektura').removeClass('vybrano');
+        }  
+    });
 
+    $(document).on('change', '.hledani', function(e) {
+        
     });
 });
