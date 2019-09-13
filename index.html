@@ -34,8 +34,56 @@
         
         <link rel="stylesheet" href="stylesheet.css" type="text/css">
         <script src="cenik.js"></script>
+        <script src="form.js"></script>
     </head>
     <body>
+        <objednaniModalOverlay>
+            <objednaniModal>
+                <levaStrana>
+                    <form>
+                        Váš email:
+                        <input type="email" placeholder="vas@email.cz"><br>
+
+                        Vyberte si službu: <select name="sluzby" id="sluzby">
+                            <option value="blank">-----</option>
+                            <option value="preklad">Překlad</option>
+                            <option value="korektura">Korektura</option>
+                            <option value="tlumoceni">Tlumočení</option>
+                        </select>
+                        <vybranPreklad class="vybrat">
+                            Co chcete přeložit?
+                            <studentContainer>
+                                <input type="checkbox" name="zahrnoutKorekturu" value="zahrnoutKorekturu">Zahrnout korekturu
+                            </studentContainer>
+                            <studentContainer>
+                                <input type="checkbox" name="grafickaUprava" value="zahrnoutGrafickouUpravu">Zahrnout grafickou úpravu
+                            </studentContainer>
+                        </vybranPreklad>
+                        <vybranaKorektura class="vybrat">
+                            Čeho chcete udělat korekturu?
+                            <studentContainer>
+                                <input type="checkbox" name="grafickaUprava" value="zahrnoutGrafickouUpravu">Zahrnout grafickou úpravu
+                            </studentContainer>
+                        </vybranaKorektura>
+                        <vybranoTlumoceni class="vybrat">
+                            Co chcete přetlumočit?
+                        </vybranoTlumoceni>
+
+                        <studentContainer>
+                            <input type="checkbox" name="student" value="jsemStudent">Jsem student
+                        </studentContainer>
+                        <!--
+                        <br>Číslo vaší ISIC karty:
+                        <input type="text" placeholder="S 123 456 789 000 N">-->
+                        <input type="submit">
+                    </form>
+                </levaStrana>
+                <pravaStrana>
+                    <p>Přibližná cena:</p>
+                    <h1>3000</h1>
+                </pravaStrana>
+            </objednaniModal>
+        </objednaniModalOverlay>
         <bar>
             <a href="en/">English</a>
             <!--<a href="jp/">日本語</a>-->
@@ -46,7 +94,7 @@
             <h1>Tlumočník, překladatel, korektor</h1>
             <p id="jaz">Čeština, Angličtina, Japonština</p>
             <p>Překlad a korektura vědeckých článků, lokalizace softwaru,<br> tlumočení konferencí a prezentací</p>
-            <a href="mailto:buresdv@gmail.com">KONTAKTUJTE MĚ</a>
+            <a id="tlacitkoContact">KONTAKTUJTE MĚ</a>
             <cenikContainer>
                 <p id="cenik">CENÍK</p>
                 <div id="cenik-menu" class="">

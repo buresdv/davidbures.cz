@@ -15,6 +15,9 @@
     --transSmooth: cubic-bezier(.4, 0, 0, 1.01);
     --stin: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
+::placeholder {
+    color: #cdd3d8;
+}
 bImage {
     position: absolute;
     top: 0;
@@ -400,29 +403,70 @@ footer h1 {
     color: var(--themeGray);
 }
 
-#tlacitkoContact {
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
+objednaniModalOverlay {
+    position: absolute;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(100, 100, 100, 0.4);
+    z-index: 1000;
 }
-@keyframes tlacitkoContactStisknutoAnimace {
-    0% {
-        color: rgba(256, 256, 256, 1);
-        width: 12rem;
-        height: 4rem;
-    }
-    50% {
-        color: rgba(256, 256, 256, 0);
-        width: 70vw;
-        height: 20rem;
-    }
-    100% {
-        color: rgba(256, 256, 256, 0);
-        width: 70vw;
-        height: 20rem;
-    }
+objednaniModal {
+    display: flex;
+    flex-flow: row;
+    background-color: var(--theme2);
+    border-radius: 10px;
+    overflow: hidden;
 }
-.tlacitkoContactStisknuto {
-    animation: tlacitkoContactStisknutoAnimace;
+objednaniModal h1 {
+    margin-top: 0;
+}
+levaStrana, pravaStrana {
+    padding: 3vw;
+}
+levaStrana {
+    background-color: #f8f9fa;
+    width: 35vw;
+}
+levaStrana input[type="email"] {
+    padding: 1vw;
+
+    background-color: var(--theme2);
+
+    border: 1px solid #dce1e4;
+}
+levaStrana input[type="email"] {
+    width: 100%;
+}
+input[type="checkbox"] {
+    display: inline;
+}
+.vybrat {
+    display: none;
+    margin-top: 1.5vw;
+}
+.vybrano {
+    display: block;
+}
+studentContainer {
+    display: inline-block;
+}
+studentContainer * {
+    display: inline;
+}
+pravaStrana {
+    color: var(--theme2);
+    background-color: var(--themeMain);
+
+    text-align: center;
+}
+pravaStrana p:first-of-type {
+    margin: 0;
 }
 
 @media screen and (max-device-width: 900px) {
