@@ -4,7 +4,7 @@ $(document).ready(function(){
         $('objednaniModalOverlay').addClass('modalAktivni');
         $('transformer').addClass('transformerAktivni');
     });
-    $('zavritModal' || 'transformer').click(function() {
+    $('zavritModal').click(function() {
         $('objednaniModalOverlay').removeClass('modalAktivni');
         $('transformer').removeClass('transformerAktivni');
     });
@@ -66,19 +66,17 @@ $(document).ready(function(){
             grafickaUpravaCena = 0;
         }
 
-        //Vytáhnout počet normostran
-
         strankaCena = vychoziCena + korekturaCena + grafickaUpravaCena;
-        konecnaCena = strankaCena * pocetNormostran;
         
         $('#strankaCenaValue').html(strankaCena);
     }
 
     function pridatNormostrany() {
-        $(document).on('input', 'input[name=pocetNormostran]', function(){
-            alert("e");
-            pocetNormostran = $('input[name=pocetNormostran]').val();
-        });
-    }
+            pocetNormostran = $('input[type="number"]').val();
+            $('#pocetStranekValue').html('× ' + pocetNormostran);
+            konecnaCena = strankaCena * pocetNormostran;
+            $('.konecnaCenaValue').html(konecnaCena + ' Kč');
 
+            /*console.log(konecnaCena);*/
+    }
 });
