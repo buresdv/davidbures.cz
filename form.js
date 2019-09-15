@@ -11,8 +11,17 @@ $(document).ready(function(){
 
     //Vybrání služby
     $(document).on('change', '#sluzby', function(e) {
+        $('input[type="number"]').val('');
+        $('input[type="checkbox"]').prop("checked", false);
+
+        console.log($('input[type="checkbox"], input[type="number"]').val());
+        console.table("Změna tabu, " + $('input[type="number"]'));
+
+        prepocitatCenu();
+        pridatNormostrany();
+
         vybranaSluzba = this.options[e.target.selectedIndex].text;
-        console.log(vybranaSluzba);
+        //console.log(vybranaSluzba);
         
         if (vybranaSluzba == 'Překlad') {
             $('vybranPreklad').addClass('vybrano');
@@ -33,16 +42,16 @@ $(document).ready(function(){
         }  
     });
 
-    $(document).on('change', 'input[type="checkbox"], input[type="number"]', function(e) {
-        prepocitatCenu();
-        pridatNormostrany();
-    });
-
-    //Výpočet ceny
+    // Výchozí ceny
     var vychoziCena = 150;
     var korekturaCena = 0;
     var grafickaUpravaCena = 0;
     var pocetNormostran = 0;
+
+    $(document).on('change', 'input[type="checkbox"], input[type="number"]', function(e) {
+        prepocitatCenu();
+        pridatNormostrany();
+    });
 
     $('#vychoziCenaValue').html(vychoziCena);
     $('#pocetStranekValue').append('× ' + pocetNormostran);
@@ -72,11 +81,15 @@ $(document).ready(function(){
     }
 
     function pridatNormostrany() {
-            pocetNormostran = $('input[type="number"]').val();
-            $('#pocetStranekValue').html('× ' + pocetNormostran);
-            konecnaCena = strankaCena * pocetNormostran;
-            $('.konecnaCenaValue').html(konecnaCena + ' Kč');
+        pocetNormostran = $('input[type="number"]').val();
 
-            /*console.log(konecnaCena);*/
+        if (pocetNormostran == "") {
+            $('#pocetStranekValue').html('× 0');
+        }
+
+        $('#pocetStranekValue').html('× ' + pocetNormostran);
+        konecnaCena = strankaCena * pocetNormostran;
+        $('.konecnaCenaValue').html(konecnaCena + ' Kč');
+        console.log(pocetNormostran);
     }
 });

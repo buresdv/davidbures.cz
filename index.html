@@ -70,7 +70,7 @@
                             Čeho chcete provést korekturu?
                             <input type="text" placeholder="Vědecký text, rodný list apod." class="hledani">
                             Kolik normostran? <span class="normostrana">Normostrana = 1 800 znaků včetně mezer</span>
-                            <input type="number" name="pocetNormostran" placeholder="0-900">
+                            <input type="number" placeholder="0-900">
 
                             <inlineContainer>
                                 <input type="checkbox" name="grafickaUprava" value="zahrnoutGrafickouUpravu">Zahrnout grafickou úpravu
@@ -78,6 +78,12 @@
                         </vybranaKorektura>
                         <vybranoTlumoceni class="vybrat">
                             Co chcete přetlumočit?
+                            <input type="text" placeholder="Konferenci, úřední komunikaci apod." class="hledani">
+                            Kolik normostran? <span class="normostrana">Normostrana = 1 800 znaků včetně mezer</span>
+                            <input type="number" placeholder="0-900">
+                            <inlineContainer>
+                                <input type="checkbox" name="mimoStandardniHodiny" value="mimoStandardniHodiny">Zakázka mimo 9:00 - 17:00
+                            </inlineContainer>
                         </vybranoTlumoceni>
 
                         <inlineContainer style="margin-top: 1.5vw;">
@@ -244,7 +250,7 @@
                     <tr><td>Obyčejný text</td><td>200 Kč/<span class="ns">ns</span></td><td>100 Kč/<span class="ns">ns</span></td></tr>
                     <tr class="spacer"></tr>
                     <tr><td></td><td></td><th>Standard</th><th>Studenti</th></tr>
-                    <tr><td rowspan="3">Tlumočení<br><span><p>On-site nebo vzdálené tlumočení.</p><p>Mimo 9:00-17:00 je účtován poplatek 100 Kč/hod.</p></span></td><td>Úřední<br>Konferencí</td><td>800 Kč/<span class="ns">hod</span></td><td>650 Kč/<span class="ns">hod</span></td></tr>
+                    <tr><td rowspan="3">Tlumočení<br><span><p>On-site nebo vzdálené tlumočení.</p><p>Mimo 9:00-17:00 je účtován poplatek 250 Kč/hod.</p></span></td><td>Úřední<br>Konferencí</td><td>800 Kč/<span class="ns">hod</span></td><td>650 Kč/<span class="ns">hod</span></td></tr>
                     <tr><td id="referenced">Policejní</td><td>1 000 Kč/<span class="ns">hod</span></td><td>750 Kč/<span class="ns">hod</span></td></tr>
                     <tr><td>Prezentací</td><td>700 Kč/<span class="ns">hod</span></td><td>450 Kč/<span class="ns">hod</span></td></tr>
                 </table>
