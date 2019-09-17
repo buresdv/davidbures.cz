@@ -14,7 +14,6 @@ $(document).ready(function(){
         $('input[type="number"]').val('');
         $('input[type="checkbox"]').prop("checked", false);
 
-        console.log($('input[type="checkbox"], input[type="number"]').val());
         console.table("Změna tabu, " + $('input[type="number"]'));
 
         prepocitatCenu();
@@ -81,7 +80,13 @@ $(document).ready(function(){
     }
 
     function pridatNormostrany() {
-        pocetNormostran = $('input[type="number"]').val();
+        var pocetNormostran = $('input[type="number"]').map(function(idx, elem) {
+           return $(elem).val();
+        }).get();
+        pocetNormostran = pocetNormostran.filter(function(el) {
+            return el.length && el==+el;
+        });
+        console.log(pocetNormostran);
 
         if (pocetNormostran == "") {
             $('#pocetStranekValue').html('× 0');
@@ -90,6 +95,5 @@ $(document).ready(function(){
         $('#pocetStranekValue').html('× ' + pocetNormostran);
         konecnaCena = strankaCena * pocetNormostran;
         $('.konecnaCenaValue').html(konecnaCena + ' Kč');
-        console.log(pocetNormostran);
     }
 });
