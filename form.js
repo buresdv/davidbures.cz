@@ -47,7 +47,11 @@ $(document).ready(function(){
     var grafickaUpravaCena = 0;
     var pocetNormostran = 0;
 
-    $(document).on('change', 'input[type="checkbox"], input[type="number"]', function(e) {
+    $(document).on('keyup', ' input[type="number"]', function(e) {
+        prepocitatCenu();
+        pridatNormostrany();
+    });
+    $(document).on('change', 'input[type="checkbox"]', function(e) {
         prepocitatCenu();
         pridatNormostrany();
     });
