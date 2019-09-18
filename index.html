@@ -100,9 +100,12 @@
                         <p>×</p>
                     </zavritModal>
                     <p>Přibližná cena:</p>
-                    <h1 class="konecnaCenaValue">---</h1>
+                    <h1 class="konecnaCenaValue">0 Kč</h1>
                     <div id="vypocet">
                         <table>
+                            <tr id="zduvodneniCeny" class="hidden">
+                                <td colspan="2" style="color: #fff; text-align: right !important;">Proč je tlumočení tak drahé?</td>
+                            </tr>
                             <tr>
                                 <td id="vychoziCena">Výchozí cena za stránku:</td><td id="vychoziCenaValue"></td>
                             </tr>
@@ -111,6 +114,9 @@
                             </tr>
                             <tr class="hidden" id="grafickaUpravaRow">
                                 <td id="grafickaUpravaCena">Grafická úprava:</td><td id="grafickaUpravaCenaValue">+ 200</td>
+                            </tr>
+                            <tr class="hidden" id="mimoStandardniHodinyRow">
+                                <td id="standardHodinyCena">Mimo standardní hodiny:</td><td id="standardHodinyCenaValue">+ 250</td>
                             </tr>
                             <tr class="rovnaSe">
                                 <td id="strankaCena">Cena za stránku:</td><td id="strankaCenaValue"></td>

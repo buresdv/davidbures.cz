@@ -38,11 +38,17 @@ $(document).ready(function(){
             $('vybranoTlumoceni').removeClass('vybrano');
             $('vybranPreklad').removeClass('vybrano');
             $('vybranaKorektura').removeClass('vybrano');
-        }  
+        }
+        if (vybranaSluzba == "Tlumočení" ) {
+            $('#zduvodneniCeny').removeClass('hidden');
+        } else {
+            $('#zduvodneniCeny').addClass('hidden');
+        }
     });
 
     // Výchozí ceny
     var vychoziCena = 150;
+    var standardniHodinyCena = 0;
     var korekturaCena = 0;
     var grafickaUpravaCena = 0;
     var pocetNormostran = 0;
@@ -77,8 +83,16 @@ $(document).ready(function(){
             $('#grafickaUpravaRow').addClass('hidden');
             grafickaUpravaCena = 0;
         }
+        //Je zatržená zakázka mimo normální dobu?
+        if ($('input[name=mimoStandardniHodiny]').is(':checked')) {
+            standardniHodinyCena = 250;
+            $('#mimoStandardniHodinyRow').removeClass('hidden');
+        } else {
+            $('#mimoStandardniHodinyRow').addClass('hidden');
+            standardniHodinyCena = 0;
+        }
 
-        strankaCena = vychoziCena + korekturaCena + grafickaUpravaCena;
+        strankaCena = vychoziCena + standardniHodinyCena + korekturaCena + grafickaUpravaCena;
         
         $('#strankaCenaValue').html(strankaCena);
     }

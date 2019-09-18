@@ -1,0 +1,27 @@
+{
+    "text": [
+        {
+            "cena": "400",
+            "sluzby": ["Vědecký text", "Interní dokumentaci", "Rodný list", "Program", "Aplikaci"]
+        }, {
+            "cena": "300",
+            "sluzby": ["Odborný text", "Webové stránky", "Knihu", "Novinový článek"]
+            
+        }, {
+            "cena": "250",
+            "sluzby": ["Obyčejný text"]
+        }
+    ],
+    "tlumoceni": [
+        {
+            "cena": "800",
+            "sluzby": ["Úřední komunikaci", "Koferenci"]
+        }, {
+            "cena": "1000",
+            "sluzby": ["Policejní"]
+        }, {
+            "cena": "700",
+            "sluzby": ["Prezentací"]
+        }
+    ]
+}
