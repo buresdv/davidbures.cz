@@ -18,6 +18,11 @@ $(document).ready(function(){
         $('input[type="checkbox"]').prop("checked", false);
 
         console.table("Změna tabu, " + $('input[type="number"]'));
+        console.log(vychoziCena);
+
+        if(vychoziCena != 0) {
+            vychoziCena = 0;
+        }
 
         prepocitatCenu();
         pridatNormostrany();
@@ -75,11 +80,12 @@ $(document).ready(function(){
             },
 
             onClickEvent: function() {
-                vychoziCena = $(".sluzbaVyhledavani").getSelectedItemData().cena;
+                vychoziCena = $(".sluzbaVyhledavani.preklad").getSelectedItemData().cena;
                 $(".konecnaCenaValue").html(vychoziCena);
                 $('#vychoziCenaValue').html(vychoziCena);
                 prepocitatCenu();
                 pridatNormostrany();
+                console.log(vychoziCena);
             }
         }
     };
@@ -103,7 +109,7 @@ $(document).ready(function(){
             },
 
             onClickEvent: function() {
-                vychoziCena = $(".sluzbaVyhledavani").getSelectedItemData().cena;
+                vychoziCena = $(".sluzbaVyhledavani.korektura").getSelectedItemData().cena;
                 $(".konecnaCenaValue").html(vychoziCena);
                 $('#vychoziCenaValue').html(vychoziCena);
                 prepocitatCenu();
@@ -131,7 +137,7 @@ $(document).ready(function(){
             },
 
             onClickEvent: function() {
-                vychoziCena = $(".sluzbaVyhledavani").getSelectedItemData().cena;
+                vychoziCena = $(".sluzbaVyhledavani.tlumoceni").getSelectedItemData().cena;
                 $(".konecnaCenaValue").html(vychoziCena);
                 $('#vychoziCenaValue').html(vychoziCena);
                 prepocitatCenu();
