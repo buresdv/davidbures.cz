@@ -57,23 +57,6 @@
                         <vybranPreklad class="vybrat">
                             Co chcete přeložit?
                             <input type="text" class="sluzbaVyhledavani" placeholder="Vědecký text, rodný list apod." class="hledani">
-                            <vysledky>
-                                <li>
-                                    
-                                </li>
-                            </vysledky>
-                            <!--<inlineContiner>
-                                Co chcete přeložit?
-                                <select name="vybratSluzbu" class="vybratSluzbu">
-                                    <option value="blank">-----</option>
-                                    <option value="vedeckyClanekP">Vědecký článek</option>
-                                    <option value="weboveStrankyP">Webové stránky</option>
-                                    <option value="rodnyListP">Rodný nebo úmrtní list</option>
-                                    <option value="interniDokumentaceP">Interní dokumentaci</option>
-                                    <option value="jinyOdbornyP">Jiný obdorný text</option>
-                                    <option value="jinyTextP">Jiný typ textu</option>
-                                </select>
-                            </inlineContiner>-->
                             Kolik normostran? <span class="normostrana">Normostrana = 1 800 znaků včetně mezer</span>
                             <input type="number" placeholder="0-900">
 
@@ -85,20 +68,8 @@
                             </inlineContainer>
                         </vybranPreklad>
                         <vybranaKorektura class="vybrat">
-                            <inlineContiner>
-                                Čeho chcete provést korekturu?
-                                <select name="vybratSluzbu" class="vybratSluzbu">
-                                    <option value="blank">-----</option>
-                                    <option value="vedeckyClanekK">Vědecký článek</option>
-                                    <option value="weboveStrankyK">Webové stránky</option>
-                                    <option value="rodnyListK">Rodný nebo úmrtní list</option>
-                                    <option value="interniDokumentaceK">Interní dokumentaci</option>
-                                    <option value="jinyOdbornyK">Jiný obdorný text</option>
-                                    <option value="jinyTextK">Jiný typ textu</option>
-                                </select>
-                            </inlineContiner>
-                            <!--Čeho chcete provést korekturu?
-                            <input type="text" class="sluzbaVyhledavani" placeholder="Vědecký text, rodný list apod." class="hledani">-->
+                            Čeho chcete provést korekturu?
+                            <input type="text" class="sluzbaVyhledavani" placeholder="Vědecký text, rodný list apod." class="hledani">
                             Kolik normostran? <span class="normostrana">Normostrana = 1 800 znaků včetně mezer</span>
                             <input type="number" placeholder="0-900">
 
@@ -303,7 +274,7 @@
                 </odkazy>
             </container>
             <footer>
-                <h1>2014-2019</h1>
+                <h1>2014-<?php echo date("Y"); ?></h1>
             </footer>
         </links>
     </transformer>

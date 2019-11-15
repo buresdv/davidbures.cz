@@ -455,6 +455,7 @@ levaStrana form span {
     display: block;
 }
 levaStrana input[type="email"], levaStrana input[type="text"], levaStrana input[type="number"] {
+    position: relative;
     width: 100%;
     padding: 1vw;
     margin-bottom: 1.5vw;
@@ -478,6 +479,15 @@ inlineContainer {
 }
 inlineContainer * {
     display: inline;
+}
+vysledky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000000;
+}
+vysledek {
+    z-index: 9999999999999;
 }
 pravaStrana {
     position: relative;

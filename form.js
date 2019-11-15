@@ -1,4 +1,7 @@
 $(document).ready(function(){
+    $.ajaxSetup({ cache: false });
+    console.log("Ay");
+
     //Otevírání a zavírání formuláře
     $('#tlacitkoContact').click(function() {
         $('objednaniModalOverlay').addClass('modalAktivni');
@@ -47,12 +50,38 @@ $(document).ready(function(){
     });
 
     // Výchozí ceny
-    var vychoziCena = 150;
+    var vychoziCena = 0;
     var standardniHodinyCena = 0;
     var korekturaCena = 0;
     var grafickaUpravaCena = 0;
     var pocetNormostran = 0;
 
+    //Vyhledávání
+    $(".sluzbaVyhledavani").keyup(function() {
+        console.log("Why");
+        $("vysledky li").html("");
+        var searchField = $(".sluzbaVyhledavani").val();
+        var expression = new RegExp(searchField, "i");
+        $.getJSON("sluzbyText.json", function(data) {
+            $.each(data, function(key, value) {
+                if (value.sluzba.search(expression) != -1) {
+                    $("vysledky li").append("<ul> <vysledek>" + value.sluzba + "</vysledek>");
+                }
+            });
+        });
+        if ($(".sluzbaVyhledavani").val() == "") {
+            $("vysledky li").html("");
+        }
+    });
+    $("vysledek").click(function() {
+        alert("Kill me");
+        
+        /*var clickText = $(this).text().split('|');
+        $(".sluzbaVyhledavani").val($.trim(clickText[0]));
+        $("vysledky li").html("");*/
+    });
+
+    //Ostatní úpravy
     $(document).on('keyup', ' input[type="number"]', function(e) {
         prepocitatCenu();
         pridatNormostrany();
@@ -104,7 +133,6 @@ $(document).ready(function(){
         pocetNormostran = pocetNormostran.filter(function(el) {
             return el.length && el==+el;
         });
-        console.log(pocetNormostran);
 
         if (pocetNormostran == "") {
             $('#pocetStranekValue').html('× 0');
