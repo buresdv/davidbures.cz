@@ -222,6 +222,10 @@ $(document).ready(function(){
 
         $('#pocetStranekValue').html('× ' + pocetNormostran);
         konecnaCena = strankaCena * pocetNormostran;
-        $('.konecnaCenaValue').html(konecnaCena + ' Kč');
+        if (isNaN(Number(vychoziCena))) {
+            $('.konecnaCenaValue').html(konecnaCena + 'i');
+        } else {
+            $('.konecnaCenaValue').html(konecnaCena + ' Kč');
+        }
     }
 });
