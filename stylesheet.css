@@ -302,22 +302,23 @@ section a {
     flex-basis: 100%;
     align-content: center;
     justify-items: center;
+    margin-top: 1.6rem;
 }
 obrazky {
     display: flex;
     flex-direction: row;
-    align-items: stretch;
+    align-items: center;
     justify-content: center;
-    margin-top: 1.6rem;
+    height: 4rem;
 }
 obrazky:first-of-type {
-    margin-top: 0.6rem;
+    margin-top: 1rem;
 }
 obrazky * {
     margin: 0 1rem;
 }
 obrazky img, obrazky svg {
-    max-height: 4rem;
+    height: 50%;
 }
 .konec {
     display: block;
