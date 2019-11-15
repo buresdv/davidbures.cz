@@ -1,0 +1,33 @@
+[
+    {
+        "cena": "200",
+        "sluzba": "Vědecký text"
+    }, {
+        "cena": "200",
+        "sluzba": "Interní dokumentaci"
+    }, {
+        "cena": "250",
+        "sluzba": "Rodný list"
+    }, {
+        "cena": "200",
+        "sluzba": "Program"
+    }, {
+        "cena": "200",
+        "sluzba": "Aplikaci"
+    }, {
+        "cena": "250",
+        "sluzba": "Webové stránky"
+    }, {
+        "cena": "250",
+        "sluzba": "Odborný text"
+    }, {
+        "cena": "250",
+        "sluzba": "Knihu"
+    }, {
+        "cena": "250",
+        "sluzba": "Novinový článek"
+    }, {
+        "cena": "200",
+        "sluzba": "Obyčejný text"
+    }
+]

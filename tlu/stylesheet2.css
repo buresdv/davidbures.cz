@@ -1,10 +1,53 @@
-obr img {
-    max-width: 49%;
+h1 + p {
+    margin-top: 0;
+
 }
-h2 {
-    color: #a0a0a0;
-    font-weight: 300;
+.rokDivider {
+    color: var(--themeGray);
+    font-size: 150%;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: right;
 }
-h2 span {
-    color: #454545;
+.rokDivider::before {
+    content: '';
+    border-top: 2px dashed;
+    margin: 0 20px 0 0;
+    flex: 1 0 20px;
+}
+kategorie::before {
+    content: "·";
+    font-weight: 900;
+    margin: 0 0.3rem;
+}
+kategorie p {
+    display: inline;
+    font-size: 75%;
+
+    color: #1870b3;
+
+    padding: 0.2rem;
+    background-color: #dff0fd;
+
+    border: 1px solid;
+    border-radius: 0.5rem;
+}
+nazev {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+nazev h3 {
+    margin: 0;
+}
+karta {
+    flex-flow: column;
+}
+.obrazek {
+    float: right;
+}
+.obrazek img {
+    max-width: 25vw;
 }

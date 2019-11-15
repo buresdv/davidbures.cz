@@ -31,8 +31,10 @@
         <title>Tlumočník a překladatel: David Bureš</title>
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="/pluginy/EasyAutocomplete-1.3.5/jquery.easy-autocomplete.js"></script>
         
         <link rel="stylesheet" href="stylesheet.css" type="text/css">
+        <link rel="stylesheel" href="/pluginy/EasyAutocomplete-1.3.5/easy-autocomplete.css">
         <script src="cenik.js"></script>
         <script src="form.js"></script>
         <script src="vyhledavani.js"></script>
@@ -47,6 +49,11 @@
 
                         <inlineContainer>
                             Vyberte si službu: 
+                            <!--<buttonContainer class="flexer">
+                                <button>Překlad</button>
+                                <button>Korektura</button>
+                                <button>Tlumočení</button>
+                            </buttonContainer>-->
                             <select name="sluzby" id="sluzby">
                                 <option value="blank">-----</option>
                                 <option value="preklad">Překlad</option>
@@ -56,12 +63,10 @@
                         </inlineContainer>
                         <vybranPreklad class="vybrat">
                             Co chcete přeložit?
-                            <input type="text" class="sluzbaVyhledavani" placeholder="Vědecký text, rodný list apod." class="hledani">
-                            <vysledky>
-                                <li>
-                                    
-                                </li>
-                            </vysledky>
+                            <input type="text" class="sluzbaVyhledavani preklad" placeholder="Vědecký text, rodný list apod." class="hledani">
+                            <!--<vysledky>
+                                <li></li>
+                            </vysledky>-->
                             <!--<inlineContiner>
                                 Co chcete přeložit?
                                 <select name="vybratSluzbu" class="vybratSluzbu">
@@ -74,7 +79,7 @@
                                     <option value="jinyTextP">Jiný typ textu</option>
                                 </select>
                             </inlineContiner>-->
-                            Kolik normostran? <span class="normostrana">Normostrana = 1 800 znaků včetně mezer</span>
+                            Kolik normostran? <span class="normostrana">Normostrana = 250 slov</span>
                             <input type="number" placeholder="0-900">
 
                             <inlineContainer>
@@ -87,19 +92,9 @@
                         <vybranaKorektura class="vybrat">
                             <inlineContiner>
                                 Čeho chcete provést korekturu?
-                                <select name="vybratSluzbu" class="vybratSluzbu">
-                                    <option value="blank">-----</option>
-                                    <option value="vedeckyClanekK">Vědecký článek</option>
-                                    <option value="weboveStrankyK">Webové stránky</option>
-                                    <option value="rodnyListK">Rodný nebo úmrtní list</option>
-                                    <option value="interniDokumentaceK">Interní dokumentaci</option>
-                                    <option value="jinyOdbornyK">Jiný obdorný text</option>
-                                    <option value="jinyTextK">Jiný typ textu</option>
-                                </select>
+                                <input type="text" class="sluzbaVyhledavani korektura" placeholder="Vědecký text, rodný list apod." class="hledani">
                             </inlineContiner>
-                            <!--Čeho chcete provést korekturu?
-                            <input type="text" class="sluzbaVyhledavani" placeholder="Vědecký text, rodný list apod." class="hledani">-->
-                            Kolik normostran? <span class="normostrana">Normostrana = 1 800 znaků včetně mezer</span>
+                            Kolik normostran? <span class="normostrana">Normostrana = 250 slov</span>
                             <input type="number" placeholder="0-900">
 
                             <inlineContainer>
@@ -108,7 +103,7 @@
                         </vybranaKorektura>
                         <vybranoTlumoceni class="vybrat">
                             Co chcete přetlumočit?
-                            <input type="text" class="sluzbaVyhledavani" placeholder="Konferenci, úřední komunikaci apod." class="hledani">
+                            <input type="text" class="sluzbaVyhledavani tlumoceni" placeholder="Konferenci, úřední komunikaci apod." class="hledani">
                             Kolik hodin bude vaše zakázka přibližně trvat?
                             <input type="number" placeholder="0-900">
                             <inlineContainer>
@@ -213,6 +208,9 @@
             </cenikContainer>
         </header>
         <bImage></bImage>
+        <bText>
+            <p>Shear oscillatory and uniaxial elongational tests performed at 30C were used to simulate gluten‐free dough proving; shear oscillatory temperature ramp (30–90C) was used to simulate baking. In test simulating initial stages of proving the differences in wheat and gluten‐free dough (amaranth, buckwheat, chickpea, corn, quinoa, millet and rice) behavior were most evident from the higher values of elastic (105 Pa) and viscous moduli (104 Pa) of gluten‐free doughs compared with the values of elastic (104 Pa) and viscous moduli (103 Pa) of wheat dough.</p>
+        </bText>
         <whoami>
             <karta>
                 <section style="width: 100%;">
@@ -245,25 +243,37 @@
                 </section>
                 <section>
                     <h2>Software</h2>
-                    <a href="https://www.transifex.com/user/profile/lFenix/">Deepin Desktop Environment</a>
-                    <a href="https://l10n.gnome.org/users/lFenix/">GNOME</a>
+                    <a href="https://davidbures.cz">Keka</a>
                     <a href="https://github.com/lFenix/MultiMC5-translate">MultiMC</a>
+                    <a href="https://l10n.gnome.org/users/lFenix/">GNOME</a>
+                    <a href="https://www.transifex.com/user/profile/lFenix/">Deepin Desktop Environment</a>
                     <p>Antergos<span class="konec">2017-2019</span></p>
-                    <h2>Titulky (zatím nefunguje!)</h2>
-                    <a href="/titulky/">Jojoovo šílené dobrodružství 5: zlatý vítr</a>
+                </section>
+                <section id="spolecnosti">
+                    <h2>Kde jsem už překládal?</h2>
+                    <obrazky>
+                        <img src="http://vizual.utb.cz/utb/utb-bez400t.png">
+                        <img src="muni.png">
+                    </obrazky>
+                    <obrazky>
+                        <img src="https://sts.lionbridge.com/adfs/portal/logo/logo.png">
+                        <img src="http://www.whitelabelproductions.co.uk/img/contact-logo.png" style="filter: invert(0.4);">
+                    </obrazky>
                 </section>
             </karta>
             <karta id="tl" style="width: auto; flex-grow: 2;">
                 <kartaThumb></kartaThumb>
                 <h1>Tlumočník</h1>
                 <section style="width: 100%;">
+                    <h2>Společenské akce</h2>
+                    <a href="tlu/index.html">UTB Noc vědců 2019</a>
                     <h2>Konference</h2>
                     <a href="tlu/index.htm">Waze Česko-Slovenský Meetup 2018</a>
                     <a href="tlu/index.htm">Waze Česko-Slovenský Meetup 2017</a>
                     <a href="tlu/index.htm">Waze Česko-Slovenský Meetup 2016</a>
                 </section>
             </karta>
-            <karta style="width: 30%; flex-grow: 1;">
+            <karta style="width: 30%; flex-grow: 1; align-self: flex-start;">
                 <h1>A další</h1>
                 <section style="width: 100%;">
                     <h2>Moje knihy</h2>
@@ -290,6 +300,7 @@
                     <tr><td id="referenced">Policejní</td><td>1 000 Kč/<span class="ns">hod</span></td><td>750 Kč/<span class="ns">hod</span></td></tr>
                     <tr><td>Prezentací</td><td>700 Kč/<span class="ns">hod</span></td><td>450 Kč/<span class="ns">hod</span></td></tr>
                 </table>
+                <a class="buttonLike" id="tlacitkoContact" style="margin: 0 auto; margin-top: 2.5rem;">KONTAKTUJTE MĚ</a>
             </karta>
         </content>
         <links>

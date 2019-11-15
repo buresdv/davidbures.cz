@@ -26,17 +26,32 @@
 .buttonLike, zavritModal {
     cursor: pointer;
 }
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
 bImage {
     position: absolute;
-    top: 0;
-    left: -10vw;
+    top: -10%;
+    left: -30%;
     width: 100%;
     height: 170%;
     background-image: url("Untitled.svg");
     background-repeat: no-repeat;
-    opacity: 0.4;
+    opacity: 0.7;
     font-size: 3000%;
-    z-index: -10;
+    z-index: -100;
+}
+btext {
+    display: none;
+    position: absolute;
+    width: 50vw;
+    top: -2%;
+    right: 0;
+    opacity: 0.2;
+    z-index: -110;
+    transform:matrix(0.87,0.50,-0.85,0.67,0,0);
 }
 b {
     color: #212121;
@@ -68,6 +83,7 @@ bar {
     
     width: 100%;
     align-items: center;
+    z-index: 10;
 }
 bar a {
     margin: 1vw;
@@ -214,7 +230,6 @@ karta {
     
     border: 2px solid #aad7fa;
     z-index: 1;
-    /*box-shadow: 0px 7px 73px -13px rgb(54, 48, 48);*/
     border-radius: 10px;
 }
 whoami karta {
@@ -254,7 +269,7 @@ kartaThumb {
 kartaThumb:hover {
     transform: scale(1.2) translateX(3rem);
 }
-#pak kartaThumb {
+.pak kartaThumb {
     background: url(pakThumb_small.jpg);
 }
 #tl kartaThumb {
@@ -281,6 +296,28 @@ section a, section h2 {
 section a {
     display: block;
     position: relative;
+}
+#spolecnosti {
+    text-align: center;
+    flex-basis: 100%;
+    align-content: center;
+    justify-items: center;
+}
+obrazky {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    margin-top: 1.6rem;
+}
+obrazky:first-of-type {
+    margin-top: 0.6rem;
+}
+obrazky * {
+    margin: 0 1rem;
+}
+obrazky img, obrazky svg {
+    max-height: 4rem;
 }
 .konec {
     display: block;
@@ -323,9 +360,7 @@ whoami a:hover:after, section a:hover:after {
 .spacer {
     height: 2rem;
 }
-#cn {
-    display: block;
-}
+
 #cn table {
     width: 100%;
     border-collapse: separate;
@@ -426,6 +461,7 @@ objednaniModalOverlay {
     transition: 1s var(--transSmooth);
 }
 objednaniModal {
+    position: fixed;
     display: flex;
     flex-flow: row;
     background-color: var(--theme2);
@@ -473,22 +509,80 @@ input[type="checkbox"] {
 }
 .vybrano {
     display: block;
+    position: relative;
 }
 inlineContainer {
-    display: inline-block;
+    display: block;
 }
 inlineContainer * {
     display: inline;
 }
-vysledky {
+.easy-autocomplete {
+    width:100% !important
+  }
+  
+.easy-autocomplete input {
+width: 100%;
+}
+.easy-autocomplete-container {
     position: absolute;
-    top: 0;
-    left: 0;
+    background-color: var(--theme2);
+
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    box-shadow: 0 7px 65px rgba(15, 71, 113, 0.12);
+
+    list-style: none;
     z-index: 1000000;
 }
-vysledek {
-    z-index: 9999999999999;
+.easy-autocomplete-container * {
+    list-style: none;
+    margin: 0;
 }
+.easy-autocomplete-container ul {
+    padding: 0;
+    overflow: hidden;
+}
+.easy-autocomplete-container ul li {
+    cursor: pointer;
+    padding: 1rem 2rem;
+}
+.easy-autocomplete-container ul li:hover {
+    background-color: #e5f3fd;
+}
+/*vysledky, vysledky ul {
+    border-radius: 0.5rem;
+}
+vysledky {
+    position: absolute;
+    top: 4rem;
+    left: 0;
+    background-color: var(--theme2);
+    padding: calc(var(--padding)*2);
+
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    box-shadow: 0 7px 65px rgba(15, 71, 113, 0.12);
+
+    list-style: none;
+
+    transition: 0.5s ease;
+
+    z-index: 1000000;
+}*/
+/*vysledky ul {
+    margin: 0;
+    padding: 0.7rem;
+    transition: 0.5s ease;
+}
+vysledky ul:hover {
+    background-color: #dee1e4;
+}
+vysledek {
+    cursor: pointer;
+    z-index: 9999999999999;
+}*/
 pravaStrana {
     position: relative;
     color: var(--theme2);

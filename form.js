@@ -56,11 +56,95 @@ $(document).ready(function(){
     var grafickaUpravaCena = 0;
     var pocetNormostran = 0;
 
+
+    var optionsPreklad = {
+        url: "sluzbyText.json",
+        getValue: "sluzba",
+        list: {
+            match: {
+                enabled: true
+            },
+            maxNumberOfElements: 3,
+            showAnimation: {
+                type: "slide",
+                time: 400
+            },
+            hideAnimation: {
+                type: "slide",
+                time: 400
+            },
+
+            onClickEvent: function() {
+                vychoziCena = $(".sluzbaVyhledavani").getSelectedItemData().cena;
+                $(".konecnaCenaValue").html(vychoziCena);
+                $('#vychoziCenaValue').html(vychoziCena);
+                prepocitatCenu();
+                pridatNormostrany();
+            }
+        }
+    };
+    $(".sluzbaVyhledavani.preklad").easyAutocomplete(optionsPreklad);
+
+    var optionsKorektura = {
+        url: "sluzbyKorektura.json",
+        getValue: "sluzba",
+        list: {
+            match: {
+                enabled: true
+            },
+            maxNumberOfElements: 3,
+            showAnimation: {
+                type: "slide",
+                time: 400
+            },
+            hideAnimation: {
+                type: "slide",
+                time: 400
+            },
+
+            onClickEvent: function() {
+                vychoziCena = $(".sluzbaVyhledavani").getSelectedItemData().cena;
+                $(".konecnaCenaValue").html(vychoziCena);
+                $('#vychoziCenaValue').html(vychoziCena);
+                prepocitatCenu();
+                pridatNormostrany();
+            }
+        }
+    };
+    $(".sluzbaVyhledavani.korektura").easyAutocomplete(optionsKorektura);
+
+    var optionsTlumoceni = {
+        url: "sluzbySlovo.json",
+        getValue: "sluzba",
+        list: {
+            match: {
+                enabled: true
+            },
+            maxNumberOfElements: 3,
+            showAnimation: {
+                type: "slide",
+                time: 400
+            },
+            hideAnimation: {
+                type: "slide",
+                time: 400
+            },
+
+            onClickEvent: function() {
+                vychoziCena = $(".sluzbaVyhledavani").getSelectedItemData().cena;
+                $(".konecnaCenaValue").html(vychoziCena);
+                $('#vychoziCenaValue').html(vychoziCena);
+                prepocitatCenu();
+                pridatNormostrany();
+            }
+        }
+    };
+    $(".sluzbaVyhledavani.tlumoceni").easyAutocomplete(optionsTlumoceni);
+
     //Vyhledávání
-    $(".sluzbaVyhledavani").keyup(function() {
-        console.log("Why");
+    /*$(".sluzbaVyhledavani").focus().keyup(function() {
         $("vysledky li").html("");
-        var searchField = $(".sluzbaVyhledavani").val();
+        var searchField = $(".sluzbaVyhledavani").focus().val();
         var expression = new RegExp(searchField, "i");
         $.getJSON("sluzbyText.json", function(data) {
             $.each(data, function(key, value) {
@@ -69,17 +153,16 @@ $(document).ready(function(){
                 }
             });
         });
-        if ($(".sluzbaVyhledavani").val() == "") {
+        if ($(".sluzbaVyhledavani").focus().val() == "") {
             $("vysledky li").html("");
         }
     });
-    $("vysledek").click(function() {
-        alert("Kill me");
-        
-        /*var clickText = $(this).text().split('|');
-        $(".sluzbaVyhledavani").val($.trim(clickText[0]));
-        $("vysledky li").html("");*/
-    });
+    $(document).on("click", "vysledek" , function() {        
+        var clickText = $(this).text().split('|');
+        $(".sluzbaVyhledavani").focus().val($.trim(clickText[0]));
+        nacistCenu();
+        $("vysledky li").html("");
+    });*/
 
     //Ostatní úpravy
     $(document).on('keyup', ' input[type="number"]', function(e) {
@@ -91,7 +174,6 @@ $(document).ready(function(){
         pridatNormostrany();
     });
 
-    $('#vychoziCenaValue').html(vychoziCena);
     $('#pocetStranekValue').append('× ' + pocetNormostran);
 
     function prepocitatCenu() {
@@ -121,7 +203,7 @@ $(document).ready(function(){
             standardniHodinyCena = 0;
         }
 
-        strankaCena = vychoziCena + standardniHodinyCena + korekturaCena + grafickaUpravaCena;
+        strankaCena = Number(vychoziCena)  + standardniHodinyCena + korekturaCena + grafickaUpravaCena;
         
         $('#strankaCenaValue').html(strankaCena);
     }
