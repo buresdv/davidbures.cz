@@ -21,11 +21,44 @@ $(document).ready(function(){
     });
 
     $(document).on('click', 'buttonContainer a', function(e){
-        console.table($(this));
-        $('activeSelection').removeClass();
+        $('buttonContainer a').removeClass('activeSelection');
         $(this).addClass('activeSelection');
-        vybranaSluzba = $(".activeSection").html();
+
+        if(vychoziCena != 0) {
+            vychoziCena = 0;
+        }
+
+        vybranaSluzba = $(".activeSelection").html();
         console.log(vybranaSluzba);
+
+        prepocitatCenu();
+        pridatNormostrany();
+
+        /*vybranaSluzba = this.options[e.target.selectedIndex].text;*/
+        
+        if (vybranaSluzba == 'Překlad') {
+            $('vybranPreklad').addClass('vybrano');
+            $('vybranaKorektura').removeClass('vybrano');
+            $('vybranoTlumoceni').removeClass('vybrano');
+        } else if (vybranaSluzba == 'Korektura') {
+            $('vybranaKorektura').addClass('vybrano');
+            $('vybranPreklad').removeClass('vybrano');
+            $('vybranoTlumoceni').removeClass('vybrano');
+        } else if (vybranaSluzba == 'Tlumočení') {
+            $('vybranoTlumoceni').addClass('vybrano');
+            $('vybranPreklad').removeClass('vybrano');
+            $('vybranaKorektura').removeClass('vybrano');
+        } else {
+            $('vybranoTlumoceni').removeClass('vybrano');
+            $('vybranPreklad').removeClass('vybrano');
+            $('vybranaKorektura').removeClass('vybrano');
+        }
+        if (vybranaSluzba == "Tlumočení" ) {
+            $('#zduvodneniCeny').removeClass('hidden');
+        } else {
+            $('#zduvodneniCeny').addClass('hidden');
+        }
+
     });
 
     //Vybrání služby
@@ -243,7 +276,7 @@ $(document).ready(function(){
 
         $('#pocetStranekValue').html('× ' + pocetNormostran);
         konecnaCena = strankaCena * pocetNormostran;
-        if (isNaN(Number(vychoziCena))) {
+        if (isNaN(Number(vychoziCena)) || isNaN(Number(strankaCena))) {
             $('.konecnaCenaValue').html(konecnaCena + 'i');
         } else {
             $('.konecnaCenaValue').html(konecnaCena + ' Kč');

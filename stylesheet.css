@@ -487,17 +487,18 @@ levaStrana {
 buttonContainer { 
     box-sizing: content-box;
     background-color: var(--theme2);
-    padding: 1vw;
     border-radius: 10px;
     box-shadow: 0 7px 65px rgba(15, 71, 113, 0.12);
     overflow: hidden;
 }
 buttonContainer a {
     position: relative;
+    cursor: pointer;
+    display: inline-block;
     padding: 1vw;
     z-index: 10;
 }
-buttonContainer a.activeSection::after {
+buttonContainer a.activeSelection::after {
     content: "";
     position: absolute;
     top: 0;
@@ -505,8 +506,12 @@ buttonContainer a.activeSection::after {
     width: 100%;
     height: 100%;
     background-color: var(--themeLightMain);
+    transition: 1s var(--transSmooth);
     z-index: -1;
 }
+/*.activeSelection {
+    background-color: var(--themeLightMain);
+}*/
 levaStrana form {
     display: flex;
     flex-flow: column;
