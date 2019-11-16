@@ -11,6 +11,7 @@
     --theme: #384046;
     --theme2: #FFFFFF;
     --themeHighlight: #FF5613;
+    --themeLightMain: #e5f3fd;
     --themeGray: #93a1ac;
     --themeGrayInverted: #cdd3d8;
     --border: 2px solid;
@@ -175,7 +176,7 @@ cenikContainer:hover #cenik-menu, .pinned {
 }
 
 content, whoami:after {
-    background-color: #e5f3fd;
+    background-color: var(--themeLightMain);
 }
 whoami, content, links {
     display: flex;
@@ -480,6 +481,32 @@ levaStrana {
     background-color: #f8f9fa;
     width: 35vw;
 }
+.inlineBlocker {
+    display: inline-block;
+}
+buttonContainer { 
+    box-sizing: content-box;
+    background-color: var(--theme2);
+    padding: 1vw;
+    border-radius: 10px;
+    box-shadow: 0 7px 65px rgba(15, 71, 113, 0.12);
+    overflow: hidden;
+}
+buttonContainer a {
+    position: relative;
+    padding: 1vw;
+    z-index: 10;
+}
+buttonContainer a.activeSection::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--themeLightMain);
+    z-index: -1;
+}
 levaStrana form {
     display: flex;
     flex-flow: column;
@@ -550,40 +577,8 @@ width: 100%;
     padding: 1rem 2rem;
 }
 .easy-autocomplete-container ul li:hover {
-    background-color: #e5f3fd;
+    background-color: var(--themeLightMain)
 }
-/*vysledky, vysledky ul {
-    border-radius: 0.5rem;
-}
-vysledky {
-    position: absolute;
-    top: 4rem;
-    left: 0;
-    background-color: var(--theme2);
-    padding: calc(var(--padding)*2);
-
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    box-shadow: 0 7px 65px rgba(15, 71, 113, 0.12);
-
-    list-style: none;
-
-    transition: 0.5s ease;
-
-    z-index: 1000000;
-}*/
-/*vysledky ul {
-    margin: 0;
-    padding: 0.7rem;
-    transition: 0.5s ease;
-}
-vysledky ul:hover {
-    background-color: #dee1e4;
-}
-vysledek {
-    cursor: pointer;
-    z-index: 9999999999999;
-}*/
 pravaStrana {
     position: relative;
     color: var(--theme2);

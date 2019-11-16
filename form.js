@@ -20,6 +20,14 @@ $(document).ready(function(){
         $('transformer').addClass('transformerNeaktivni');
     });
 
+    $(document).on('click', 'buttonContainer a', function(e){
+        console.table($(this));
+        $('activeSelection').removeClass();
+        $(this).addClass('activeSelection');
+        vybranaSluzba = $(".activeSection").html();
+        console.log(vybranaSluzba);
+    });
+
     //Vybrání služby
     $(document).on('change', '#sluzby', function(e) {
         $('input[type="number"]').val('');
@@ -35,8 +43,7 @@ $(document).ready(function(){
         prepocitatCenu();
         pridatNormostrany();
 
-        vybranaSluzba = this.options[e.target.selectedIndex].text;
-        //console.log(vybranaSluzba);
+        /*vybranaSluzba = this.options[e.target.selectedIndex].text;*/
         
         if (vybranaSluzba == 'Překlad') {
             $('vybranPreklad').addClass('vybrano');
