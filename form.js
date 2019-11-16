@@ -1,4 +1,6 @@
 $(document).ready(function(){
+    alert("Elča is the best girl"); // TODO: Remove in production
+
     $.ajaxSetup({ cache: false });
     console.log("Ay");
 
@@ -27,6 +29,11 @@ $(document).ready(function(){
         if(vychoziCena != 0) {
             vychoziCena = 0;
         }
+        if(pocetNormostran != 0) {
+            pocetNormostran = 0;
+            alert("Elčaaa");
+            $("input[type=number]").val();
+        }
 
         vybranaSluzba = $(".activeSelection").html();
         console.log(vybranaSluzba);
@@ -48,57 +55,6 @@ $(document).ready(function(){
             $('vybranoTlumoceni').addClass('vybrano');
             $('vybranPreklad').removeClass('vybrano');
             $('vybranaKorektura').removeClass('vybrano');
-        } else {
-            $('vybranoTlumoceni').removeClass('vybrano');
-            $('vybranPreklad').removeClass('vybrano');
-            $('vybranaKorektura').removeClass('vybrano');
-        }
-        if (vybranaSluzba == "Tlumočení" ) {
-            $('#zduvodneniCeny').removeClass('hidden');
-        } else {
-            $('#zduvodneniCeny').addClass('hidden');
-        }
-
-    });
-
-    //Vybrání služby
-    $(document).on('change', '#sluzby', function(e) {
-        $('input[type="number"]').val('');
-        $('input[type="checkbox"]').prop("checked", false);
-
-        console.table("Změna tabu, " + $('input[type="number"]'));
-        console.log(vychoziCena);
-
-        if(vychoziCena != 0) {
-            vychoziCena = 0;
-        }
-
-        prepocitatCenu();
-        pridatNormostrany();
-
-        /*vybranaSluzba = this.options[e.target.selectedIndex].text;*/
-        
-        if (vybranaSluzba == 'Překlad') {
-            $('vybranPreklad').addClass('vybrano');
-            $('vybranaKorektura').removeClass('vybrano');
-            $('vybranoTlumoceni').removeClass('vybrano');
-        } else if (vybranaSluzba == 'Korektura') {
-            $('vybranaKorektura').addClass('vybrano');
-            $('vybranPreklad').removeClass('vybrano');
-            $('vybranoTlumoceni').removeClass('vybrano');
-        } else if (vybranaSluzba == 'Tlumočení') {
-            $('vybranoTlumoceni').addClass('vybrano');
-            $('vybranPreklad').removeClass('vybrano');
-            $('vybranaKorektura').removeClass('vybrano');
-        } else {
-            $('vybranoTlumoceni').removeClass('vybrano');
-            $('vybranPreklad').removeClass('vybrano');
-            $('vybranaKorektura').removeClass('vybrano');
-        }
-        if (vybranaSluzba == "Tlumočení" ) {
-            $('#zduvodneniCeny').removeClass('hidden');
-        } else {
-            $('#zduvodneniCeny').addClass('hidden');
         }
     });
 
@@ -140,7 +96,7 @@ $(document).ready(function(){
     $(".sluzbaVyhledavani.preklad").easyAutocomplete(optionsPreklad);
 
     var optionsKorektura = {
-        url: "sluzbyKorektura.json",
+        url: "sluzbyText.json",
         getValue: "sluzba",
         list: {
             match: {
@@ -157,7 +113,7 @@ $(document).ready(function(){
             },
 
             onClickEvent: function() {
-                vychoziCena = $(".sluzbaVyhledavani.korektura").getSelectedItemData().cena;
+                vychoziCena = $(".sluzbaVyhledavani.korektura").getSelectedItemData().korektura;
                 $(".konecnaCenaValue").html(vychoziCena);
                 $('#vychoziCenaValue').html(vychoziCena);
                 prepocitatCenu();

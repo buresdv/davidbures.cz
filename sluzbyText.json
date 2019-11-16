@@ -1,33 +1,43 @@
 [
     {
         "cena": "400",
+        "korektura": "300",
         "sluzba": "Vědecký text"
     }, {
         "cena": "400",
+        "korektura": "300",
         "sluzba": "Interní dokumentaci"
     }, {
         "cena": "400",
+        "korektura": "400",
         "sluzba": "Rodný list"
     }, {
         "cena": "400",
+        "korektura": "300",
         "sluzba": "Program"
     }, {
         "cena": "400",
+        "korektura": "300",
         "sluzba": "Aplikaci"
     }, {
         "cena": "300",
+        "korektura": "250",
         "sluzba": "Webové stránky"
     }, {
         "cena": "300",
+        "korektura": "250",
         "sluzba": "Odborný text"
     }, {
         "cena": "300",
+        "korektura": "235",
         "sluzba": "Knihu"
     }, {
         "cena": "300",
+        "korektura": "250",
         "sluzba": "Novinový článek"
     }, {
         "cena": "250",
+        "korektura": "200",
         "sluzba": "Obyčejný text"
     }
 ]

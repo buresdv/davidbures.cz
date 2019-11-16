@@ -29,8 +29,11 @@
 }
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+input[type=number] {
+    -moz-appearance: textfield;
 }
 bImage {
     position: absolute;
@@ -506,7 +509,6 @@ buttonContainer a.activeSelection::after {
     width: 100%;
     height: 100%;
     background-color: var(--themeLightMain);
-    transition: 1s var(--transSmooth);
     z-index: -1;
 }
 /*.activeSelection {
