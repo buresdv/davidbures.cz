@@ -4,12 +4,20 @@ $(document).ready(function(){
 
     //Otevírání a zavírání formuláře
     $('#tlacitkoContact').click(function() {
+        if($('objednaniModalOverlay').hasClass('modalNeaktivni')) {
+            $('objednaniModalOverlay').removeClass('modalNeaktivni');
+        }
+        if($('transformer').hasClass('transformerNeaktivni')) {
+            $('transformer').removeClass('transformerNeaktivni');
+        }
         $('objednaniModalOverlay').addClass('modalAktivni');
         $('transformer').addClass('transformerAktivni');
     });
     $('zavritModal').click(function() {
         $('objednaniModalOverlay').removeClass('modalAktivni');
+        $('objednaniModalOverlay').addClass('modalNeaktivni');
         $('transformer').removeClass('transformerAktivni');
+        $('transformer').addClass('transformerNeaktivni');
     });
 
     //Vybrání služby

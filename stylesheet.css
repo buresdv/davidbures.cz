@@ -625,8 +625,6 @@ pravaStrana tr td:nth-child(2n) {
 }
 .modalAktivni {
     animation: modalOpen 1s;
-    animation-fill-mode: forwards;
-    animation-timing-function: var(--transSmooth);
 }
 @keyframes modalOpen {
     1% {
@@ -635,6 +633,18 @@ pravaStrana tr td:nth-child(2n) {
     }
     100% {
         transform: scale(1);
+    }
+}
+.modalNeaktivni {
+    animation: modalClose 1s;
+}
+@keyframes modalClose {
+    1% {
+        transform: scale(1);
+    }
+    100% {
+        display: flex;
+        transform: scale(0);
     }
 }
 transformer {
@@ -646,8 +656,6 @@ transformer {
 }
 .transformerAktivni {
     animation: zmenseniTransformera 1s;
-    animation-fill-mode: forwards;
-    animation-timing-function: var(--transSmooth);
 }
 @keyframes zmenseniTransformera {
     0% {
@@ -664,6 +672,29 @@ transformer {
         filter: saturate(70%);
         filter: opacity(0.1);
     }
+}
+.transformerNeaktivni {
+    animation: 1s zvetseniTransformera;
+}
+@keyframes zvetseniTransformera {
+    1% {
+        transform: scale(0.95);
+        filter: saturate(70%);
+        filter: opacity(0.1);
+    }
+    50% {
+        filter: blur(70%);
+        filter: opacity(0.1);
+    }
+    100% {
+        transform: scale(1);
+        filter: saturate(100%);
+        filter: opacity(1);
+    }
+}
+.modalAktivni, .modalNeaktivni, .transformerAktivni, .transformerNeaktivni {
+    animation-fill-mode: forwards;
+    animation-timing-function: var(--transSmooth);
 }
 
 @media screen and (max-device-width: 900px) {
