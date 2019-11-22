@@ -43,9 +43,9 @@
         <objednaniModalOverlay>
             <objednaniModal>
                 <levaStrana>
-                    <form>
+                    <form action="formularZP.php">
                         Váš email:
-                        <input type="email" placeholder="vas@email.cz">
+                        <input type="email" name="email" placeholder="vas@email.cz">
 
                         <inlineContainer>
                             Vyberte si službu: 
@@ -63,9 +63,9 @@
                         </inlineContainer>
                         <vybranPreklad class="vybrat">
                             Co chcete přeložit?
-                            <input type="text" class="sluzbaVyhledavani preklad" placeholder="Vědecký text, rodný list apod." class="hledani">                                
+                            <input type="text" name="sluzba" class="sluzbaVyhledavani preklad" placeholder="Vědecký text, rodný list apod." class="hledani">                                
                             Kolik normostran? <span class="normostrana">Normostrana = 250 slov</span>
-                            <input type="number" placeholder="0-900">
+                            <input type="number" name="stranky" placeholder="0-900">
 
                             <inlineContainer>
                                 <input type="checkbox" name="zahrnoutKorekturu" value="zahrnoutKorekturu">Zahrnout korekturu
@@ -77,10 +77,10 @@
                         <vybranaKorektura class="vybrat">
                             <inlineContiner>
                                 Čeho chcete provést korekturu?
-                                <input type="text" class="sluzbaVyhledavani korektura" placeholder="Vědecký text, rodný list apod." class="hledani">
+                                <input type="text" name="sluzba" class="sluzbaVyhledavani korektura" placeholder="Vědecký text, rodný list apod." class="hledani">
                             </inlineContiner>
                             Kolik normostran? <span class="normostrana">Normostrana = 250 slov</span>
-                            <input type="number" placeholder="0-900">
+                            <input type="number" name="stranky" placeholder="0-900">
 
                             <inlineContainer>
                                 <input type="checkbox" name="grafickaUprava" value="zahrnoutGrafickouUpravu">Zahrnout grafickou úpravu
@@ -88,9 +88,9 @@
                         </vybranaKorektura>
                         <vybranoTlumoceni class="vybrat">
                             Co chcete přetlumočit?
-                            <input type="text" class="sluzbaVyhledavani tlumoceni" placeholder="Konferenci, úřední komunikaci apod." class="hledani">
+                            <input type="text" name="sluzba" class="sluzbaVyhledavani tlumoceni" placeholder="Konferenci, úřední komunikaci apod." class="hledani">
                             Kolik hodin bude vaše zakázka přibližně trvat?
-                            <input type="number" placeholder="0-900">
+                            <input type="number" name="stranky" placeholder="0-900">
                             <inlineContainer>
                                 <input type="checkbox" name="mimoStandardniHodiny" value="mimoStandardniHodiny">Zakázka mimo 9:00 - 17:00
                             </inlineContainer>
@@ -120,7 +120,7 @@
                                 <td id="vychoziCena">Výchozí cena za stránku:</td><td id="vychoziCenaValue"></td>
                             </tr>
                             <tr class="hidden" id="korekturaRow">
-                                <td id="korekturaCena">Korektura:</td><td id="korekturaCenaValue">+ 150</td>
+                                <td id="korekturaCena">Korektura:</td><td id="korekturaCenaValue"></td>
                             </tr>
                             <tr class="hidden" id="grafickaUpravaRow">
                                 <td id="grafickaUpravaCena">Grafická úprava:</td><td id="grafickaUpravaCenaValue">+ 200</td>

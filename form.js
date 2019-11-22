@@ -85,6 +85,8 @@ $(document).ready(function(){
 
             onClickEvent: function() {
                 vychoziCena = $(".sluzbaVyhledavani.preklad").getSelectedItemData().cena;
+                korekturaCena = Number($(".sluzbaVyhledavani.preklad").getSelectedItemData().korektura);
+                console.log(korekturaCena);
                 $(".konecnaCenaValue").html(vychoziCena);
                 $('#vychoziCenaValue').html(vychoziCena);
                 prepocitatCenu();
@@ -190,7 +192,7 @@ $(document).ready(function(){
         //Je zatržená korektura?
         if ($('input[name=zahrnoutKorekturu]').is(':checked')) {
             $('#korekturaRow').removeClass('hidden');
-            korekturaCena = 150;
+            $("#korekturaCenaValue").html("+ " + korekturaCena);
         } else {
             $('#korekturaRow').addClass('hidden');
             korekturaCena = 0;
