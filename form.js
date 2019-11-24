@@ -35,13 +35,13 @@ $(document).ready(function(){
             $("input[type=number]").val();
         }
 
+        $('form :input').val('');
+
         vybranaSluzba = $(".activeSelection").html();
         console.log(vybranaSluzba);
 
         prepocitatCenu();
         pridatNormostrany();
-
-        /*vybranaSluzba = this.options[e.target.selectedIndex].text;*/
         
         if (vybranaSluzba == 'Překlad') {
             $('vybranPreklad').addClass('vybrano');
@@ -64,7 +64,7 @@ $(document).ready(function(){
     var korekturaCena = 0;
     var grafickaUpravaCena = 0;
     var pocetNormostran = 0;
-
+    var korekturaCenaModifier = 0;
 
     var optionsPreklad = {
         url: "sluzbyText.json",
@@ -193,9 +193,10 @@ $(document).ready(function(){
         if ($('input[name=zahrnoutKorekturu]').is(':checked')) {
             $('#korekturaRow').removeClass('hidden');
             $("#korekturaCenaValue").html("+ " + korekturaCena);
+            korekturaCenaModifier = 0;
         } else {
             $('#korekturaRow').addClass('hidden');
-            korekturaCena = 0;
+            korekturaCenaModifier = korekturaCena;
         }
 
         //Je zatržená grafická úprava?
@@ -215,7 +216,7 @@ $(document).ready(function(){
             standardniHodinyCena = 0;
         }
 
-        strankaCena = Number(vychoziCena)  + standardniHodinyCena + korekturaCena + grafickaUpravaCena;
+        strankaCena = Number(vychoziCena)  + standardniHodinyCena + korekturaCena + grafickaUpravaCena - korekturaCenaModifier;
         
         $('#strankaCenaValue').html(strankaCena);
     }
