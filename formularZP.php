@@ -40,11 +40,31 @@
     }*/
     header('Content-type: text/html; charset=utf-8');
 
-    $sluzba = $_POST["sluzba"];
-    $stranky = $_POST["stranky"];
+    $email = $_POST["email"];
+    $sluzba = array_filter($_POST["sluzba"]);
+    $stranky = array_filter($_POST["stranky"]);
     $zahrnoutKorekturu = $_POST["zahrnoutKorekturu"];
     $zahrnoutGrafickouUpravu = $_POST["grafickaUprava"];
     $mimoStandardniHodiny = $_POST["mimoStandardniHodiny"];
+    
+    $vypocitanaCena = $_POST["vypocitanaCena"];
 
-    echo("Best girlfriend Elča <3");
+    echo "Elčaaaa 💗💗💗💗💗💗";
+    echo "I seriously love you so so so much... You're just... perfect... 💗💗💗💗💗💗 >___<";
+    /*echo $stranky . $sluzba . $zahrnoutKorekturu . $zahrnoutGrafickouUpravu . $mimoStandardniHodiny;*/
+    echo '<br> e-mail: <b>' . $email . '</b>';
+    echo '<pre>'; print_r($sluzba); echo '</pre>';
+    echo '<pre>'; print_r($stranky); echo '</pre>';
+    if (!empty($zahrnoutKorekturu)) {
+        echo "✔ Zahrnuta <b>korektura</b>";
+    }
+    if (!empty($zahrnoutGrafickouUpravu)) {
+        echo "✔ Zahrnuta <b>grafická úprava</b>";
+    }
+    if (!empty($mimoStandardniHodiny)) {
+        echo "✔ Zakázka <b>mimo standardní hodiny</b>";
+    }
+    echo "Cena: " . $vypocitanaCena;
+    /*echo '<pre>'; print_r($zahrnoutKorekturu); echo '</pre>';*/
+    /*echo '<pre>'; print_r($zahrnoutGrafickouUpravu); echo '</pre>';*/
 ?>

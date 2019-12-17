@@ -35,6 +35,54 @@ input[type=number]::-webkit-outer-spin-button {
 input[type=number] {
     -moz-appearance: textfield;
 }
+.atd {
+    position: relative;
+    display: inline-block;
+    text-align: right;
+    margin-top: 1rem;
+    z-index: 20000;
+}
+.atd > p {
+    display: inline-block;
+    position: relative;
+    z-index: 200;
+}
+.atd > p::after {
+    content: "▶";
+    vertical-align: 25%;
+    font-size: 50%;
+    margin-left: 0.5rem;
+}
+.atd atd {
+    position: absolute;
+    display: block;
+    text-align: left;
+
+    opacity: 0;
+    visibility: hidden;
+
+    left: 0;
+
+    width: 500%;
+
+    transform: translateY(-10rem);
+
+    border-radius: 1rem;
+    background-color: var(--theme2);
+    padding: 1rem;
+
+    box-shadow: var(--stin);
+
+    z-index: 100;
+
+    transition: 1s var(--transSmooth);
+}
+.atd:hover atd {
+    visibility: visible;
+    opacity: 1;
+    left: 100%;
+}
+
 bImage {
     position: absolute;
     top: -10%;
@@ -153,6 +201,8 @@ cenikContainer {
     z-index: 10;
     overflow: hidden;
     white-space: nowrap;
+
+    will-change: transform;
     
     transition: 1s var(--transSmooth);
 }
@@ -160,22 +210,23 @@ cenikContainer {
     margin-top: 1rem;
 }
 cenikContainer:hover #cenik-menu, .pinned {
-    height: 24em;
+    height: 23em;
     width: 18rem;
     padding: 1rem;
-    left: 100%;
-    top: -16rem;
+    -webkit-transform: translate(7rem, -50%);
+    transform: translate(7rem, -50%);
     color: var(--theme1);
-    
-    border-radius: 10px;
 }
 
 .pinned {
     border-left: 5px solid #f79256;
 }
 #cenik-menu h1 {
-    margin-bottom: 0rem;
+    margin-bottom: 0;
 	font-size: 120%;
+}
+#cenik-menu h1:first-of-type {
+    margin-top: 0;
 }
 
 content, whoami:after {
@@ -225,15 +276,12 @@ karta {
     flex-flow: row;
     flex-wrap: wrap;
     
-    position: relative;
-    
     width: 100%;
     margin: 2vw;
     padding: 3vw 4vw;
     background-color: #fff;
     
     border: 2px solid #aad7fa;
-    z-index: 1;
     border-radius: 10px;
 }
 whoami karta {
@@ -256,7 +304,7 @@ whoami:after {
 kartaThumb {
     position: absolute;
     right: -2rem;
-    top: 15%;
+    top: 2rem;
     
     width: 15vw;
     height: 15vw;
@@ -306,7 +354,7 @@ section a {
     flex-basis: 100%;
     align-content: center;
     justify-items: center;
-    margin-top: 1.6rem;
+    margin-bottom: 1.6rem;
 }
 obrazky {
     display: flex;
@@ -325,22 +373,8 @@ obrazky img, obrazky svg {
     height: 50%;
 }
 .konec {
-    display: block;
-    position: absolute;
-
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    transform: translateY(-1rem);
-    opacity: 0;
-
-    background-color: var(--theme2);
-    box-shadow: 0 7px 65px rgba(15, 71, 113, 0.2);
-    transition: 0.5s var(--transSmooth);
-}
-karta section p:hover .konec {
-    transform: translateY(0);
-    opacity: 1;
-    transition: 0.5s var(--transSmooth);
+    color: var(--themeGray);
+    font-size: 60%;
 }
 whoami a:after, section a:after, #cenik-menu a {
     content: "⇀";
@@ -484,10 +518,8 @@ levaStrana {
     background-color: #f8f9fa;
     width: 35vw;
 }
-.inlineBlocker {
-    display: inline-block;
-}
 buttonContainer { 
+    align-self: flex-start;
     box-sizing: content-box;
     background-color: var(--theme2);
     border-radius: 10px;
@@ -537,6 +569,7 @@ levaStrana input[type="email"], levaStrana input[type="text"], levaStrana input[
 }
 input[type="checkbox"] {
     display: inline;
+    margin-right: 0.3rem;
 }
 .vybrat {
     display: none;
@@ -547,7 +580,8 @@ input[type="checkbox"] {
     position: relative;
 }
 inlineContainer {
-    display: block;
+    display: flex;
+    align-items: center;
 }
 inlineContainer * {
     display: inline;

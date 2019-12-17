@@ -31,10 +31,10 @@
         <title>Tlumočník a překladatel: David Bureš</title>
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="/pluginy/EasyAutocomplete-1.3.5/jquery.easy-autocomplete.js"></script>
+        <script src="pluginy/EasyAutocomplete-1.3.5/jquery.easy-autocomplete.min.js"></script>
         
         <link rel="stylesheet" href="stylesheet.css" type="text/css">
-        <link rel="stylesheel" href="/pluginy/EasyAutocomplete-1.3.5/easy-autocomplete.css">
+        <link rel="stylesheel" href="pluginy/EasyAutocomplete-1.3.5/easy-autocomplete.css">
         <script src="cenik.js"></script>
         <script src="form.js"></script>
         <script src="vyhledavani.js"></script>
@@ -43,66 +43,57 @@
         <objednaniModalOverlay>
             <objednaniModal>
                 <levaStrana>
-                    <form action="formularZP.php">
+                    <form method="POST" action="formularZP.php">
                         Váš email:
                         <input type="email" name="email" placeholder="vas@email.cz">
 
-                        <inlineContainer>
                             Vyberte si službu: 
                             <buttonContainer class="inlineBlocker">
                                 <a>Překlad</a>
                                 <a>Korektura</a>
                                 <a>Tlumočení</a>
                             </buttonContainer>
-                            <!--<select name="sluzby" id="sluzby">
-                                <option value="blank">-----</option>
-                                <option value="preklad">Překlad</option>
-                                <option value="korektura">Korektura</option>
-                                <option value="tlumoceni">Tlumočení</option>
-                            </select>-->
-                        </inlineContainer>
                         <vybranPreklad class="vybrat">
                             Co chcete přeložit?
-                            <input type="text" name="sluzba" class="sluzbaVyhledavani preklad" placeholder="Vědecký text, rodný list apod." class="hledani">                                
+                            <input type="text" name="sluzba[]" class="sluzbaVyhledavani preklad" placeholder="Vědecký text, rodný list apod." class="hledani">                                
                             Kolik normostran? <span class="normostrana">Normostrana = 250 slov</span>
-                            <input type="number" name="stranky" placeholder="0-900">
+                            <input type="number" name="stranky[]" placeholder="0-900">
 
                             <inlineContainer>
-                                <input type="checkbox" name="zahrnoutKorekturu" value="zahrnoutKorekturu">Zahrnout korekturu
+                                <input type="checkbox" name="zahrnoutKorekturu[]" value="zahrnoutKorekturu">Zahrnout korekturu
                             </inlineContainer>
                             <inlineContainer>
-                                <input type="checkbox" name="grafickaUprava" value="zahrnoutGrafickouUpravu">Zahrnout grafickou úpravu
+                                <input type="checkbox" name="grafickaUprava[]" value="zahrnoutGrafickouUpravu">Zahrnout grafickou úpravu
                             </inlineContainer>
                         </vybranPreklad>
                         <vybranaKorektura class="vybrat">
                             <inlineContiner>
                                 Čeho chcete provést korekturu?
-                                <input type="text" name="sluzba" class="sluzbaVyhledavani korektura" placeholder="Vědecký text, rodný list apod." class="hledani">
+                                <input type="text" name="sluzba[]" class="sluzbaVyhledavani korektura" placeholder="Vědecký text, rodný list apod." class="hledani">
                             </inlineContiner>
                             Kolik normostran? <span class="normostrana">Normostrana = 250 slov</span>
-                            <input type="number" name="stranky" placeholder="0-900">
+                            <input type="number" name="stranky[]" placeholder="0-900">
 
                             <inlineContainer>
-                                <input type="checkbox" name="grafickaUprava" value="zahrnoutGrafickouUpravu">Zahrnout grafickou úpravu
+                                <input type="checkbox" name="grafickaUprava[]" value="zahrnoutGrafickouUpravu">Zahrnout grafickou úpravu
                             </inlineContainer>
                         </vybranaKorektura>
                         <vybranoTlumoceni class="vybrat">
                             Co chcete přetlumočit?
-                            <input type="text" name="sluzba" class="sluzbaVyhledavani tlumoceni" placeholder="Konferenci, úřední komunikaci apod." class="hledani">
+                            <input type="text" name="sluzba[]" class="sluzbaVyhledavani tlumoceni" placeholder="Konferenci, úřední komunikaci apod." class="hledani">
                             Kolik hodin bude vaše zakázka přibližně trvat?
-                            <input type="number" name="stranky" placeholder="0-900">
+                            <input type="number" name="stranky[]" placeholder="0-900">
                             <inlineContainer>
-                                <input type="checkbox" name="mimoStandardniHodiny" value="mimoStandardniHodiny">Zakázka mimo 9:00 - 17:00
+                                <input type="checkbox" name="mimoStandardniHodiny[]" value="mimoStandardniHodiny">Zakázka mimo 9:00 - 17:00
                             </inlineContainer>
                         </vybranoTlumoceni>
 
-                        <inlineContainer style="margin-top: 1.5vw;">
+                        <!--<inlineContainer style="margin-top: 1.5vw;">
                             <input type="checkbox" name="student" value="jsemStudent">Jsem student
-                        </inlineContainer>
-                        <!--
-                        <br>Číslo vaší ISIC karty:
-                        <input type="text" placeholder="S 123 456 789 000 N">-->
-                        <input type="submit" value="Odeslat">
+                        </inlineContainer>-->
+                        <!--<br>Přiložte, co chcete přeložit:
+                        <input type="file" id="myFile">-->
+                        <input type="submit" value="Odeslat" id="kontaktFormularOdeslat" style="margin-top: 1.5vw;">
                     </form>
                 </levaStrana>
                 <pravaStrana>
@@ -200,7 +191,7 @@
                 <section style="width: 100%;">
                     <h2>Proč  já?</h2>
                     <div>
-                        <img src="20180210-2138-ples-gymhol-095.jpg" style="max-width: 15vw; align-self: flex-start;">
+                        <img src="Tomo.jpg" style="max-width: 15vw; align-self: flex-start;">
                         <ul style="margin: 0;">
                             <li>Jako překladatel a korektor vědeckých, odborných a populárně-vědeckých textů působím už od roku 2014</li>
                             <li>O mé jazykové služby měly zájem instituce jako Waze a Univerzita Tomáše Bati ve Zlíně</li>
@@ -217,24 +208,7 @@
             <karta class="pak">
                 <kartaThumb></kartaThumb>
                 <h1>Překladatel a korektor</h1>
-                <section>
-                    <h2>Vědecké články</h2>
-                    <a href="http://www.sciencedirect.com/science/article/pii/S002364381630010X">The comparison of the effect of sodium caseinate, calcium caseinate, carboxymethyl cellulose and xanthan gum on rice-buckwheat dough rheological characteristics and textural and sensory quality of bread</a>
-                    <a href="http://www.sciencedirect.com/science/article/pii/S0023643817302311">The effect of Chios mastic gum addition on the characteristics of rice dough and bread</a>
-                    <a href="http://www.sciencedirect.com/science/article/pii/S0733521014001246">The relationship between rheological characteristics of gluten-free dough and the quality of biologically leavened bread</a>
-                    <a href="http://onlinelibrary.wiley.com/doi/10.1111/jtxs.12176/abstract">The Behavior of Amaranth, Chickpea, Millet, Corn, Quinoa, Buckwheat and Rice Doughs Under Shear Oscillatory and Uniaxial Elongational Tests Simulating Proving and Baking</a>
-                    <a href="http://kvasnyprumysl.cz/artkey/kpr-201701-0002_Porovnani_schopnosti_bezlepkoveho_testa_produkovat_kyprici_plyn_behem_peceni_a_jeho_vliv_na_kvalitu_peciva.php">Porovnání schopnosti bezlepkového těsta produkovat kypřící plyn během pečení a jeho vliv na kvalitu pečiva</a>
-                </section>
-                <section>
-                    <h2>Software</h2>
-                    <a href="https://davidbures.cz">Keka</a>
-                    <a href="https://github.com/lFenix/MultiMC5-translate">MultiMC</a>
-                    <a href="https://l10n.gnome.org/users/lFenix/">GNOME</a>
-                    <a href="https://www.transifex.com/user/profile/lFenix/">Deepin Desktop Environment</a>
-                    <p>Antergos<span class="konec">2017-2019</span></p>
-                </section>
                 <section id="spolecnosti">
-                    <h2>Kde jsem už překládal?</h2>
                     <obrazky>
                         <img src="utb_logo.png">
                         <img src="muni.png">
@@ -243,6 +217,31 @@
                         <img src="https://sts.lionbridge.com/adfs/portal/logo/logo.png">
                         <img src="http://www.whitelabelproductions.co.uk/img/contact-logo.png" style="filter: invert(0.4);">
                     </obrazky>
+                </section>
+                <section>
+                    <h2>Vědecké články</h2>
+                    <a href="http://www.sciencedirect.com/science/article/pii/S002364381630010X">The comparison of the effect of sodium caseinate, calcium caseinate, carboxymethyl cellulose and xanthan gum on rice-buckwheat dough rheological characteristics and textural and sensory quality of bread</a>
+                    <a href="http://www.sciencedirect.com/science/article/pii/S0023643817302311">The effect of Chios mastic gum addition on the characteristics of rice dough and bread</a>
+                    <a href="http://www.sciencedirect.com/science/article/pii/S0733521014001246">The relationship between rheological characteristics of gluten-free dough and the quality of biologically leavened bread</a>
+                    <a href="http://onlinelibrary.wiley.com/doi/10.1111/jtxs.12176/abstract">The Behavior of Amaranth, Chickpea, Millet, Corn, Quinoa, Buckwheat and Rice Doughs Under Shear Oscillatory and Uniaxial Elongational Tests Simulating Proving and Baking</a>
+                    <a href="http://kvasnyprumysl.cz/artkey/kpr-201701-0002_Porovnani_schopnosti_bezlepkoveho_testa_produkovat_kyprici_plyn_behem_peceni_a_jeho_vliv_na_kvalitu_peciva.php">Porovnání schopnosti bezlepkového těsta produkovat kypřící plyn během pečení a jeho vliv na kvalitu pečiva</a>
+                    <div class="atd">
+                        <p>a další...</p>
+                        <atd>
+                            <p>The Effect of Dietary Zinc Nanoparticles on Intestinal Microbiome of Piglets</p>
+                            <p>The effect of rice flour particle size and the content of damaged starch on rheological characteristics of dough and bread texture</p>
+                            <p>The continued effect of human activity on the environment</p>
+                        </atd>
+                    </div>
+                    </p>
+                </section>
+                <section>
+                    <h2>Software</h2>
+                    <a href="https://github.com/lFenix/Keka">Keka</a>
+                    <a href="https://github.com/lFenix/MultiMC5-translate">MultiMC</a>
+                    <a href="https://l10n.gnome.org/users/lFenix/">GNOME</a>
+                    <a href="https://www.transifex.com/user/profile/lFenix/">Deepin Desktop Environment</a>
+                    <p>Antergos <span class="konec">2017-2019</span></p>
                 </section>
             </karta>
             <karta id="tl" style="width: auto; flex-grow: 2;">

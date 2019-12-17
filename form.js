@@ -1,6 +1,4 @@
 $(document).ready(function(){
-    alert("Elča is the best girl"); // TODO: Remove in production
-
     $.ajaxSetup({ cache: false });
     console.log("Ay");
 
@@ -35,7 +33,7 @@ $(document).ready(function(){
             $("input[type=number]").val();
         }
 
-        $('form :input').val('');
+        $('form')[0].reset();
 
         vybranaSluzba = $(".activeSelection").html();
         console.log(vybranaSluzba);
@@ -153,29 +151,6 @@ $(document).ready(function(){
     };
     $(".sluzbaVyhledavani.tlumoceni").easyAutocomplete(optionsTlumoceni);
 
-    //Vyhledávání
-    /*$(".sluzbaVyhledavani").focus().keyup(function() {
-        $("vysledky li").html("");
-        var searchField = $(".sluzbaVyhledavani").focus().val();
-        var expression = new RegExp(searchField, "i");
-        $.getJSON("sluzbyText.json", function(data) {
-            $.each(data, function(key, value) {
-                if (value.sluzba.search(expression) != -1) {
-                    $("vysledky li").append("<ul> <vysledek>" + value.sluzba + "</vysledek>");
-                }
-            });
-        });
-        if ($(".sluzbaVyhledavani").focus().val() == "") {
-            $("vysledky li").html("");
-        }
-    });
-    $(document).on("click", "vysledek" , function() {        
-        var clickText = $(this).text().split('|');
-        $(".sluzbaVyhledavani").focus().val($.trim(clickText[0]));
-        nacistCenu();
-        $("vysledky li").html("");
-    });*/
-
     //Ostatní úpravy
     $(document).on('keyup', ' input[type="number"]', function(e) {
         prepocitatCenu();
@@ -190,7 +165,7 @@ $(document).ready(function(){
 
     function prepocitatCenu() {
         //Je zatržená korektura?
-        if ($('input[name=zahrnoutKorekturu]').is(':checked')) {
+        if ($('input[name="zahrnoutKorekturu[]"]').is(':checked')) {
             $('#korekturaRow').removeClass('hidden');
             $("#korekturaCenaValue").html("+ " + korekturaCena);
             korekturaCenaModifier = 0;
@@ -200,7 +175,7 @@ $(document).ready(function(){
         }
 
         //Je zatržená grafická úprava?
-        if ($('input[name=grafickaUprava]').is(':checked')) {
+        if ($('input[name="grafickaUprava[]"]').is(':checked')) {
             $('#grafickaUpravaRow').removeClass('hidden');
             grafickaUpravaCena = 200;
         } else {
@@ -208,7 +183,7 @@ $(document).ready(function(){
             grafickaUpravaCena = 0;
         }
         //Je zatržená zakázka mimo normální dobu?
-        if ($('input[name=mimoStandardniHodiny]').is(':checked')) {
+        if ($('input[name="mimoStandardniHodiny[]"]').is(':checked')) {
             standardniHodinyCena = 250;
             $('#mimoStandardniHodinyRow').removeClass('hidden');
         } else {
@@ -241,4 +216,19 @@ $(document).ready(function(){
             $('.konecnaCenaValue').html(konecnaCena + ' Kč');
         }
     }
+
+    //Pass ceny do PHP
+    $('#kontaktFormularOdeslat').on("click", function() {
+        $.post('formularZP.php', 'vypocitanaCena=' + konecnaCena, function(response) {
+            alert("E");
+        })
+        /*$.ajax(
+            {
+                url: "formularZP.php",
+                type: "POST",
+
+                data: { vypocitanaCena: konecnaCena }
+            }
+        );*/
+    });
 });
