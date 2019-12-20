@@ -44,6 +44,7 @@
             <objednaniModal>
                 <levaStrana>
                     <form method="POST" action="formularZP.php">
+                        <input type="hidden" name="cenaHack" id="cenaHack">
                         Váš email:
                         <input type="email" name="email" placeholder="vas@email.cz">
 
@@ -94,6 +95,8 @@
                         <!--<br>Přiložte, co chcete přeložit:
                         <input type="file" id="myFile">-->
                         <input type="submit" value="Odeslat" id="kontaktFormularOdeslat" style="margin-top: 1.5vw;">
+                        <spinner class="hidden"></spinner>
+                        <spinnerUnder>✓</spinnerUnder>
                     </form>
                 </levaStrana>
                 <pravaStrana>
@@ -249,7 +252,7 @@
                 <h1>Tlumočník</h1>
                 <section style="width: 100%;">
                     <h2>Společenské akce</h2>
-                    <a href="tlu/index.html">UTB Noc vědců 2019</a>
+                    <a href="tlu/index.htm">UTB Noc vědců 2019</a>
                     <h2>Konference</h2>
                     <a href="tlu/index.htm">Waze Česko-Slovenský Meetup 2018</a>
                     <a href="tlu/index.htm">Waze Česko-Slovenský Meetup 2017</a>

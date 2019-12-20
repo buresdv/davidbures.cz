@@ -33,7 +33,9 @@ $(document).ready(function(){
             $("input[type=number]").val();
         }
 
+        emailTemp = $('input[name="email"]').val();
         $('form')[0].reset();
+        $('input[name="email"]').val(emailTemp);
 
         vybranaSluzba = $(".activeSelection").html();
         console.log(vybranaSluzba);
@@ -210,6 +212,9 @@ $(document).ready(function(){
 
         $('#pocetStranekValue').html('× ' + pocetNormostran);
         konecnaCena = strankaCena * pocetNormostran;
+
+        $('#cenaHack').val(konecnaCena);
+
         if (isNaN(Number(vychoziCena)) || isNaN(Number(strankaCena))) {
             $('.konecnaCenaValue').html(konecnaCena + 'i');
         } else {
@@ -217,18 +222,26 @@ $(document).ready(function(){
         }
     }
 
+    $('form').on("submit", function(e) {
+        e.preventDefault();
+        $('spinner').removeClass('hidden');
+        $('input[type="submit"]').addClass("odesilani");
+
+        $.ajax({
+            type: "POST",
+            url: "formularZP.php",
+            data: $('form').serialize(),
+            success: function (response) {
+                $('spinnerUnder').addClass('spinnerUspech');
+                $('spinner').hide();
+            }
+        });
+        return false;
+    });
     //Pass ceny do PHP
-    $('#kontaktFormularOdeslat').on("click", function() {
+    /*$('#kontaktFormularOdeslat').on("click", function() {
         $.post('formularZP.php', 'vypocitanaCena=' + konecnaCena, function(response) {
             alert("E");
-        })
-        /*$.ajax(
-            {
-                url: "formularZP.php",
-                type: "POST",
-
-                data: { vypocitanaCena: konecnaCena }
-            }
-        );*/
-    });
+        });
+    });*/
 });

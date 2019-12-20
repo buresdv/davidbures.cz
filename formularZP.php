@@ -46,12 +46,52 @@
     $zahrnoutKorekturu = $_POST["zahrnoutKorekturu"];
     $zahrnoutGrafickouUpravu = $_POST["grafickaUprava"];
     $mimoStandardniHodiny = $_POST["mimoStandardniHodiny"];
-    
-    $vypocitanaCena = $_POST["vypocitanaCena"];
 
-    echo "Elčaaaa 💗💗💗💗💗💗";
+    $sluzba = implode("I", $sluzba);
+    $stranky = implode("I", $stranky);
+    
+    $vypocitanaCena = $_POST["cenaHack"];
+
+    $zahrnoutKorekturuMail = "❌ <b>Korektura</b> nezahrnuta";
+    $zahrnoutGrafickouUpravuMail = "❌ <b>Grafická úrava</b> nezahrnuta";
+    $mimoStandardniHodinyMail = "❌ <b>Zakázka mimo standardní hodiny</b> NE";
+
+    if (!empty($zahrnoutKorekturu)) {
+        $zahrnoutKorekturuMail = "✔ Zahrnuta <b>korektura</b>";
+    }
+    if (!empty($zahrnoutGrafickouUpravu)) {
+        $zahrnoutGrafickouUpravuMail = "✔ Zahrnuta <b>grafická úprava</b>";
+    }
+    if (!empty($mimoStandardniHodiny)) {
+        $mimoStandardniHodinyMail = "✔ Zakázka <b>mimo standardní hodiny</b>";
+    }
+
+    $headers = 'From: David Bureš <ja@davidbures.cz>' . PHP_EOL .
+    'Reply-To: David Bureš <buresdv@gmail.com>' . PHP_EOL .
+    'X-Mailer: PHP/' . phpversion();
+
+    $headersZakaznik = 'From: davidbures.cz <buresdv@gmail.com>' . PHP_EOL .
+    'Reply-To: David Bureš <buresdv@gmail.com>' . PHP_EOL .
+    'X-Mailer: PHP/' . phpversion();
+
+    $zprava = "E-mail: " . $email . "\n\n"
+        . "Zvolená služba: " . $sluzba . "\n\n"
+        . "Počet stránek: " . $stranky . "\n\n"
+        . "Cena: " . $vypocitanaCena . "\n\n"
+        . $zahrnoutKorekturuMail . "\n\n"
+        . $zahrnoutGrafickouUpravuMail . "\n\n"
+        . $mimoStandardniHodinyMail . "\n\n";
+
+    mail("buresdv@icloud.com", "Test " . $sluzba, $zprava, $headers);
+
+    $zpravaZakaznik = 'Vaši objednávku jsem přijal a brzy vám poušlu e-mail s dalšími informacemi' . "\n\n"
+        . 'Přeji pěkný zbytek dne,' . "\n\n"
+        . 'David Bureš';
+    
+    mail($email, "davidbures.cz: Informace o vaší objednávce", $zpravaZakaznik, $headersZakaznik);
+
+    /*echo "Elčaaaa 💗💗💗💗💗💗";
     echo "I seriously love you so so so much... You're just... perfect... 💗💗💗💗💗💗 >___<";
-    /*echo $stranky . $sluzba . $zahrnoutKorekturu . $zahrnoutGrafickouUpravu . $mimoStandardniHodiny;*/
     echo '<br> e-mail: <b>' . $email . '</b>';
     echo '<pre>'; print_r($sluzba); echo '</pre>';
     echo '<pre>'; print_r($stranky); echo '</pre>';
@@ -64,7 +104,7 @@
     if (!empty($mimoStandardniHodiny)) {
         echo "✔ Zakázka <b>mimo standardní hodiny</b>";
     }
-    echo "Cena: " . $vypocitanaCena;
+    echo "Cena: " . $vypocitanaCena;*/
     /*echo '<pre>'; print_r($zahrnoutKorekturu); echo '</pre>';*/
     /*echo '<pre>'; print_r($zahrnoutGrafickouUpravu); echo '</pre>';*/
 ?>

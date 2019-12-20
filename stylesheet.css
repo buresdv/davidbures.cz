@@ -2,7 +2,8 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Mono&display=swap&subset=latin-ext');
 * {
     text-decoration: none;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 :root {
@@ -17,6 +18,15 @@
     --border: 2px solid;
     --transSmooth: cubic-bezier(.4, 0, 0, 1.01);
     --stin: 0 7px 30px rgba(15, 71, 113, 0.28);
+}
+::-webkit-input-placeholder {
+    color: var(--themeGrayInverted);
+}
+:-ms-input-placeholder {
+    color: var(--themeGrayInverted);
+}
+::-ms-input-placeholder {
+    color: var(--themeGrayInverted);
 }
 ::placeholder {
     color: var(--themeGrayInverted);
@@ -65,15 +75,21 @@ input[type=number] {
 
     width: 500%;
 
-    transform: translateY(-10rem);
+    -webkit-transform: translateY(-10rem);
+
+            transform: translateY(-10rem);
 
     border-radius: 1rem;
     background-color: var(--theme2);
     padding: 1rem;
 
-    box-shadow: var(--stin);
+    -webkit-box-shadow: var(--stin);
+
+            box-shadow: var(--stin);
 
     z-index: 100;
+
+    -webkit-transition: 1s var(--transSmooth);
 
     transition: 1s var(--transSmooth);
 }
@@ -103,7 +119,8 @@ btext {
     right: 0;
     opacity: 0.2;
     z-index: -110;
-    transform:matrix(0.87,0.50,-0.85,0.67,0,0);
+    -webkit-transform:matrix(0.87,0.50,-0.85,0.67,0,0);
+            transform:matrix(0.87,0.50,-0.85,0.67,0,0);
 }
 b {
     color: #212121;
@@ -128,13 +145,17 @@ body a {
 
 bar {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     
     padding: 2vh 14vw;
     border-top: 5px solid var(--themeMain);
     
     width: 100%;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     z-index: 10;
 }
 bar a {
@@ -158,12 +179,76 @@ input[type="submit"], button, .buttonLike {
     border-radius: 5px;
     border: var(--border) var(--themeHighlight);
     z-index: 10;
+    -webkit-transition: 0.3s var(--transSmooth);
     transition: 0.3s var(--transSmooth);
 }
 input[type="submit"]:hover, button:hover, .buttonLike:hover {
     background-color: #fcad7f;
-    transform: translateY(-0.2rem);
+    -webkit-transform: translateY(-0.2rem);
+            transform: translateY(-0.2rem);
 }
+input[type="submit"] {
+    position: relative;
+    width: 100%;
+}
+.odesilani {
+    width: calc(100% - 3rem) !important;
+}
+
+spinner, spinnerUnder {
+    position: absolute;
+    color: var(--theme2);
+    text-align: center;
+    right: 0;
+    bottom: 0;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 10rem;
+    background: var(--themeMain);
+    -webkit-border-radius: 10rem;
+    -moz-border-radius: 10rem;
+    -ms-border-radius: 10rem;
+    -o-border-radius: 10rem;
+    border: 0.5rem solid #f8f9fa;
+}
+spinner {
+    animation: spinnerAnim 1s;
+    animation-iteration-count: infinite;
+    -webkit-animation: spinnerAnim 1s;
+    -webkit-animation-iteration-count: infinite;
+    animation-timing-function: var(--transSmooth);
+}
+@keyframes spinnerAnim {
+    0% {
+        border: 0.5rem solid #f8f9fa;
+    }
+    50% {
+        border: 1rem solid #f8f9fa;
+    }
+    100% {
+        border: 0.5rem solid #f8f9fa;
+    }
+}
+spinnerUnder {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transition: 1s var(--transSmooth);
+    -webkit-transition: 1s var(--transSmooth);
+    -moz-transition: 1s var(--transSmooth);
+    -ms-transition: 1s var(--transSmooth);
+    -o-transition: 1s var(--transSmooth);
+}
+.spinnerUspech {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+}
+
 header h1 {
     font-weight: 600;
     margin-bottom: -1rem;
@@ -196,13 +281,16 @@ cenikContainer {
     color: #fff;
     
     border-radius: 0.5rem;
-    box-shadow: 0 7px 65px rgba(15, 71, 113, 0.12);
+    -webkit-box-shadow: 0 7px 65px rgba(15, 71, 113, 0.12);
+            box-shadow: 0 7px 65px rgba(15, 71, 113, 0.12);
     
     z-index: 10;
     overflow: hidden;
     white-space: nowrap;
 
     will-change: transform;
+    
+    -webkit-transition: 1s var(--transSmooth);
     
     transition: 1s var(--transSmooth);
 }
@@ -233,9 +321,15 @@ content, whoami:after {
     background-color: var(--themeLightMain);
 }
 whoami, content, links {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     position: relative;
     
     padding: 0 10vw;
@@ -246,6 +340,8 @@ whoami h2 {
     margin-top: 0 !important;
 }
 whoami div {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     text-align: left;
 }
@@ -265,16 +361,25 @@ whoami li:before {
 whoami img {
     margin-right: 1rem;
     border-radius: 10px;
-    box-shadow: var(--stin);
+    -webkit-box-shadow: var(--stin);
+            box-shadow: var(--stin);
 }
 
 karta {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     position: relative;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     margin-top: 1rem;
-    flex-flow: row;
-    flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     
     width: 100%;
     margin: 2vw;
@@ -285,7 +390,10 @@ karta {
     border-radius: 10px;
 }
 whoami karta {
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    z-index: 1;
 }
 whoami {
     position: relative;
@@ -313,13 +421,17 @@ kartaThumb {
     background-color: #000;
     border-radius: .8rem;
     
-    box-shadow: 0 7px 30px rgba(0, 0, 0, 0.28);
+    -webkit-box-shadow: 0 7px 30px rgba(0, 0, 0, 0.28);
+    
+            box-shadow: 0 7px 30px rgba(0, 0, 0, 0.28);
     
     z-index: 100;
+    -webkit-transition: 0.35s var(--transSmooth);
     transition: 0.35s var(--transSmooth);
 }
 kartaThumb:hover {
-    transform: scale(1.2) translateX(3rem);
+    -webkit-transform: scale(1.2) translateX(3rem);
+            transform: scale(1.2) translateX(3rem);
 }
 .pak kartaThumb {
     background: url(pakThumb_small.jpg);
@@ -333,8 +445,11 @@ karta h1, karta h2 {
     margin: 0;
 }
 karta h1 {
-    flex-grow: 2;
-    flex-basis: 100%;
+    -webkit-box-flex: 2;
+        -ms-flex-positive: 2;
+            flex-grow: 2;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
     font-size: 150%;
     margin: 0;
 }
@@ -351,16 +466,27 @@ section a {
 }
 #spolecnosti {
     text-align: center;
-    flex-basis: 100%;
-    align-content: center;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    -ms-flex-line-pack: center;
+        align-content: center;
     justify-items: center;
     margin-bottom: 1.6rem;
 }
 obrazky {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     height: 4rem;
 }
 obrazky:first-of-type {
@@ -382,13 +508,18 @@ whoami a:after, section a:after, #cenik-menu a {
     color: #1d2ada;
     font-weight: 600;
     margin-left: 0.25rem;
+    -webkit-transition: 0.3s ease-in-out;
     transition: 0.3s ease-in-out;
 }
 whoami a:hover:after, section a:hover:after {
-    transform: translateX(0.5rem);
+    -webkit-transform: translateX(0.5rem);
+            transform: translateX(0.5rem);
     /*opacity: 1;*/
 }
 
+.pak h1 {
+    text-align: center;
+}
 .pak h1, td.pak {
     color: var(--themeMain);
 }
@@ -453,10 +584,15 @@ whoami a:hover:after, section a:hover:after {
     font-size: 0.8rem;
 }
 container, odkazy {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 container {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     width: 100%;
     margin-top: 20vw;
 }
@@ -465,7 +601,8 @@ container h2 {
 }
 odkazy {
     width: 100%;
-    justify-content: space-around;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
 }
 odkazy a {
     padding: 1vw;
@@ -487,26 +624,42 @@ footer h1 {
 
 objednaniModalOverlay {
     position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+
+        -ms-flex-pack: center;
+
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 
     width: 100%;
     height: 100%;
 
     z-index: 1000;
-    transform: scale(0);
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transition: 1s var(--transSmooth);
     transition: 1s var(--transSmooth);
 }
 objednaniModal {
     position: fixed;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-flow: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row;
     background-color: var(--theme2);
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: var(--stin);
+    -webkit-box-shadow: var(--stin);
+            box-shadow: var(--stin);
 }
 objednaniModal h1 {
     margin: 0;
@@ -519,11 +672,14 @@ levaStrana {
     width: 35vw;
 }
 buttonContainer { 
-    align-self: flex-start;
-    box-sizing: content-box;
+    -ms-flex-item-align: start; 
+        align-self: flex-start;
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
     background-color: var(--theme2);
     border-radius: 10px;
-    box-shadow: 0 7px 65px rgba(15, 71, 113, 0.12);
+    -webkit-box-shadow: 0 7px 65px rgba(15, 71, 113, 0.12);
+            box-shadow: 0 7px 65px rgba(15, 71, 113, 0.12);
     overflow: hidden;
 }
 buttonContainer a {
@@ -547,8 +703,14 @@ buttonContainer a.activeSelection::after {
     background-color: var(--themeLightMain);
 }*/
 levaStrana form {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-flow: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
 }
 levaStrana form span {
     color: var(--themeGray);
@@ -580,8 +742,12 @@ input[type="checkbox"] {
     position: relative;
 }
 inlineContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 inlineContainer * {
     display: inline;
@@ -600,7 +766,8 @@ width: 100%;
     border-radius: 5px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    box-shadow: 0 7px 65px rgba(15, 71, 113, 0.12);
+    -webkit-box-shadow: 0 7px 65px rgba(15, 71, 113, 0.12);
+            box-shadow: 0 7px 65px rgba(15, 71, 113, 0.12);
 
     list-style: none;
     z-index: 1000000;
@@ -660,77 +827,183 @@ pravaStrana tr td:nth-child(2n) {
     border-top: 1px solid var(--themeGrayInverted);
 }
 .modalAktivni {
-    animation: modalOpen 1s;
+    -webkit-animation: modalOpen 1s;
+            animation: modalOpen 1s;
+}
+@-webkit-keyframes modalOpen {
+    1% {
+        display: -webkit-box;
+        display: flex;
+        -webkit-transform: scale(0);
+                transform: scale(0);
+    }
+    100% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
 }
 @keyframes modalOpen {
     1% {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        transform: scale(0);
+        -webkit-transform: scale(0);
+                transform: scale(0);
     }
     100% {
-        transform: scale(1);
+        -webkit-transform: scale(1);
+                transform: scale(1);
     }
 }
 .modalNeaktivni {
-    animation: modalClose 1s;
+    -webkit-animation: modalClose 1s;
+            animation: modalClose 1s;
+}
+@-webkit-keyframes modalClose {
+    1% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+    100% {
+        display: -webkit-box;
+        display: flex;
+        -webkit-transform: scale(0);
+                transform: scale(0);
+    }
 }
 @keyframes modalClose {
     1% {
-        transform: scale(1);
+        -webkit-transform: scale(1);
+                transform: scale(1);
     }
     100% {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        transform: scale(0);
+        -webkit-transform: scale(0);
+                transform: scale(0);
     }
 }
 transformer {
     display: block;
-    transform-origin: top center;
-    transform: scale(1);
-    filter: saturate(100%);
+    -webkit-transform-origin: top center;
+            transform-origin: top center;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-filter: saturate(100%);
+            filter: saturate(100%);
+    -webkit-transition: 1s var(--transSmooth);
     transition: 1s var(--transSmooth);
 }
 .transformerAktivni {
-    animation: zmenseniTransformera 1s;
+    -webkit-animation: zmenseniTransformera 1s;
+            animation: zmenseniTransformera 1s;
+}
+@-webkit-keyframes zmenseniTransformera {
+    0% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        -webkit-filter: saturate(100%);
+                filter: saturate(100%);
+        -webkit-filter: opacity(1);
+                filter: opacity(1);
+    }
+    50% {
+        -webkit-filter: blur(70%);
+                filter: blur(70%);
+        -webkit-filter: opacity(0.1);
+                filter: opacity(0.1);
+    }
+    100% {
+        -webkit-transform: scale(0.95);
+                transform: scale(0.95);
+        -webkit-filter: saturate(70%);
+                filter: saturate(70%);
+        -webkit-filter: opacity(0.1);
+                filter: opacity(0.1);
+    }
 }
 @keyframes zmenseniTransformera {
     0% {
-        transform: scale(1);
-        filter: saturate(100%);
-        filter: opacity(1);
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        -webkit-filter: saturate(100%);
+                filter: saturate(100%);
+        -webkit-filter: opacity(1);
+                filter: opacity(1);
     }
     50% {
-        filter: blur(70%);
-        filter: opacity(0.1);
+        -webkit-filter: blur(70%);
+                filter: blur(70%);
+        -webkit-filter: opacity(0.1);
+                filter: opacity(0.1);
     }
     100% {
-        transform: scale(0.95);
-        filter: saturate(70%);
-        filter: opacity(0.1);
+        -webkit-transform: scale(0.95);
+                transform: scale(0.95);
+        -webkit-filter: saturate(70%);
+                filter: saturate(70%);
+        -webkit-filter: opacity(0.1);
+                filter: opacity(0.1);
     }
 }
 .transformerNeaktivni {
-    animation: 1s zvetseniTransformera;
+    -webkit-animation: 1s zvetseniTransformera;
+            animation: 1s zvetseniTransformera;
+}
+@-webkit-keyframes zvetseniTransformera {
+    1% {
+        -webkit-transform: scale(0.95);
+                transform: scale(0.95);
+        -webkit-filter: saturate(70%);
+                filter: saturate(70%);
+        -webkit-filter: opacity(0.1);
+                filter: opacity(0.1);
+    }
+    50% {
+        -webkit-filter: blur(70%);
+                filter: blur(70%);
+        -webkit-filter: opacity(0.1);
+                filter: opacity(0.1);
+    }
+    100% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        -webkit-filter: saturate(100%);
+                filter: saturate(100%);
+        -webkit-filter: opacity(1);
+                filter: opacity(1);
+    }
 }
 @keyframes zvetseniTransformera {
     1% {
-        transform: scale(0.95);
-        filter: saturate(70%);
-        filter: opacity(0.1);
+        -webkit-transform: scale(0.95);
+                transform: scale(0.95);
+        -webkit-filter: saturate(70%);
+                filter: saturate(70%);
+        -webkit-filter: opacity(0.1);
+                filter: opacity(0.1);
     }
     50% {
-        filter: blur(70%);
-        filter: opacity(0.1);
+        -webkit-filter: blur(70%);
+                filter: blur(70%);
+        -webkit-filter: opacity(0.1);
+                filter: opacity(0.1);
     }
     100% {
-        transform: scale(1);
-        filter: saturate(100%);
-        filter: opacity(1);
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        -webkit-filter: saturate(100%);
+                filter: saturate(100%);
+        -webkit-filter: opacity(1);
+                filter: opacity(1);
     }
 }
 .modalAktivni, .modalNeaktivni, .transformerAktivni, .transformerNeaktivni {
-    animation-fill-mode: forwards;
-    animation-timing-function: var(--transSmooth);
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-animation-timing-function: var(--transSmooth);
+            animation-timing-function: var(--transSmooth);
 }
 
 @media screen and (max-device-width: 900px) {
@@ -774,11 +1047,17 @@ transformer {
         display: none;
     }
     #cenik:hover ~ #cenik-menu, .pinned {
-        transform: translateY(100%) !important;
+        -webkit-transform: translateY(100%) !important;
+                transform: translateY(100%) !important;
     }
     odkazy {
-        flex-direction: column;
-        align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
     }
     odkazy a {
         margin: 3vw;
