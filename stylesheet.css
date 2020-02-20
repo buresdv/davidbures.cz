@@ -18,6 +18,16 @@
     --border: 2px solid;
     --transSmooth: cubic-bezier(.4, 0, 0, 1.01);
     --stin: 0 7px 30px rgba(15, 71, 113, 0.28);
+    --hoverOffset: 1px;
+}
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
 }
 ::-webkit-input-placeholder {
     color: var(--themeGrayInverted);
@@ -41,6 +51,10 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button { 
     -webkit-appearance: none; 
     margin: 0; 
+}
+input:not(input[type="checkbox"]) {
+    appearance: none;
+    -webkit-appearance: none;
 }
 input[type=number] {
     -moz-appearance: textfield;
@@ -132,6 +146,10 @@ h2 {
 }
 
 body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 1.25rem;
     line-height: 1.5;
@@ -175,7 +193,7 @@ input[type="submit"], button, .buttonLike {
     font-size: 1.2rem;
     background-color: #FF9A72;
     color: #fff;
-    padding: 1vw;
+    padding: 1rem;
     border-radius: 5px;
     border: var(--border) var(--themeHighlight);
     z-index: 10;
@@ -262,7 +280,7 @@ header h1 {
 cenikContainer {
     position: relative;
     margin-left: 1.5vw;
-    padding: calc(1vw + 5px);
+    padding: calc(1rem + 5px);
 }
 #cenik {
     display: inline-block;
@@ -416,15 +434,11 @@ kartaThumb {
     
     width: 15vw;
     height: 15vw;
-    
-    background-size: cover !important;    
+    background-size: cover !important;
     background-color: #000;
     border-radius: .8rem;
-    
     -webkit-box-shadow: 0 7px 30px rgba(0, 0, 0, 0.28);
-    
-            box-shadow: 0 7px 30px rgba(0, 0, 0, 0.28);
-    
+    box-shadow: 0 7px 30px rgba(0, 0, 0, 0.28);
     z-index: 100;
     -webkit-transition: 0.35s var(--transSmooth);
     transition: 0.35s var(--transSmooth);
@@ -477,6 +491,7 @@ obrazky {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    flex-wrap: wrap;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -487,17 +502,56 @@ obrazky {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    height: 4rem;
+    padding: 2vw;
+    transition: 1s var(--transSmooth);
 }
-obrazky:first-of-type {
-    margin-top: 1rem;
+obrazkyWrapper {
+    display: block;
+    position: relative;
+    background-color: var(--themeLightMain);
+}
+obrazkyWrapper a {
+    position: absolute;
+    padding: 0.8rem;
+    /*background-color: var(--themeMain);*/
+    color: var(--theme2);
+    font-weight: 600;
+    border-radius: 10px;
+    left: 50%;
+    bottom: 0;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.9) translateX(-50%);
+    transition: 0.75s var(--transSmooth);
+    z-index: 10;
+    box-shadow: 0 7px 15px rgba(15, 71, 113, 0.28);
+    background: linear-gradient(45deg, rgba(64,166,245,1) 0%, rgba(33,150,243,1) 100%);
+}
+obrazkyWrapper:hover obrazky {
+    filter: blur(0.5rem);
+    transform: scale(0.85);
+}
+obrazkyWrapper:hover a {
+    opacity: 1;
+    bottom: 25%;
+    transition: 0.75s var(--transSmooth);
+    transform: scale(1) translateX(-50%);
+    pointer-events: visible;
 }
 obrazky * {
     margin: 0 1rem;
+    max-height: 2rem;
+}
+obrazky h1 {
+    width: 100%;
+    margin-bottom: 3rem;
+    text-align: center;
+    font-size: 2rem;
 }
 obrazky img, obrazky svg {
     height: 50%;
 }
+
 .konec {
     color: var(--themeGray);
     font-size: 60%;
@@ -517,9 +571,6 @@ whoami a:hover:after, section a:hover:after {
     /*opacity: 1;*/
 }
 
-.pak h1 {
-    text-align: center;
-}
 .pak h1, td.pak {
     color: var(--themeMain);
 }
@@ -722,7 +773,7 @@ levaStrana form span {
 levaStrana input[type="email"], levaStrana input[type="text"], levaStrana input[type="number"] {
     position: relative;
     width: 100%;
-    padding: 1vw;
+    padding: 1rem;
     margin-bottom: 1.5vw;
 
     background-color: var(--theme2);
@@ -1005,6 +1056,34 @@ transformer {
     -webkit-animation-timing-function: var(--transSmooth);
             animation-timing-function: var(--transSmooth);
 }
+
+/* MOBILIZACE ZAČÁTEK*/
+objednaniModal {
+    margin-top: 10vh;
+}
+pravaStrana {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+levaStrana {
+    width: 90vw;
+    padding: 1.5rem;
+}
+buttonContainer a {
+    padding: 0.8rem;
+}
+#vypocet {
+    display: none;
+}
+#cn table td[rowspan^="3"] {
+    
+}
+/* MOBILIZACE KONEC */
 
 @media screen and (max-device-width: 900px) {
     bar a:last-child {
