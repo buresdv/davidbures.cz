@@ -1,4 +1,4 @@
-button, input[type="submit"], input[type="reset"] {
+input[type="submit"], input[type="reset"] {
 	background: none;
 	color: inherit;
 	border: none;
@@ -102,7 +102,7 @@ header {
     width: 100%;
     height: 80%;
 }
-input[type="submit"], button, .buttonLike {
+input[type="submit"], .buttonLike {
     color: var(--themeHighlight);
     display: inline-block;
     font-size: 1.2rem;
@@ -209,9 +209,6 @@ header h1 {
 #jaz {
     color: var(--themeGray);
 }
-/*header *:not(a) {
-    text-shadow: 0px 0px 10px #fff;
-}*/
 cenikContainer {
     position: relative;
     margin-left: 1.5vw;
@@ -271,6 +268,19 @@ cenikContainer:hover #cenik-menu, .pinned {
     margin-top: 0;
 }
 
+nabidka {
+    display: flex;
+    flex-direction: column;
+}
+nabidka h1 {
+    background-color: var(--theme2);
+    text-align: center;
+}
+nabidka karty {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
 #cenikGrid {
     width: 100%;
     grid-auto-rows: minmax(100px, auto);
@@ -278,11 +288,6 @@ cenikContainer:hover #cenik-menu, .pinned {
     grid-template-areas: 
     "gridNadpis gridNadpis"
     "popisSluzby cena";
-}
-#cenikGrid h1 {
-    text-align: center;
-    grid-area: gridNadpis;
-    background-color: var(--theme2);
 }
 popisSluzby {
     grid-area: popisSluzby;
@@ -338,7 +343,7 @@ whoami img {
             box-shadow: var(--stin);
 }
 
-karta {
+/*karta {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -357,7 +362,7 @@ karta {
     width: 100%;
     margin: 2vw;
     padding: 3vw 4vw;
-}
+} */
 
 whoami karta {
     -webkit-box-pack: center;
@@ -892,6 +897,7 @@ transformer {
             filter: saturate(100%);
     -webkit-transition: 1s var(--transSmooth);
     transition: 1s var(--transSmooth);
+    will-change: transform, filter, opacity;
 }
 .transformerAktivni {
     -webkit-animation: zmenseniTransformera 1s;
