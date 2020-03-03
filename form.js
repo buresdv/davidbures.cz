@@ -3,7 +3,7 @@ $(document).ready(function(){
     console.log("Ay");
 
     //Otevírání a zavírání formuláře
-    $('#tlacitkoContact').click(function() {
+    $('.tlacitkoKontakt').click(function() {
         if($('objednaniModalOverlay').hasClass('modalNeaktivni')) {
             $('objednaniModalOverlay').removeClass('modalNeaktivni');
         }

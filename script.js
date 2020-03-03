@@ -2,6 +2,7 @@ $(document).ready(function () {
     function convertRemToPixels(rem) {    
         return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
     }
+
     $('karta').on('mouseenter', function() {
         thumbKarty = $(this).children('kartaThumb');
         puvodniThumb = thumbKarty.css("background-image");

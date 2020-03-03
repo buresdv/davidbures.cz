@@ -138,17 +138,17 @@
             </objednaniModal>
         </objednaniModalOverlay>
         <bar>
-            <a href="en/">English</a>
-            <!--<a href="jp/">日本語</a>-->
-            <a href="https://blog.davidbures.cz" style="margin-left: auto;">Blog</a>
+            <a href="https://blog.davidbures.cz">Blog</a>
             <a href="/oMne/">O mně</a>
+            <a class="tlacitkoKontrast tlacitkoKontakt" style="margin-left: auto;">Kontaktujte mě</a>
+            <a href="en/">English</a>
         </bar>
         <transformer>
         <header>
-            <h1>Tlumočník, překladatel, korektor</h1>
+            <h1 id="hlavniTitulek">Tlumočník, překladatel, korektor</h1>
             <p id="jaz">Čeština, Angličtina, Japonština</p>
             <p>Překlad a korektura vědeckých článků, lokalizace softwaru,<br> tlumočení konferencí a prezentací</p>
-            <a class="buttonLike" id="tlacitkoContact">KONTAKTUJTE MĚ</a>
+            <a class="tlacitkoKontrast tlacitkoKontakt" >KONTAKTUJTE MĚ</a>
             <cenikContainer>
                 <p id="cenik">CENÍK</p>
                 <div id="cenik-menu" class="">
@@ -185,12 +185,12 @@
                     <a href="#cn">Detailní ceník</a>
                 </div>
             </cenikContainer>
+            <bImage></bImage>
         </header>
-        <bImage></bImage>
-        <whoami>
+        <!--<whoami>
             <karta>
                 <section style="width: 100%;">
-                    <h2>Proč  já?</h2>
+                    <h2>Proč já?</h2>
                     <div>
                         <img src="Tomo.jpg" style="max-width: 15vw; align-self: flex-start;">
                         <ul style="margin: 0;">
@@ -205,9 +205,26 @@
                     <a href="/oMne">Více o mně</a>
                 </section>
             </karta>
-        </whoami>
+        </whoami>-->
+
+        <article id="whoami" style="margin-top: 20vh; margin-bottom: 10vh;">
+            <titulek>
+                <h3>Proč já?</h3>
+                <img src="Tomo.jpg">
+            </titulek>
+            <text>
+                <ul style="margin: 0;">
+                    <li>Jako překladatel a korektor vědeckých článků, webů a technických textů působím už od roku 2014</li>
+                    <li>O mé jazykové služby měly zájem instituce jako Waze a Univerzita Tomáše Bati ve Zlíně</li>
+                    <li>Při překladu používám špičkové překladatelské prostředí SDL Trados Studio</li>
+                    <li>Třetím rokem tlumočím mezinárodní konference</li>
+                    <li>Jsem obeznámený s nejnovějším vývojem v tlumočnických a překladatelských technikách a zvyklostech</li>
+                    <li>Proč ne?</li>
+                </ul>
+            </text>
+        </article>
         <obrazkyWrapper>
-            <a href="/zakaznici">Mí zákazníci</a>
+            <a class="tlacitko" href="/zakaznici">Mí zákazníci</a>
             <obrazky>
                 <img src="utb_logo.png">
                 <img src="muni.png">
@@ -266,6 +283,36 @@
                     <a href="/psani/index.html#sbirkaNahodneho">Sbírka náhodného</a>
                 </section>
             </karta>
+            <article id="cenikGrid">
+                <h1>Ceník</h1>
+                <popisSluzby>
+                    <h2>Překlad</h2>
+                    <p class="dodatek">Webové stránky jsou účtovány podle počtu objednaných stránek.</p><p class="dodatek">Grafická úprava dokumentů není v ceně zahrnuta.</p>
+                </popisSluzby>
+                <cena>
+                    <popisky>Standard</popisky><popisky>Studenti</popisky>
+                    <nazevSluzby>Vědecký článek<br>Interní dokumentace</nazevSluzby>
+                    <ceny>400</ceny><ceny>300</ceny>
+                </cena>
+                <popisSluzby>
+                    <h2>Překlad</h2>
+                    <p class="dodatek">Webové stránky jsou účtovány podle počtu objednaných stránek.</p><p class="dodatek">Grafická úprava dokumentů není v ceně zahrnuta.</p>
+                </popisSluzby>
+                <cena>
+                    <popisky>Standard</popisky><popisky>Studenti</popisky>
+                    <nazevSluzby>Vědecký článek<br>Interní dokumentace</nazevSluzby>
+                    <ceny>400</ceny><ceny>300</ceny>
+                </cena>
+                <popisSluzby>
+                    <h2>Překlad</h2>
+                    <p class="dodatek">Webové stránky jsou účtovány podle počtu objednaných stránek.</p><p class="dodatek">Grafická úprava dokumentů není v ceně zahrnuta.</p>
+                </popisSluzby>
+                <cena>
+                    <popisky>Standard</popisky><popisky>Studenti</popisky>
+                    <nazevSluzby>Vědecký článek<br>Interní dokumentace</nazevSluzby>
+                    <ceny>400</ceny><ceny>300</ceny>
+                </cena>
+            </article>
             <karta id="cn">
                 <h1>Ceník</h1>
                 <table>
@@ -284,7 +331,7 @@
                     <tr><td id="referenced">Policejní</td><td>1 000 Kč/<span class="ns">hod</span></td><td>750 Kč/<span class="ns">hod</span></td></tr>
                     <tr><td>Prezentací</td><td>700 Kč/<span class="ns">hod</span></td><td>450 Kč/<span class="ns">hod</span></td></tr>
                 </table>
-                <a class="buttonLike" id="tlacitkoContact" style="margin: 0 auto; margin-top: 2.5rem;">KONTAKTUJTE MĚ</a>
+                <a class="tlacitkoKontrast tlacitkoKontakt" style="margin: 0 auto; margin-top: 2.5rem;">KONTAKTUJTE MĚ</a>
             </karta>
         </content>
         <links>

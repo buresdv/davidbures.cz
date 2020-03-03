@@ -70,14 +70,10 @@ button, input[type="submit"], input[type="reset"] {
 
 bImage {
     position: absolute;
-    top: -10%;
-    left: -30%;
-    width: 100%;
-    height: 170%;
-    background-image: url("Untitled.svg");
-    background-repeat: no-repeat;
-    opacity: 0.7;
-    font-size: 3000%;
+
+    left: 0;
+    top: 0;
+
     z-index: -100;
 }
 btext {
@@ -100,45 +96,9 @@ h2 {
     font-size: 1.25rem;
 }
 
-body {
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 1.25rem;
-    line-height: 1.5;
-    
-    color: var(--theme);
-    margin: 0;
-}
-body a {
-    color: #1d2ada;
-}
-
-bar {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    
-    padding: 2vh 14vw;
-    border-top: 5px solid var(--themeMain);
-    
-    width: 100%;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    z-index: 10;
-}
-bar a {
-    margin: 1vw;
-    border-bottom: 2px solid;
-}
-
 header {
     padding-left: 15vw;
-    padding-top: 9vh;
+    padding-top: 13vh;
     width: 100%;
     height: 80%;
 }
@@ -223,7 +183,28 @@ spinnerUnder {
 }
 
 header h1 {
+    position: relative;
     margin-bottom: -1rem;
+}
+#hlavniTitulek:after {
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 300%;
+
+    left: 0;
+    top: -200%;
+    transform: translateX(-15vw);
+    -webkit-transform: translateX(-15vw);
+    -moz-transform: translateX(-15vw);
+    -ms-transform: translateX(-15vw);
+    -o-transform: translateX(-15vw);
+
+    background-image: radial-gradient(#ebecfe 20%, #f6fafd 20%);
+    background-position: 0 0;
+    background-size: 2rem 2rem;
+
+    z-index: -1;
 }
 #jaz {
     color: var(--themeGray);
@@ -245,8 +226,8 @@ cenikContainer {
 #cenik-menu {
 	position: absolute;
     background-color: #fff;
-    height: 100%;
-    width: 100%;
+    max-height: 100%;
+    max-width: 100%;
     top: 0;
     left: 0;
     padding: 0;
@@ -270,8 +251,8 @@ cenikContainer {
     margin-top: 1rem;
 }
 cenikContainer:hover #cenik-menu, .pinned {
-    height: 23em;
-    width: 18rem;
+    max-height: 30em;
+    max-width: 30vw;
     padding: 1rem;
     -webkit-transform: translate(7rem, -50%);
     transform: translate(7rem, -50%);
@@ -283,15 +264,44 @@ cenikContainer:hover #cenik-menu, .pinned {
 }
 #cenik-menu h1 {
     margin-bottom: 0;
+    margin-top: 1rem;
 	font-size: 120%;
 }
 #cenik-menu h1:first-of-type {
     margin-top: 0;
 }
 
-content, whoami:after {
-    background-color: var(--themeLightMain);
+#cenikGrid {
+    width: 100%;
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    grid-template-areas: 
+    "gridNadpis gridNadpis"
+    "popisSluzby cena";
 }
+#cenikGrid h1 {
+    text-align: center;
+    grid-area: gridNadpis;
+    background-color: var(--theme2);
+}
+popisSluzby {
+    grid-area: popisSluzby;
+}
+popisSluzby h2 {
+    margin: 0;
+}
+cena {
+    grid-area: cena;
+}
+/*cena {
+    display: grid;
+    grid-template-rows: repeat(3, min-content);
+    grid-template-columns: repeat(3, minmax(min-content, 1fr));
+    grid-template-areas: 
+    ". popisky popisky"
+    "nazevSluzby ceny ceny";
+}*/
+
 whoami, content, links {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -307,21 +317,12 @@ whoami, content, links {
     padding: 0 10vw;
     z-index: 2;
 }
-whoami h2 {
-    margin-bottom: 1rem !important;
-    margin-top: 0 !important;
-}
-whoami div {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    text-align: left;
-}
-whoami li {
+
+#whoami li {
     list-style-type: none;
     margin-bottom: 1rem;
 }
-whoami li:before {
+#whoami li:before {
     content: ""; 
     display: inline-block;
     margin-left: -1.3em; 
@@ -356,10 +357,6 @@ karta {
     width: 100%;
     margin: 2vw;
     padding: 3vw 4vw;
-    background-color: #fff;
-    
-    border: 2px solid #aad7fa;
-    border-radius: 10px;
 }
 
 whoami karta {
@@ -421,6 +418,9 @@ karta h1 {
         flex-basis: 100%;
     font-size: 150%;
     margin: 0;
+
+    background-color: var(--theme2);
+    padding: 1rem;
 }
 
 section {
@@ -463,24 +463,16 @@ obrazky {
 obrazkyWrapper {
     display: block;
     position: relative;
-    background-color: var(--themeLightMain);
 }
 obrazkyWrapper a {
     position: absolute;
-    padding: 0.8rem;
-    /*background-color: var(--themeMain);*/
-    color: var(--theme2);
-    font-weight: 600;
-    border-radius: 10px;
     left: 50%;
     bottom: 0;
     opacity: 0;
     pointer-events: none;
-    transform: scale(0.9) translateX(-50%);
-    transition: 0.75s var(--transSmooth);
+    transform: scale(0.9) translateX(-50%) !important;
+    transition: 0.75s var(--transSmooth) !important;
     z-index: 10;
-    box-shadow: 0 7px 15px rgba(15, 71, 113, 0.28);
-    background: linear-gradient(45deg, rgba(64,166,245,1) 0%, rgba(33,150,243,1) 100%);
 }
 obrazkyWrapper:hover obrazky {
     filter: blur(0.5rem);
@@ -490,7 +482,7 @@ obrazkyWrapper:hover a {
     opacity: 1;
     bottom: 25%;
     transition: 0.75s var(--transSmooth);
-    transform: scale(1) translateX(-50%);
+    transform: scale(1) translateX(-50%) !important;
     pointer-events: visible;
 }
 obrazky * {
@@ -629,7 +621,7 @@ footer h1 {
 }
 
 objednaniModalOverlay {
-    position: absolute;
+    position: fixed;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

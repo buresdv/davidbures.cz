@@ -1,8 +1,4 @@
 
-a:not(.tlacitko), a:not(.kontaktTlacitko) {
-    text-decoration: underline; 
-    color: var(--themeHighlight);
-}
 h1 {
     text-align: center;
 }
@@ -64,6 +60,7 @@ gridKarta h3 {
     max-height: 0;
     padding: 0;
     text-align: center;
+    cursor: default;
 }
 gridItem:hover gridKarta {
     background-color: var(--theme2);
@@ -89,60 +86,6 @@ section {
 }
 .centered {
     align-items: center;
-}
-article {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 5rem;
-    grid-template-areas: 
-    'titulek text';
-    align-items: start;
-    margin-bottom: 3rem;
-}
-article titulek {
-    position: relative;
-    text-align: right;
-    grid-area: titulek;
-    background-color: var(--theme2);
-    padding: 2.5rem;
-}
-article titulek img {
-    position: absolute;
-    right: -1rem;
-    top: 1rem;
-    max-width: 70%;
-    max-height: 27rem;
-    z-index: -1;
-    box-shadow: var(--stin);
-}
-article titulek * {
-    margin: 0;
-}
-text {
-    grid-area: text;
-    width: 40ch;
-}
-article text h4 {
-    color: #616e78;
-    font-weight: 300;
-    font-size: 120%;
-    margin-top: 0;
-}
-article text h4 + p:first-of-type {
-    color: var(--themeMain);
-}
-article text p {
-    margin-top: 0;
-}
-article text ikony {
-    display: block;
-    padding-top: 0.8rem;
-    border-top: 1px solid var(--themeGray);
-}
-article text ikony img {
-    max-height: 2rem;
-    margin-right: 1rem;
 }
 section flexing {
     padding: 0 8vw;

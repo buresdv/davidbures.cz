@@ -23,8 +23,13 @@
     --hoverOffset: 1px;
 
     --border: 2px solid;
+
     --transSmooth: cubic-bezier(.4, 0, 0, 1.01);
+
+    --tlacitkoTransform: 0.3s var(--transSmooth);
+
     --stin: 0 7px 30px rgba(15, 71, 113, 0.28);
+
     --gridConstant: 10;
 }
 
@@ -76,6 +81,45 @@ body {
 }
 
 /* Kosmetické věci */
+a:not(.tlacitko), a:not(.kontaktTlacitko) {
+    text-decoration: underline; 
+    color: var(--themeHighlight);
+}
+
+bar {
+    position: fixed;
+    width: 100%;
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    display: flex;
+    padding: 0 15vw;
+    background-color: var(--theme2);
+    box-shadow: 0 7px 15px rgba(15, 71, 113, 0.05);
+    z-index: 10;
+}
+bar a {
+    padding: 1rem;
+}
+bar a:not(.tlacitkoKontrast):hover {
+    background-color: #ffedf0;
+}
+bar .tlacitkoKontrast {
+    position: relative;
+    transition: var(--tlacitkoTransform);
+}
+bar .tlacitkoKontrast::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1rem;
+    left: 0;
+    top: -1rem;
+    z-index: 20;
+}
+bar .tlacitkoKontrast:hover {
+    transform: translateY(0.5rem);
+}
+
 .dotBackground {
     background-image: radial-gradient(#ebecfe 20%, #f6fafd 20%);
     background-position: 0 0;
@@ -83,16 +127,33 @@ body {
     height: 100%;
     width: 100%;
 }
+.dodatek {
+    color: var(--themeGray);
+    font-size: 0.95rem;
+    margin: 0.3rem 0;
+}
 
 /* Často používané elementy */
-.tlacitkoKontrast {
+.tlacitkoKontrast, bar .tlacitkoKontrast::before {
     background: linear-gradient(45deg, rgba(255, 93, 115, 1) 0%, rgba(255, 115, 134, 1) 100%);
+}
+.tlacitkoKontrast {
     font-weight: 900;
+
+    padding: 1rem;
+
+    cursor: pointer;
+
     color: var(--theme2) !important;
     text-decoration: none !important;
-}
-.tlacitkoKontrast:hover {
 
+    background-attachment: fixed;
+}
+.tlacitkoKontrast:first-of-type, .tlacitko {
+    transition: var(--tlacitkoTransform);
+}
+.tlacitkoKontrast:first-of-type:hover, .tlacitko:hover {
+    transform: translateY(-0.2rem);
 }
 .tlacitko {
     padding: 0.8rem;
@@ -101,12 +162,9 @@ body {
     font-weight: 600;
     border-radius: 10px;
     background: linear-gradient(45deg, rgba(64,166,245,1) 0%, rgba(33,150,243,1) 100%);
-    box-shadow: 0 7px 15px rgba(15, 71, 113, 0.28);
-    transition: 0.3s var(--transSmooth);
 }
 .tlacitko:hover {
     box-shadow: 0 8px 20px rgba(15, 71, 113, 0.40);
-    transform: translateY(-0.2rem);
 }
 
 h1, h2, h3 {
@@ -116,4 +174,70 @@ h1 {
     font-weight: 900;
     font-size: 300%;
     margin: 5rem 0 0 0;
+}
+
+/* Rozložení */
+
+article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 5rem;
+    grid-template-areas: 
+    'titulek text';
+    align-items: start;
+    margin-bottom: 3rem;
+}
+article titulek {
+    position: relative;
+    text-align: right;
+    grid-area: titulek;
+    background-color: var(--theme2);
+    padding: 2.5rem;
+}
+article titulek img {
+    position: absolute;
+    right: -1rem;
+    top: 1rem;
+    max-width: 70%;
+    max-height: 27rem;
+    z-index: -1;
+    box-shadow: var(--stin);
+}
+article titulek * {
+    margin: 0;
+}
+text {
+    grid-area: text;
+    width: 40ch;
+}
+article text h4 {
+    color: #616e78;
+    font-weight: 300;
+    font-size: 120%;
+    margin-top: 0;
+}
+article text h4 + p:first-of-type {
+    color: var(--themeMain);
+}
+article text p {
+    margin-top: 0;
+}
+article text ikony {
+    display: block;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--themeGray);
+}
+article text ikony img {
+    max-height: 2rem;
+    margin-right: 1rem;
+}
+
+/* Ostatní */
+tr {
+    transition: 0.5s var(--transSmooth);
+}
+tr:hover {
+    background-color: var(--theme2);
+    box-shadow: 0 7px 15px rgba(15, 71, 113, 0.05);
 }
