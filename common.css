@@ -14,6 +14,8 @@
 
     --themeHighlight: rgba(255, 93, 115, 1);
     --themeLightMain: #e5f3fd;
+
+    --themeHighlightDark: #7f1119;
 }
 
 /* Konstanty */
@@ -94,6 +96,10 @@ body {
 a:not(.tlacitko), a:not(.kontaktTlacitko) {
     text-decoration: underline; 
     color: var(--themeHighlight);
+    transition: 0.3s var(--transSmooth);
+}
+a:not(.tlacitko):hover, a:not(.kontaktTlacitko):hover {
+    color: var(--themeHighlightDark);
 }
 
 bar {
