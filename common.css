@@ -125,6 +125,7 @@ bar .tlacitkoKontrast::before {
     left: 0;
     top: -1rem;
     z-index: 20;
+    background-attachment: fixed;
 }
 bar .tlacitkoKontrast:hover {
     transform: translateY(0.5rem);
