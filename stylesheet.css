@@ -271,10 +271,12 @@ cenikContainer:hover #cenik-menu, .pinned {
 nabidka {
     display: flex;
     flex-direction: column;
+    margin-top: 10rem;
 }
 nabidka h1 {
     background-color: var(--theme2);
     text-align: center;
+    margin-top: 0;
 }
 nabidka karty {
     display: grid;
