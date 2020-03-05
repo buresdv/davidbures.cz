@@ -302,22 +302,18 @@ popisSluzby h2 {
 cena {
     grid-column: 2;
 
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-auto-rows: 1fr;
-
-    padding-left: var(--paddingMini);
     border-left: 1px solid var(--themeGray);
 }
-ceny {
-    grid-row: 3;
+cena table {
+    border-collapse: collapse;
+    width: 100%;
+    vertical-align: top;
 }
-nazevSluzby {
-    grid-column: 1;
+cena table tr {
+    padding: var(--paddingMini);
 }
-nic {
-    grid-column: 1;
-    grid-row: 1;
+cena table td {
+    border: none;
 }
 
 whoami, content, links {
