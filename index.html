@@ -319,13 +319,15 @@
                 <h1>Ceník</h1>
                 <popisSluzby>
                     <h2>Překlad</h2>
-                    <p class="dodatek">Webové stránky jsou účtovány podle počtu objednaných stránek.</p><p class="dodatek">Grafická úprava dokumentů není v ceně zahrnuta.</p>
+                    <p class="dodatek">Webové stránky jsou účtovány podle počtu objednaných stránek a obtížnosti obsahu. Přesnou cenu se dozvíte po analýze objednaných stránek.</p><p class="dodatek">Grafická úprava dokumentů není v ceně zahrnuta.</p>
                 </popisSluzby>
                 <cena>
                     <table>
-                        <tr><td></td><td>Standard</td><td>Studenti</td></tr>
-                        <tr><td><p>Webové stránky</p><p>Odborný text</p></td><td>300</td><td>200</td></tr>
-                        <tr><td><p>Vědecký text</p><p>Interní dokumentace</p></td><td>400</td><td>300</td></tr>
+                        <tr class="popisky"><th></th><th>Standard</td><th>Studenti</td></tr>
+                        <tr><td class="seznamSluzeb"><p>Webové stránky</p></td><td class="cena">od 300 Kč/<span class="ns">stránka</span></td><td class="cena">od 200 Kč/<span class="ns">stránka</span></td></tr>
+                        <tr><td class="seznamSluzeb"><p>Vědecký text</p><p>Interní dokumentace</p></td><td class="cena">400 Kč/<span class="ns">ns</span></td><td class="cena">300 Kč/<span class="ns">ns</span></td></tr>
+                        <tr><td class="seznamSluzeb"><p>Technický a jiný odborný text</p></td><td class="cena">300 Kč/<span class="ns">ns</span></td><td class="cena">200 Kč/<span class="ns">ns</span></td></tr>
+                        <tr><td class="seznamSluzeb"><p>Obyčejný text</p></td><td class="cena">250 Kč/<span class="ns">ns</span></td><td class="cena">150 Kč/<span class="ns">ns</span></td></tr>
                     </table>
                 </cena>
                 <popisSluzby>
@@ -333,46 +335,27 @@
                     <p class="dodatek">Webové stránky jsou účtovány podle počtu objednaných stránek.</p><p class="dodatek">Grafická úprava dokumentů není v ceně zahrnuta.</p>
                 </popisSluzby>
                 <cena>
-                    <nic></nic>
-                    <popisky>Standard</popisky><popisky>Studenti</popisky>
-                    <nazevSluzby>Vědecký článek</nazevSluzby>
-                    <nazevSluzby>Interní dokumentace</nazevSluzby>
-                    <ceny>400</ceny>
-                    <ceny>300</ceny>
+                    <table>
+                        <tr class="popisky"><th></th><th>Standard</td><th>Studenti</td></tr>
+                        <tr><td class="seznamSluzeb"><p>Webové stránky</p></td><td class="cena">od 250 Kč/<span class="ns">stránka</span></td><td class="cena">od 150 Kč/<span class="ns">stránka</span></td></tr>
+                        <tr><td class="seznamSluzeb"><p>Vědecký text</p><p>Interní dokumentace</p></td><td class="cena">300 Kč/<span class="ns">ns</span></td><td class="cena">200 Kč/<span class="ns">ns</span></td></tr>
+                        <tr><td class="seznamSluzeb"><p>Technický a jiný odborný text</p></td><td class="cena">250 Kč/<span class="ns">ns</span></td><td class="cena">150 Kč/<span class="ns">ns</span></td></tr>
+                        <tr><td class="seznamSluzeb"><p>Obyčejný text</p></td><td class="cena">200 Kč/<span class="ns">ns</span></td><td class="cena">100 Kč/<span class="ns">ns</span></td></tr>
+                    </table>
                 </cena>
                 <popisSluzby>
                     <h2>Tlumočení</h2>
                     <p class="dodatek">On-site nebo vzdálené tlumočení.</p><p class="dodatek">Mimo 9:00-17:00 je účtován poplatek 250 Kč/hod.</p>
                 </popisSluzby>
                 <cena>
-                    <nic></nic>
-                    <popisky>Standard</popisky><popisky>Studenti</popisky>
-                    <nazevSluzby>Vědecký článek</nazevSluzby>
-                    <nazevSluzby>Interní dokumentace</nazevSluzby>
-                    <ceny>400</ceny>
-                    <ceny>300</ceny>
+                    <table>
+                        <tr class="popisky"><th></th><th>Standard</td><th>Studenti</td></tr>
+                        <tr><td class="seznamSluzeb"><p>Úřední</p><p>Konferencí</p></td><td class="cena">800 Kč/<span class="ns">hod</span></td><td class="cena">650 Kč/<span class="ns">hod</span></td></tr>
+                        <tr><td class="seznamSluzeb"><p>Policejní</p></td><td class="cena">1000 Kč/<span class="ns">hod</span></td><td class="cena">750 Kč/<span class="ns">hod</span></td></tr>
+                        <tr><td class="seznamSluzeb"><p>Prezentací</p></td><td class="cena">700 Kč/<span class="ns">hod</span></td><td class="cena">100 Kč/<span class="ns">hod</span></td></tr>
+                    </table>
                 </cena>
             </article>
-            <karta id="cn">
-                <h1>Ceník</h1>
-                <table>
-                    <tr><td></td><td></td><th>Standard</th><th>Studenti</th></tr>
-                    <tr><td rowspan="3">Překlad<br><span><p>Webové stránky jsou účtovány podle počtu objednaných stránek.</p><p>Grafická úprava dokumentů není v ceně zahrnuta.</p></span></td><td>Vědecký článek<br>Interní dokumentace</td><td>400 Kč/<span class="ns">ns</span></td><td>300 Kč/<span class="ns">ns</span></td></tr>
-                    <tr><td>Odborný text<br>Webové stránky</td><td>300 Kč/<span class="ns">ns</span></td><td>200 Kč/<span class="ns">ns</span></td></tr>
-                    <tr><td>Obyčejný text</td><td>250 Kč/<span class="ns">ns</span></td><td>150 Kč/<span class="ns">ns</span></td></tr>
-                    <tr class="spacer"></tr>
-                    <tr><td></td><td></td><th>Standard</th><th>Studenti</th></tr>
-                    <tr><td rowspan="3">Korektura<br><span><p>Webové stránky jsou účtovány podle počtu objednaných stránek.</p><p>Grafická úprava textů není v ceně zahrnuta.</p></span></td><td>Vědecký článek<br>Interní dokumentace</td><td>300 Kč/<span class="ns">ns</span></td><td>200 Kč/<span class="ns">ns</span></td></tr>
-                    <tr><td id="reference">Odborný text<br>Webové stránky</td><td>250 Kč/<span class="ns">ns</span></td><td>150 Kč/<span class="ns">ns</span></td></tr>
-                    <tr><td>Obyčejný text</td><td>200 Kč/<span class="ns">ns</span></td><td>100 Kč/<span class="ns">ns</span></td></tr>
-                    <tr class="spacer"></tr>
-                    <tr><td></td><td></td><th>Standard</th><th>Studenti</th></tr>
-                    <tr><td rowspan="3">Tlumočení<br><span><p>On-site nebo vzdálené tlumočení.</p><p>Mimo 9:00-17:00 je účtován poplatek 250 Kč/hod.</p></span></td><td>Úřední<br>Konferencí</td><td>800 Kč/<span class="ns">hod</span></td><td>650 Kč/<span class="ns">hod</span></td></tr>
-                    <tr><td id="referenced">Policejní</td><td>1 000 Kč/<span class="ns">hod</span></td><td>750 Kč/<span class="ns">hod</span></td></tr>
-                    <tr><td>Prezentací</td><td>700 Kč/<span class="ns">hod</span></td><td>450 Kč/<span class="ns">hod</span></td></tr>
-                </table>
-                <a class="tlacitkoKontrast tlacitkoKontakt" style="margin: 0 auto; margin-top: 2.5rem;">KONTAKTUJTE MĚ</a>
-            </karta>
         </content>
         <links>
             <container>

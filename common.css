@@ -318,10 +318,10 @@ gridPage img {
 }
 
 /* Ostatní */
-tr {
+tr:not(.popisky) {
     transition: 0.5s var(--transSmooth);
 }
-tr:hover {
+tr:not(.popisky):hover {
     background-color: var(--theme2);
     box-shadow: 0 7px 15px rgba(15, 71, 113, 0.05);
 }

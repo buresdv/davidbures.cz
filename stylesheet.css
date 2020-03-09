@@ -286,7 +286,7 @@ nabidka karty {
 #cenikGrid {
     width: 100%;
     grid-template-columns: unset;
-    grid-auto-columns: max-content minmax(300px, 1fr);
+    grid-auto-columns: minmax(min-content, 0.7fr) minmax(300px, 1fr);
     gap: var(--paddingMini2x);
 }
 #cenikGrid h1 {
@@ -302,18 +302,30 @@ popisSluzby h2 {
 cena {
     grid-column: 2;
 
-    border-left: 1px solid var(--themeGray);
 }
 cena table {
     border-collapse: collapse;
     width: 100%;
     vertical-align: top;
 }
-cena table tr {
-    padding: var(--paddingMini);
+
+cena table tr td, .popisky th {
+    padding-right: var(--paddingMini2x);
 }
-cena table td {
+cena table tr td {
     border: none;
+}
+.popisky {
+    text-align: right;
+}
+.seznamSluzeb {
+    padding: var(--paddingMini2x);
+}
+.seznamSluzeb p {
+    margin: 0;
+}
+.cena {
+    text-align: right;
 }
 
 whoami, content, links {
@@ -529,7 +541,6 @@ whoami a:after, section a:after, #cenik-menu a {
 whoami a:hover:after, section a:hover:after {
     -webkit-transform: translateX(0.5rem);
             transform: translateX(0.5rem);
-    /*opacity: 1;*/
 }
 
 .pak h1, td.pak {
@@ -539,56 +550,6 @@ whoami a:hover:after, section a:hover:after {
     color: var(--themeMain);
 }
 
-.spacer {
-    height: 2rem;
-}
-
-#cn table {
-    width: 100%;
-    border-collapse: separate;
-    margin-top: 1rem;
-}
-#cn span:not(.ns) {
-    font-size: 0.95rem;
-    color: var(--themeGray);
-}
-#cn table th {
-    font-size: 0.95rem;
-    padding-bottom: 0;
-    text-align: right; /* TODO: Dát to middle? Prý to má být middle, ale vypadá to divně */
-}
-#cn table td {
-    padding: 0.5vw;
-    line-height: 2.4rem;
-    vertical-align: top;
-}
-#cn table td:first-child {
-    max-width: 25vw;
-}
-#cn table td {
-    padding-left: 1vw;
-}
-#cn table td:nth-last-child(-n+2) {
-    text-align: right;
-    vertical-align: middle;
-}
-#cn table td[rowspan^="3"] {
-    font-weight: 600;
-    font-size: 110%;
-    border-right: 1px solid var(--themeGray);
-    margin-top: 3rem;
-}
-#cn table td[rowspan^="3"] span {
-    display: block;
-    font-weight: 300;
-    line-height: 1.5rem;
-}
-#cn table td[rowspan^="3"] span p {
-    margin: 0.3rem 0;
-}
-#cn table td[rowspan^="3"] span p:first-of-type {
-    margin-top: 0;
-}
 #referenced {
     min-width: 15rem;
 }
@@ -615,10 +576,6 @@ odkazy {
     width: 100%;
     -ms-flex-pack: distribute;
         justify-content: space-around;
-}
-odkazy a {
-    padding: 1vw;
-    border-bottom: 2px solid #1d2ada;
 }
 
 footer {
