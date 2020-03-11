@@ -72,6 +72,12 @@ gridItem:hover gridKarta h3 {
     padding: 0.5rem 0;
     max-height: 5rem;
 }
+section, header, flexing {
+    position: relative;
+}
+section, header {
+    z-index: 20;
+}
 header {
     display: flex;
     padding: 0 10vw;
@@ -94,4 +100,33 @@ footer {
 footer h2 {
     width: 100%;
     text-align: center;
+}
+
+blockquote {
+    border-left: 3px solid var(--themeMain);
+    margin-left: 0;
+    padding-left: 1em;
+}
+podpis {
+    display: grid;
+    justify-items: left;
+    grid-template-columns: min-content auto;
+    grid-template-areas: 
+    "obrazek jmeno"
+    "obrazek funkce";
+}
+podpis * {
+    margin-bottom: 0;
+}
+podpis h4 {
+    grid-area: jmeno;
+}
+podpis p {
+    grid-area: funkce;
+}
+podpis img {
+    grid-area: obrazek;
+    margin-right: var(--paddingMini2x);
+    max-height: 5rem;
+    border-radius: 50%;
 }

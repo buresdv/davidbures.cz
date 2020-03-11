@@ -8,6 +8,7 @@
     --themeMain: #2196F3;
     --theme: #384046;
     --theme2: #FFFFFF;
+    --mainPozadi: #f6fafd;
 
     --themeGray: #93a1ac;
     --themeGrayInverted: #cdd3d8;
@@ -82,7 +83,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-    background-color: #f6fafd;
+    background-color: var(--mainPozadi);
     font-family: 'IBM Plex Sans', sans-serif;
     color: var(--theme);
     font-size: 1.2rem;
@@ -239,7 +240,7 @@ article titulek * {
 }
 text {
     grid-area: text;
-    width: 40ch;
+    width: 45ch;
 }
 article text h4 {
     color: #616e78;
