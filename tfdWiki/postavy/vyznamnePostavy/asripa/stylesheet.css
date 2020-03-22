@@ -1,8 +1,0 @@
-@import url("/gradients.css");
-header:before {
-    background: linear-gradient(var(--km));
-    
-}
-infoImage {
-    background: url(avat.jpg)
-}

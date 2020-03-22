@@ -1,7 +1,0 @@
-@import url("/gradients.css");
-header:before {
-    background: linear-gradient(var(--hz));
-}
-infoImage {
-    background: url(avat.png);
-}
