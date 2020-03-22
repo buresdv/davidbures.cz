@@ -154,7 +154,7 @@ $(document).ready(function(){
     $(".sluzbaVyhledavani.tlumoceni").easyAutocomplete(optionsTlumoceni);
 
     //Ostatní úpravy
-    $(document).on('keyup', ' input[type="number"]', function(e) {
+    $(document).on('keyup', 'input[type="number"]', function(e) {
         prepocitatCenu();
         pridatNormostrany();
     });
