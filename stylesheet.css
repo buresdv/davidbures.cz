@@ -869,104 +869,42 @@ transformer {
     -webkit-animation: zmenseniTransformera 1s;
             animation: zmenseniTransformera 1s;
 }
-@-webkit-keyframes zmenseniTransformera {
-    0% {
-        -webkit-transform: scale(1);
-                transform: scale(1);
-        -webkit-filter: saturate(100%);
-                filter: saturate(100%);
-        -webkit-filter: opacity(1);
-                filter: opacity(1);
-    }
-    50% {
-        -webkit-filter: blur(70%);
-                filter: blur(70%);
-        -webkit-filter: opacity(0.1);
-                filter: opacity(0.1);
-    }
-    100% {
-        -webkit-transform: scale(0.95);
-                transform: scale(0.95);
-        -webkit-filter: saturate(70%);
-                filter: saturate(70%);
-        -webkit-filter: opacity(0.1);
-                filter: opacity(0.1);
-    }
-}
 @keyframes zmenseniTransformera {
     0% {
-        -webkit-transform: scale(1);
-                transform: scale(1);
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
         -webkit-filter: saturate(100%);
                 filter: saturate(100%);
-        -webkit-filter: opacity(1);
-                filter: opacity(1);
-    }
-    50% {
-        -webkit-filter: blur(70%);
-                filter: blur(70%);
-        -webkit-filter: opacity(0.1);
-                filter: opacity(0.1);
     }
     100% {
-        -webkit-transform: scale(0.95);
-                transform: scale(0.95);
-        -webkit-filter: saturate(70%);
+            -webkit-transform: translateY(-10vh);
+                transform: translateY(-10vh);
+            -webkit-filter: saturate(70%);
                 filter: saturate(70%);
-        -webkit-filter: opacity(0.1);
-                filter: opacity(0.1);
-    }
+            -moz-transform: translateY(-10vh);
+            -ms-transform: translateY(-10vh);
+            -o-transform: translateY(-10vh);
+}
 }
 .transformerNeaktivni {
     -webkit-animation: 1s zvetseniTransformera;
             animation: 1s zvetseniTransformera;
 }
-@-webkit-keyframes zvetseniTransformera {
-    1% {
-        -webkit-transform: scale(0.95);
-                transform: scale(0.95);
-        -webkit-filter: saturate(70%);
-                filter: saturate(70%);
-        -webkit-filter: opacity(0.1);
-                filter: opacity(0.1);
-    }
-    50% {
-        -webkit-filter: blur(70%);
-                filter: blur(70%);
-        -webkit-filter: opacity(0.1);
-                filter: opacity(0.1);
-    }
-    100% {
-        -webkit-transform: scale(1);
-                transform: scale(1);
-        -webkit-filter: saturate(100%);
-                filter: saturate(100%);
-        -webkit-filter: opacity(1);
-                filter: opacity(1);
-    }
-}
 @keyframes zvetseniTransformera {
-    1% {
-        -webkit-transform: scale(0.95);
-                transform: scale(0.95);
-        -webkit-filter: saturate(70%);
+    0% {
+            -webkit-transform: translateY(-10vh);
+                transform: translateY(-10vh);
+            -webkit-filter: saturate(70%);
                 filter: saturate(70%);
-        -webkit-filter: opacity(0.1);
-                filter: opacity(0.1);
-    }
-    50% {
-        -webkit-filter: blur(70%);
-                filter: blur(70%);
-        -webkit-filter: opacity(0.1);
-                filter: opacity(0.1);
-    }
+            -moz-transform: translateY(-10vh);
+            -ms-transform: translateY(-10vh);
+            -o-transform: translateY(-10vh);
+}
     100% {
-        -webkit-transform: scale(1);
-                transform: scale(1);
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
         -webkit-filter: saturate(100%);
                 filter: saturate(100%);
-        -webkit-filter: opacity(1);
-                filter: opacity(1);
     }
 }
 .modalAktivni, .modalNeaktivni, .transformerAktivni, .transformerNeaktivni {

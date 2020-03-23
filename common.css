@@ -191,9 +191,6 @@ bar .tlacitkoKontrast:hover {
     box-shadow: 0 7px 15px rgba(15, 71, 113, 0.25);
     transform: translateY(-1px) !important;
 }
-.tlacitkoPerspektiva {
-    display: inline-block;
-}
 
 h1, h2, h3 {
     font-family: "Nunito", sans-serif;
@@ -323,9 +320,35 @@ gridPage img {
 
 /* Ostatní */
 tr:not(.popisky) {
-    transition: 0.5s var(--transSmooth);
+    position: relative;
 }
-tr:not(.popisky):hover {
+tr:not(.popisky):after {
+    content: "E";
+    position: absolute;
+    width: 150vw;
+    height: 100%;
+    left: -50vw;
+    transform: translateY(1rem);
     background-color: var(--theme2);
     box-shadow: 0 7px 15px rgba(15, 71, 113, 0.05);
+    z-index: -1;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: 0.5s var(--transSmooth);
+
+    -webkit-transform: translateY(1rem);
+    -moz-transform: translateY(1rem);
+    -ms-transform: translateY(1rem);
+    -o-transform: translateY(1rem);
+}
+tr:not(.popisky):hover:after {
+    opacity: 1;
+
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
 }
