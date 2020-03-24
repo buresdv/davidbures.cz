@@ -14,6 +14,10 @@ input[type="submit"], input[type="reset"] {
     cursor: pointer;
 }
 
+article {
+    margin: 10vh unset;
+}
+
 .atd {
     position: relative;
     display: inline-block;
@@ -529,19 +533,6 @@ obrazky img, obrazky svg {
     color: var(--themeGray);
     font-size: 60%;
 }
-whoami a:after, section a:after, #cenik-menu a {
-    content: "⇀";
-    position: absolute;
-    color: #1d2ada;
-    font-weight: 600;
-    margin-left: 0.25rem;
-    -webkit-transition: 0.3s ease-in-out;
-    transition: 0.3s ease-in-out;
-}
-whoami a:hover:after, section a:hover:after {
-    -webkit-transform: translateX(0.5rem);
-            transform: translateX(0.5rem);
-}
 
 .pak h1, td.pak {
     color: var(--themeMain);
@@ -801,11 +792,14 @@ pravaStrana tr td:nth-child(2n) {
 }
 @-webkit-keyframes modalOpen {
     1% {
-        display: -webkit-box;
-        display: flex;
-        -webkit-transform: scale(0);
+                display: -webkit-box;
+                display: flex;
+                -webkit-transform: scale(0);
                 transform: scale(0);
-    }
+                -moz-transform: scale(0);
+                -ms-transform: scale(0);
+                -o-transform: scale(0);
+}
     100% {
         -webkit-transform: scale(1);
                 transform: scale(1);
@@ -871,19 +865,22 @@ transformer {
 }
 @keyframes zmenseniTransformera {
     0% {
-        -webkit-transform: translateY(0);
-                transform: translateY(0);
-        -webkit-filter: saturate(100%);
+                -webkit-transform: translateY(0) ;
+                transform: translateY(0) ;
+                -webkit-filter: saturate(100%);
                 filter: saturate(100%);
-    }
+                -moz-transform: translateY(0) ;
+                -ms-transform: translateY(0) ;
+                -o-transform: translateY(0) ;
+}
     100% {
-            -webkit-transform: translateY(-10vh);
+                -webkit-transform: translateY(-10vh);
                 transform: translateY(-10vh);
-            -webkit-filter: saturate(70%);
+                -webkit-filter: saturate(70%);
                 filter: saturate(70%);
-            -moz-transform: translateY(-10vh);
-            -ms-transform: translateY(-10vh);
-            -o-transform: translateY(-10vh);
+                -moz-transform: translateY(-10vh);
+                -ms-transform: translateY(-10vh);
+                -o-transform: translateY(-10vh);
 }
 }
 .transformerNeaktivni {
@@ -892,20 +889,23 @@ transformer {
 }
 @keyframes zvetseniTransformera {
     0% {
-            -webkit-transform: translateY(-10vh);
+                -webkit-transform: translateY(-10vh);
                 transform: translateY(-10vh);
-            -webkit-filter: saturate(70%);
+                -webkit-filter: saturate(70%);
                 filter: saturate(70%);
-            -moz-transform: translateY(-10vh);
-            -ms-transform: translateY(-10vh);
-            -o-transform: translateY(-10vh);
+                -moz-transform: translateY(-10vh);
+                -ms-transform: translateY(-10vh);
+                -o-transform: translateY(-10vh);
 }
     100% {
-        -webkit-transform: translateY(0);
+                -webkit-transform: translateY(0);
                 transform: translateY(0);
-        -webkit-filter: saturate(100%);
+                -webkit-filter: saturate(100%);
                 filter: saturate(100%);
-    }
+                -moz-transform: translateY(0);
+                -ms-transform: translateY(0);
+                -o-transform: translateY(0);
+}
 }
 .modalAktivni, .modalNeaktivni, .transformerAktivni, .transformerNeaktivni {
     -webkit-animation-fill-mode: forwards;
@@ -936,9 +936,6 @@ buttonContainer a {
 }
 #vypocet {
     display: none;
-}
-#cn table td[rowspan^="3"] {
-    
 }
 /* MOBILIZACE KONEC */
 
