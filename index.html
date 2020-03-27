@@ -47,7 +47,7 @@
                     <form method="POST" action="formularZP.php">
                         <input type="hidden" name="cenaHack" id="cenaHack">
                         Váš email:
-                        <input type="email" name="email" placeholder="vas@email.cz">
+                        <input type="email" name="email" placeholder="vas@email.cz" required>
 
                             Vyberte si službu: 
                             <buttonContainer class="inlineBlocker">
@@ -57,9 +57,9 @@
                             </buttonContainer>
                         <vybranPreklad class="vybrat">
                             Co chcete přeložit?
-                            <input type="text" name="sluzba[]" class="sluzbaVyhledavani preklad" placeholder="Vědecký text, rodný list apod." class="hledani">                                
+                            <input type="text" name="sluzba[]" class="sluzbaVyhledavani preklad" placeholder="Vědecký text, rodný list apod." class="hledani" required>                                
                             Kolik normostran? <span class="normostrana">Normostrana = 250 slov</span>
-                            <input type="number" name="stranky[]" placeholder="0-900">
+                            <input type="number" name="stranky[]" placeholder="0-900" required>
 
                             <inlineContainer>
                                 <input type="checkbox" name="zahrnoutKorekturu[]" value="zahrnoutKorekturu">Zahrnout korekturu
@@ -71,7 +71,7 @@
                         <vybranaKorektura class="vybrat">
                             <inlineContiner>
                                 Čeho chcete provést korekturu?
-                                <input type="text" name="sluzba[]" class="sluzbaVyhledavani korektura" placeholder="Vědecký text, rodný list apod." class="hledani">
+                                <input type="text" name="sluzba[]" class="sluzbaVyhledavani korektura" placeholder="Vědecký text, rodný list apod." class="hledani" required>
                             </inlineContiner>
                             Kolik normostran? <span class="normostrana">Normostrana = 250 slov</span>
                             <input type="number" name="stranky[]" placeholder="0-900">
@@ -82,9 +82,9 @@
                         </vybranaKorektura>
                         <vybranoTlumoceni class="vybrat">
                             Co chcete přetlumočit?
-                            <input type="text" name="sluzba[]" class="sluzbaVyhledavani tlumoceni" placeholder="Konferenci, úřední komunikaci apod." class="hledani">
+                            <input type="text" name="sluzba[]" class="sluzbaVyhledavani tlumoceni" placeholder="Konferenci, úřední komunikaci apod." class="hledani" required>
                             Kolik hodin bude vaše zakázka přibližně trvat?
-                            <input type="number" name="stranky[]" placeholder="0-900">
+                            <input type="number" name="stranky[]" placeholder="0-900" required>
                             <inlineContainer>
                                 <input type="checkbox" name="mimoStandardniHodiny[]" value="mimoStandardniHodiny">Zakázka mimo 9:00 - 17:00
                             </inlineContainer>
@@ -95,7 +95,7 @@
                         </inlineContainer>-->
                         <!--<br>Přiložte, co chcete přeložit:
                         <input type="file" id="myFile">-->
-                        <input type="submit" value="Odeslat" id="kontaktFormularOdeslat" style="margin-top: 1.5vw;">
+                        <input type="submit" value="ODESLAT" id="kontaktFormularOdeslat" class="tlacitkoKontrast" style="align-self: center; padding: 1rem 2rem; margin-top: 1.5vw;">
                         <spinner class="hidden"></spinner>
                         <spinnerUnder>✓</spinnerUnder>
                     </form>
@@ -305,10 +305,10 @@
                 <cena>
                     <table>
                         <tr class="popisky"><th></th><th>Standard</td><th>Studenti</td></tr>
-                        <tr><td class="seznamSluzeb"><p>Webové stránky</p></td><td class="cena">od 300 Kč/<span class="ns">stránka</span></td><td class="cena">od 200 Kč/<span class="ns">stránka</span></td></tr>
-                        <tr><td class="seznamSluzeb"><p>Vědecký text</p><p>Interní dokumentace</p></td><td class="cena">400 Kč/<span class="ns">ns</span></td><td class="cena">300 Kč/<span class="ns">ns</span></td></tr>
-                        <tr><td class="seznamSluzeb"><p>Technický a jiný odborný text</p></td><td class="cena">300 Kč/<span class="ns">ns</span></td><td class="cena">200 Kč/<span class="ns">ns</span></td></tr>
-                        <tr><td class="seznamSluzeb"><p>Obyčejný text</p></td><td class="cena">250 Kč/<span class="ns">ns</span></td><td class="cena">150 Kč/<span class="ns">ns</span></td></tr>
+                        <div class="rowWrapper"><tr><td class="seznamSluzeb"><p>Webové stránky</p></td><td class="cena">od 300 Kč/<span class="ns">stránka</span></td><td class="cena">od 200 Kč/<span class="ns">stránka</span></td></tr></div>
+                        <div class="rowWrapper"><tr><td class="seznamSluzeb"><p>Vědecký text</p><p>Interní dokumentace</p></td><td class="cena">400 Kč/<span class="ns">ns</span></td><td class="cena">300 Kč/<span class="ns">ns</span></td></tr></div>
+                        <div class="rowWrapper"><tr><td class="seznamSluzeb"><p>Technický a jiný odborný text</p></td><td class="cena">300 Kč/<span class="ns">ns</span></td><td class="cena">200 Kč/<span class="ns">ns</span></td></tr></div>
+                        <div class="rowWrapper"><tr><td class="seznamSluzeb"><p>Obyčejný text</p></td><td class="cena">250 Kč/<span class="ns">ns</span></td><td class="cena">150 Kč/<span class="ns">ns</span></td></tr></div>
                     </table>
                 </cena>
                 <popisSluzby>
@@ -318,10 +318,10 @@
                 <cena>
                     <table>
                         <tr class="popisky"><th></th><th>Standard</td><th>Studenti</td></tr>
-                        <tr><td class="seznamSluzeb"><p>Webové stránky</p></td><td class="cena">od 250 Kč/<span class="ns">stránka</span></td><td class="cena">od 150 Kč/<span class="ns">stránka</span></td></tr>
-                        <tr><td class="seznamSluzeb"><p>Vědecký text</p><p>Interní dokumentace</p></td><td class="cena">300 Kč/<span class="ns">ns</span></td><td class="cena">200 Kč/<span class="ns">ns</span></td></tr>
-                        <tr><td class="seznamSluzeb"><p>Technický a jiný odborný text</p></td><td class="cena">250 Kč/<span class="ns">ns</span></td><td class="cena">150 Kč/<span class="ns">ns</span></td></tr>
-                        <tr><td class="seznamSluzeb"><p>Obyčejný text</p></td><td class="cena">200 Kč/<span class="ns">ns</span></td><td class="cena">100 Kč/<span class="ns">ns</span></td></tr>
+                        <div class="rowWrapper"><tr><td class="seznamSluzeb"><p>Webové stránky</p></td><td class="cena">od 250 Kč/<span class="ns">stránka</span></td><td class="cena">od 150 Kč/<span class="ns">stránka</span></td></tr></div>
+                        <div class="rowWrapper"><tr><td class="seznamSluzeb"><p>Vědecký text</p><p>Interní dokumentace</p></td><td class="cena">300 Kč/<span class="ns">ns</span></td><td class="cena">200 Kč/<span class="ns">ns</span></td></tr></div>
+                        <div class="rowWrapper"><tr><td class="seznamSluzeb"><p>Technický a jiný odborný text</p></td><td class="cena">250 Kč/<span class="ns">ns</span></td><td class="cena">150 Kč/<span class="ns">ns</span></td></tr></div>
+                        <div class="rowWrapper"><tr><td class="seznamSluzeb"><p>Obyčejný text</p></td><td class="cena">200 Kč/<span class="ns">ns</span></td><td class="cena">100 Kč/<span class="ns">ns</span></td></tr></div>
                     </table>
                 </cena>
                 <popisSluzby>
@@ -331,9 +331,9 @@
                 <cena>
                     <table>
                         <tr class="popisky"><th></th><th>Standard</td><th>Studenti</td></tr>
-                        <tr><td class="seznamSluzeb"><p>Úřední</p><p>Konferencí</p></td><td class="cena">800 Kč/<span class="ns">hod</span></td><td class="cena">650 Kč/<span class="ns">hod</span></td></tr>
-                        <tr><td class="seznamSluzeb"><p>Policejní</p></td><td class="cena">1000 Kč/<span class="ns">hod</span></td><td class="cena">750 Kč/<span class="ns">hod</span></td></tr>
-                        <tr><td class="seznamSluzeb"><p>Prezentací</p></td><td class="cena">700 Kč/<span class="ns">hod</span></td><td class="cena">100 Kč/<span class="ns">hod</span></td></tr>
+                        <div class="rowWrapper"><tr><td class="seznamSluzeb"><p>Úřední</p><p>Konferencí</p></td><td class="cena">800 Kč/<span class="ns">hod</span></td><td class="cena">650 Kč/<span class="ns">hod</span></td></tr></div>
+                        <div class="rowWrapper"><tr><td class="seznamSluzeb"><p>Policejní</p></td><td class="cena">1000 Kč/<span class="ns">hod</span></td><td class="cena">750 Kč/<span class="ns">hod</span></td></tr></div>
+                        <div class="rowWrapper"><tr><td class="seznamSluzeb"><p>Prezentací</p></td><td class="cena">700 Kč/<span class="ns">hod</span></td><td class="cena">100 Kč/<span class="ns">hod</span></td></tr></div>
                     </table>
                 </cena>
             </article>
