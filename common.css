@@ -1,6 +1,6 @@
 /* Fonty */
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,500,500i,600,700&subset=latin-ext');
-@import url('https://fonts.googleapis.com/css?family=PT+Mono&display=swap&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700&display=swap&subset=latin-ext');
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,400i,600,600i,700,700i&display=swap&subset=latin-ext');
 
 /* Barvy */
@@ -11,7 +11,8 @@
     --mainPozadi: #f6fafd;
 
     --themeGray: #93a1ac;
-    --themeGrayInverted: #cdd3d8;
+    --themeGrayInverted: #dde1e5;
+    --themeGrayInverted2: #40a6f5;
 
     --themeHighlight: rgba(255, 93, 115, 1);
     --themeLightMain: #e5f3fd;
@@ -26,6 +27,7 @@
     --paddingMini: 0.6rem;
     --paddingMini2x: 1.2rem;
     --padding: 1rem;
+    --paddingMedium: 2.4rem;
     --paddingLayout: 5rem;
 
     --hoverOffset: 1px;
@@ -49,16 +51,16 @@
 }
 
 ::-webkit-input-placeholder {
-    color: var(--themeGrayInverted);
+    color: var(--themeGrayInverted2);
 }
 :-ms-input-placeholder {
-    color: var(--themeGrayInverted);
+    color: var(--themeGrayInverted2);
 }
 ::-ms-input-placeholder {
-    color: var(--themeGrayInverted);
+    color: var(--themeGrayInverted2);
 }
 ::placeholder {
-    color: var(--themeGrayInverted);
+    color: var(--themeGrayInverted2);
 }
 input[type="submit"], input[type="reset"] {
 	background: none;
@@ -197,10 +199,12 @@ bar .tlacitkoKontrast:hover {
 }
 .tlacitko:hover, button:hover {
     box-shadow: 0 8px 20px rgba(15, 71, 113, 0.40);
+    transform: translateY(-3px)
 }
 .tlacitko:active, button:active {
     box-shadow: 0 7px 15px rgba(15, 71, 113, 0.25);
     transform: translateY(-1px) !important;
+    transition: 0.2s var(--transSmooth);
 }
 
 h1, h2, h3 {
@@ -419,6 +423,7 @@ buttonContainer {
         align-self: flex-start;
     -webkit-box-sizing: content-box;
             box-sizing: content-box;
+    margin-top: 1rem;
     background-color: var(--theme2);
     border-radius: 10px;
     -webkit-box-shadow: 0 7px 65px rgba(15, 71, 113, 0.12);
@@ -427,10 +432,17 @@ buttonContainer {
 }
 buttonContainer a {
     position: relative;
+    color: var(--themeMain) !important;
+    text-decoration: none !important;
+    font-weight: 500;
     cursor: pointer;
     display: inline-block;
-    padding: 1vw;
+    padding: 1rem;
     z-index: 10;
+    transition: none !important;
+}
+buttonContainer a.activeSelection {
+    color: var(--theme2) !important;
 }
 buttonContainer a.activeSelection::after {
     content: "";
@@ -439,7 +451,7 @@ buttonContainer a.activeSelection::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--themeHoverBackground);
+    background-color: var(--themeMain);
     z-index: -1;
 }
 
@@ -462,13 +474,15 @@ levaStrana form span {
 }
 levaStrana input[type="email"], levaStrana input[type="text"], levaStrana input[type="number"] {
     position: relative;
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: var(--paddingMedium);
+    padding: 0.8rem;
     width: 100%;
-    padding: 1rem;
-    margin-bottom: 1.5vw;
-
-    background-color: var(--theme2);
-
-    border: 1px solid #dce1e4;
+    background: #FFFFFF;
+    border: 1px solid #dff0fd;
+    box-sizing: border-box;
+    box-shadow: 0px 5px 17px rgba(15, 71, 113, 0.06);
 }
 input[type="checkbox"] {
     display: inline;
@@ -476,7 +490,7 @@ input[type="checkbox"] {
 }
 .vybrat {
     display: none;
-    margin-top: 1.5vw;
+    margin-top: var(--paddingMedium);
 }
 .vybrano {
     display: block;
@@ -489,6 +503,7 @@ inlineContainer {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    margin-bottom: 0.4rem;
 }
 inlineContainer * {
     display: inline;
@@ -553,14 +568,17 @@ pravaStrana p:first-of-type {
     margin: 0;
 }
 pravaStrana table {
-    font-family: 'PT Mono', monospace;
-    font-size: 75%;
+    font-family: 'Inconsolata', monospace;
+    font-weight: 600;
+    font-size: 80%;
+    letter-spacing: 0.05rem;
     width: 100%;
     border-collapse: collapse;
 }
 pravaStrana tr td:nth-child(1n) {
     color: var(--themeGrayInverted);
     text-align: left;
+    padding-bottom: 0.2rem;
 }
 pravaStrana tr td:nth-child(2n) {
     color: var(--theme2);
@@ -643,51 +661,29 @@ transformer {
     will-change: transform, filter, opacity;
 }
 .transformerAktivni {
-    -webkit-animation: zmenseniTransformera 1s;
-            animation: zmenseniTransformera 1s;
+    animation: zmenseniTransformera 1s;
 }
 @keyframes zmenseniTransformera {
     0% {
-                -webkit-transform: translateY(0) ;
-                transform: translateY(0) ;
-                -webkit-filter: saturate(100%);
-                filter: saturate(100%);
-                -moz-transform: translateY(0) ;
-                -ms-transform: translateY(0) ;
-                -o-transform: translateY(0) ;
+        transform: translateY(0) ;
+        filter: saturate(100%) opacity(1);
 }
     100% {
-                -webkit-transform: translateY(-10vh);
-                transform: translateY(-10vh);
-                -webkit-filter: saturate(70%);
-                filter: saturate(70%);
-                -moz-transform: translateY(-10vh);
-                -ms-transform: translateY(-10vh);
-                -o-transform: translateY(-10vh);
+        transform: translateY(-10vh);
+        filter: saturate(70%) opacity(0.1);
 }
 }
 .transformerNeaktivni {
-    -webkit-animation: 1s zvetseniTransformera;
-            animation: 1s zvetseniTransformera;
+    animation: 1s zvetseniTransformera;
 }
 @keyframes zvetseniTransformera {
     0% {
-                -webkit-transform: translateY(-10vh);
-                transform: translateY(-10vh);
-                -webkit-filter: saturate(70%);
-                filter: saturate(70%);
-                -moz-transform: translateY(-10vh);
-                -ms-transform: translateY(-10vh);
-                -o-transform: translateY(-10vh);
+        transform: translateY(-10vh);
+        filter: saturate(70%) opacity(0.1);
 }
     100% {
-                -webkit-transform: translateY(0);
-                transform: translateY(0);
-                -webkit-filter: saturate(100%);
-                filter: saturate(100%);
-                -moz-transform: translateY(0);
-                -ms-transform: translateY(0);
-                -o-transform: translateY(0);
+        transform: translateY(0);
+        filter: saturate(100%) opacity(1);
 }
 }
 .modalAktivni, .modalNeaktivni, .transformerAktivni, .transformerNeaktivni {

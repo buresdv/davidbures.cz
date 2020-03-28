@@ -238,10 +238,4 @@ $(document).ready(function(){
         });
         return false;
     });
-    //Pass ceny do PHP
-    /*$('#kontaktFormularOdeslat').on("click", function() {
-        $.post('formularZP.php', 'vypocitanaCena=' + konecnaCena, function(response) {
-            alert("E");
-        });
-    });*/
 });
