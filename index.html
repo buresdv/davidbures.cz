@@ -41,7 +41,7 @@
         <script src="script.js"></script>
     </head>
     <body>
-        <objednaniModalOverlay>
+        <objednaniModalOverlay class="modalNeaktivni">
             <objednaniModal>
                 <levaStrana>
                     <form method="POST" action="formularZP.php">
@@ -49,12 +49,14 @@
                         Váš email:
                         <input type="email" name="email" placeholder="vas@email.cz" required>
 
-                            Vyberte si službu: 
-                            <buttonContainer class="inlineBlocker">
+                        <paneSwitcher>
+                            <p class="dodatek">Vyberte si službu</p> 
+                            <buttonContainer>
                                 <a>Překlad</a>
                                 <a>Korektura</a>
                                 <a>Tlumočení</a>
                             </buttonContainer>
+                        </paneSwitcher>
                         <vybranPreklad class="vybrat">
                             Co chcete přeložit?
                             <input type="text" name="sluzba[]" class="sluzbaVyhledavani preklad" placeholder="Vědecký text, rodný list apod." class="hledani" required>                                
@@ -95,8 +97,8 @@
                         </inlineContainer>-->
                         <!--<br>Přiložte, co chcete přeložit:
                         <input type="file" id="myFile">-->
-                        <input type="submit" value="ODESLAT" id="kontaktFormularOdeslat" class="tlacitkoKontrast" style="align-self: center; padding: 1rem 2rem; margin-top: 1.5vw;">
-                        <spinner class="hidden"></spinner>
+                        <input type="submit" value="ODESLAT" id="kontaktFormularOdeslat" class="tlacitkoKontrast skryto">
+                        <spinner class="skryto"></spinner>
                         <spinnerUnder>✓</spinnerUnder>
                     </form>
                 </levaStrana>
@@ -108,19 +110,19 @@
                     <h1 class="konecnaCenaValue">0 Kč</h1>
                     <div id="vypocet">
                         <table>
-                            <tr id="zduvodneniCeny" class="hidden">
+                            <tr id="zduvodneniCeny" class="skryto">
                                 <td colspan="2" style="color: #fff; text-align: right !important;">Proč je tlumočení tak drahé?</td>
                             </tr>
                             <tr>
                                 <td id="vychoziCena">Výchozí cena za stránku:</td><td id="vychoziCenaValue"></td>
                             </tr>
-                            <tr class="hidden" id="korekturaRow">
+                            <tr class="skryto" id="korekturaRow">
                                 <td id="korekturaCena">Korektura:</td><td id="korekturaCenaValue"></td>
                             </tr>
-                            <tr class="hidden" id="grafickaUpravaRow">
+                            <tr class="skryto" id="grafickaUpravaRow">
                                 <td id="grafickaUpravaCena">Grafická úprava:</td><td id="grafickaUpravaCenaValue">+ 200</td>
                             </tr>
-                            <tr class="hidden" id="mimoStandardniHodinyRow">
+                            <tr class="skryto" id="mimoStandardniHodinyRow">
                                 <td id="standardHodinyCena">Mimo standardní hodiny:</td><td id="standardHodinyCenaValue">+ 250</td>
                             </tr>
                             <tr class="rovnaSe">

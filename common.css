@@ -164,6 +164,9 @@ bar .tlacitkoKontrast:hover {
     font-size: 0.95rem;
     margin: 0.3rem 0;
 }
+.skryto {
+    display: none;
+}
 
 /* Často používané elementy */
 .tlacitkoKontrast, bar .tlacitkoKontrast::before, input[type="submit"] {
@@ -418,16 +421,20 @@ levaStrana {
     background-color: var(--mainPozadi);
     width: 35vw;
 }
+paneSwitcher {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+paneSwitcher p {
+    margin: 0;
+}
 buttonContainer { 
-    -ms-flex-item-align: start; 
-        align-self: flex-start;
-    -webkit-box-sizing: content-box;
-            box-sizing: content-box;
+    box-sizing: content-box;
     margin-top: 1rem;
     background-color: var(--theme2);
     border-radius: 10px;
-    -webkit-box-shadow: 0 7px 65px rgba(15, 71, 113, 0.12);
-            box-shadow: 0 7px 65px rgba(15, 71, 113, 0.12);
+    box-shadow: 0 7px 65px rgba(15, 71, 113, 0.12);
     overflow: hidden;
 }
 buttonContainer a {
@@ -483,6 +490,12 @@ levaStrana input[type="email"], levaStrana input[type="text"], levaStrana input[
     border: 1px solid #dff0fd;
     box-sizing: border-box;
     box-shadow: 0px 5px 17px rgba(15, 71, 113, 0.06);
+
+    transition: 0.2s var(--transSmooth);
+}
+levaStrana input[type="email"]:focus, levaStrana input[type="text"]:focus, levaStrana input[type="number"]:focus {
+    border: 1px solid #6bbaf7;
+    box-shadow: 0px 5px 5px rgba(15, 71, 113, 0.02);
 }
 input[type="checkbox"] {
     display: inline;
@@ -513,13 +526,13 @@ inlineContainer * {
   }
   
 .easy-autocomplete input {
-width: 100%;
+    width: 100%;
 }
 .easy-autocomplete-container {
     position: absolute;
     background-color: var(--theme2);
 
-    margin-top: -1.4vw;
+    margin-top: -2vw;
 
     border-radius: 5px;
     border-top-left-radius: 0;
@@ -545,6 +558,12 @@ width: 100%;
 .easy-autocomplete-container ul li:hover {
     background-color: var(--themeHoverBackground)
 }
+#kontaktFormularOdeslat {
+    align-self: center;
+    padding: 1rem 2rem;
+    margin-top: var(--paddingMedium);
+}
+
 pravaStrana {
     position: relative;
     color: var(--theme2);

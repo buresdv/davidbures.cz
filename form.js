@@ -1,6 +1,5 @@
 $(document).ready(function(){
     $.ajaxSetup({ cache: false });
-    console.log("Ay");
 
     //Otevírání a zavírání formuláře
     $('.tlacitkoKontakt').click(function() {
@@ -23,6 +22,7 @@ $(document).ready(function(){
     $(document).on('click', 'buttonContainer a', function(e){
         $('buttonContainer a').removeClass('activeSelection');
         $(this).addClass('activeSelection');
+        $('#kontaktFormularOdeslat').removeClass('skryto');
 
         if(vychoziCena != 0) {
             vychoziCena = 0;
