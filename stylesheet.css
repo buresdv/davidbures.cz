@@ -6,6 +6,11 @@ article {
     margin: 10vh unset;
 }
 
+article text a {
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
 .atd {
     position: relative;
     display: inline-block;
@@ -58,6 +63,11 @@ article {
     visibility: visible;
     opacity: 1;
     left: 100%;
+}
+
+content {
+    display: flex;
+    flex-direction: column;
 }
 
 bImage {
@@ -243,10 +253,13 @@ nabidka {
     flex-direction: column;
     margin-top: 10rem;
 }
-nabidka h1 {
+nabidka h1, .fullWidthNadpis {
     background-color: var(--theme2);
     text-align: center;
     margin-top: 0;
+}
+.fullWidthNadpis {
+    margin-top: 10vh;
 }
 nabidka karty {
     display: grid;
@@ -254,7 +267,8 @@ nabidka karty {
 }
 
 #cenikGrid {
-    width: 100%;
+    align-self: center;
+    width: 80vw;
     grid-template-columns: unset;
     grid-auto-columns: minmax(min-content, 0.7fr) minmax(300px, 1fr);
     gap: var(--paddingMini2x);
@@ -298,7 +312,7 @@ cena table tr td {
     text-align: right;
 }
 
-whoami, content, links {
+whoami, links {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -314,11 +328,20 @@ whoami, content, links {
     z-index: 2;
 }
 
-#whoami li {
-    list-style-type: none;
-    margin-bottom: 1rem;
+gridpage ul {
+    font-size: 90%;
+    padding-left: 1.3em;
 }
-#whoami li:before {
+gridpage li, #whoami li {
+    list-style-type: none;
+}
+gridpage li {
+    margin-top: var(--paddingMini);
+}
+#whoami li {
+    margin-bottom: var(--padding);
+}
+gridpage li:before, #whoami li:before {
     content: ""; 
     display: inline-block;
     margin-left: -1.3em; 
@@ -585,9 +608,6 @@ buttonContainer a {
     }
     header a {
         padding: 2vw;
-    }
-    content {
-        padding: 0;    
     }
     whoami {
         margin-top: 2vh;

@@ -44,8 +44,4 @@ $(document).ready(function () {
         $(thumbKarty).get(0).style.setProperty("top", "2rem");
         $(thumbKarty).get(0).style.setProperty("background", puvodniThumb);
     });
-
-    VanillaTilt.init(document.querySelector(".tlacitkoPerspektiva"), {
-		reverse: true
-	});
 });

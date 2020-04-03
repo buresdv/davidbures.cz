@@ -168,33 +168,33 @@ $(document).ready(function(){
     function prepocitatCenu() {
         //Je zatržená korektura?
         if ($('input[name="zahrnoutKorekturu[]"]').is(':checked')) {
-            $('#korekturaRow').removeClass('hidden');
+            $('#korekturaRow').removeClass('skryto');
             $("#korekturaCenaValue").html("+ " + korekturaCena);
             korekturaCenaModifier = 0;
         } else {
-            $('#korekturaRow').addClass('hidden');
+            $('#korekturaRow').addClass('skryto');
             korekturaCenaModifier = korekturaCena;
         }
 
         //Je zatržená grafická úprava?
         if ($('input[name="grafickaUprava[]"]').is(':checked')) {
-            $('#grafickaUpravaRow').removeClass('hidden');
+            $('#grafickaUpravaRow').removeClass('skryto');
             grafickaUpravaCena = 200;
         } else {
-            $('#grafickaUpravaRow').addClass('hidden');
+            $('#grafickaUpravaRow').addClass('skryto');
             grafickaUpravaCena = 0;
         }
         //Je zatržená zakázka mimo normální dobu?
         if ($('input[name="mimoStandardniHodiny[]"]').is(':checked')) {
             standardniHodinyCena = 250;
-            $('#mimoStandardniHodinyRow').removeClass('hidden');
+            $('#mimoStandardniHodinyRow').removeClass('skryto');
         } else {
-            $('#mimoStandardniHodinyRow').addClass('hidden');
+            $('#mimoStandardniHodinyRow').addClass('skryto');
             standardniHodinyCena = 0;
         }
 
         strankaCena = Number(vychoziCena)  + standardniHodinyCena + korekturaCena + grafickaUpravaCena - korekturaCenaModifier;
-        
+
         $('#strankaCenaValue').html(strankaCena);
     }
 
@@ -224,7 +224,7 @@ $(document).ready(function(){
 
     $('form').on("submit", function(e) {
         e.preventDefault();
-        $('spinner').removeClass('hidden');
+        $('spinner').removeClass('skryto');
         $('input[type="submit"]').addClass("odesilani");
 
         $.ajax({
