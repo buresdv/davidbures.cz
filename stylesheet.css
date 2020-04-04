@@ -596,57 +596,11 @@ buttonContainer a {
 }*/
 /* MOBILIZACE KONEC */
 
-@media screen and (max-device-width: 900px) {
-    bar a:last-child {
-        margin-left: 5vw;
+@media screen and (max-device-width: 800px) {
+    obrazky * {
+        max-height: 1.5rem;
     }
-    header {
-        padding: 5vh 15vw;
-    }
-    header h1 {
-        font-size: 180%;
-    }
-    header a {
-        padding: 2vw;
-    }
-    whoami {
-        margin-top: 2vh;
-    }
-    whoami img {
-        display: none;
-    }
-    section {
-        width: 100%;
-    }
-    whoami, karta {
-        padding: 7vw;
-    }
-    karta:last-of-type {
-        margin-bottom: 5vh;
-    }
-    kartaThumb {
-        display: none;
-    }
-    #cenik {
-        display: none;
-    }
-    #cenik-menu {
-        display: none;
-    }
-    #cenik:hover ~ #cenik-menu, .pinned {
-        -webkit-transform: translateY(100%) !important;
-                transform: translateY(100%) !important;
-    }
-    odkazy {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
-    }
-    odkazy a {
-        margin: 3vw;
+    obrazky img {
+        margin-bottom: var(--paddingMini2x);
     }
 }
