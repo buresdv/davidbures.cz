@@ -29,7 +29,6 @@ $(document).ready(function(){
         }
         if(pocetNormostran != 0) {
             pocetNormostran = 0;
-            alert("Elčaaa");
             $("input[type=number]").val();
         }
 
@@ -67,7 +66,7 @@ $(document).ready(function(){
     var korekturaCenaModifier = 0;
 
     var optionsPreklad = {
-        url: "sluzbyText.json",
+        url: "/sluzbyText.json",
         getValue: "sluzba",
         list: {
             match: {
@@ -98,7 +97,7 @@ $(document).ready(function(){
     $(".sluzbaVyhledavani.preklad").easyAutocomplete(optionsPreklad);
 
     var optionsKorektura = {
-        url: "sluzbyText.json",
+        url: "/sluzbyText.json",
         getValue: "sluzba",
         list: {
             match: {
@@ -126,7 +125,7 @@ $(document).ready(function(){
     $(".sluzbaVyhledavani.korektura").easyAutocomplete(optionsKorektura);
 
     var optionsTlumoceni = {
-        url: "sluzbySlovo.json",
+        url: "/sluzbySlovo.json",
         getValue: "sluzba",
         list: {
             match: {
@@ -206,11 +205,12 @@ $(document).ready(function(){
             return el.length && el==+el;
         });
 
-        if (pocetNormostran == "") {
+        if (pocetNormostran == 0) {
             $('#pocetStranekValue').html('× 0');
+        } else {
+            $('#pocetStranekValue').html('× ' + pocetNormostran);
         }
 
-        $('#pocetStranekValue').html('× ' + pocetNormostran);
         konecnaCena = strankaCena * pocetNormostran;
 
         $('#cenaHack').val(konecnaCena);

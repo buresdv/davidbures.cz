@@ -51,11 +51,11 @@
         <objednaniModalOverlay>
             <objednaniModal>
                 <levaStrana>
-                    <form method="POST" action="formularZP.php">
+                    <form method="POST" action="/formularZP.php">
                         <input type="hidden" name="cenaHack" id="cenaHack">
                         Váš email:
                         <input type="email" name="email" placeholder="vas@email.cz" required>
-
+    
                         <paneSwitcher>
                             <p class="dodatek">Vyberte si službu</p> 
                             <buttonContainer>
@@ -69,7 +69,7 @@
                             <input type="text" name="sluzba[]" class="sluzbaVyhledavani preklad" placeholder="Vědecký text, rodný list apod." class="hledani" required>                                
                             Kolik normostran? <span class="normostrana">Normostrana = 250 slov</span>
                             <input type="number" name="stranky[]" placeholder="0-900" required>
-
+    
                             <inlineContainer>
                                 <input type="checkbox" name="zahrnoutKorekturu[]" value="zahrnoutKorekturu">Zahrnout korekturu
                             </inlineContainer>
@@ -84,7 +84,7 @@
                             </inlineContiner>
                             Kolik normostran? <span class="normostrana">Normostrana = 250 slov</span>
                             <input type="number" name="stranky[]" placeholder="0-900">
-
+    
                             <inlineContainer>
                                 <input type="checkbox" name="grafickaUprava[]" value="zahrnoutGrafickouUpravu">Zahrnout grafickou úpravu
                             </inlineContainer>
@@ -98,7 +98,7 @@
                                 <input type="checkbox" name="mimoStandardniHodiny[]" value="mimoStandardniHodiny">Zakázka mimo 9:00 - 17:00
                             </inlineContainer>
                         </vybranoTlumoceni>
-
+    
                         <!--<inlineContainer style="margin-top: 1.5vw;">
                             <input type="checkbox" name="student" value="jsemStudent">Jsem student
                         </inlineContainer>-->
@@ -121,7 +121,7 @@
                                 <td colspan="2" style="color: #fff; text-align: right !important;">Proč je tlumočení tak drahé?</td>
                             </tr>
                             <tr>
-                                <td id="vychoziCena">Výchozí cena za stránku:</td><td id="vychoziCenaValue"></td>
+                                <td id="vychoziCena">Výchozí cena za stránku:</td><td id="vychoziCenaValue">0</td>
                             </tr>
                             <tr class="skryto" id="korekturaRow">
                                 <td id="korekturaCena">Korektura:</td><td id="korekturaCenaValue"></td>
@@ -133,13 +133,13 @@
                                 <td id="standardHodinyCena">Mimo standardní hodiny:</td><td id="standardHodinyCenaValue">+ 250</td>
                             </tr>
                             <tr class="rovnaSe">
-                                <td id="strankaCena">Cena za stránku:</td><td id="strankaCenaValue"></td>
+                                <td id="strankaCena">Cena za stránku:</td><td id="strankaCenaValue">0</td>
                             </tr>
                             <tr>
                                 <td id="pocetStranek">Počet stránek:</td><td id="pocetStranekValue"></td>
                             </tr>
                             <tr class="rovnaSe">
-                                <td id="konecnaCena">Přibližná cena:</td><td class="konecnaCenaValue">---</td>
+                                <td id="konecnaCena">Přibližná cena:</td><td class="konecnaCenaValue">0 Kč</td>
                             </tr>
                         </table>
                     </div>
@@ -149,8 +149,8 @@
         <transformer>
         <header>
             <h1 id="hlavniTitulek">Jazykové služby pro všechny</h1>
-            <p id="jaz">Čeština, Angličtina, Japonština</p>
-            <p>Překlad a korektura vědeckých článků, lokalizace softwaru,<br> tlumočení konferencí a prezentací</p>
+            <p id="jaz">Čeština, Angličtina, Slovinština</p>
+            <p>Konečně kvalitní překlad<br>Mé služby </p>
             <a class="tlacitkoKontrast tlacitkoKontakt">KONTAKTUJTE MĚ</a>
             <cenikContainer>
                 <p id="cenik">CENÍK</p>
@@ -223,7 +223,7 @@
                 <gridPage>
                     <img src="/android-chrome-512x512.png">
                     <itemText>
-                        <h3>Překlad softwaru</h3>
+                        <h3>Překlad macOS a iOS aplikací</h3>
                         <p>Blanditiis perferendis magnam itaque necessitatibus autem doloribus, voluptatum quasi quia aperiam, commodi eaque quaerat? Quibusdam, esse.</p>
                         <p>Co dostanete?</p>
                         <ul>
@@ -244,10 +244,10 @@
             <text>
                 <ul style="margin: 0;">
                     <li>Jako překladatel a korektor vědeckých článků, webů a technických textů působím už od roku 2014</li>
-                    <li>O mé jazykové služby měly zájem instituce jako Waze a Univerzita Tomáše Bati ve Zlíně</li>
+                    <li>O mé jazykové služby měly zájem instituce jako <a href="https://www.microsoft.com/cs-cz/">Microsoft</a>, <a href="https://www.lionbridge.com/">Lionbridge</a> a <a href="https://www.utb.cz/">Univerzita Tomáše Bati ve Zlíně</a></li>
                     <li>Při překladu používám špičkové překladatelské prostředí SDL Trados Studio</li>
                     <li>Třetím rokem tlumočím mezinárodní konference</li>
-                    <li>Jsem obeznámený s nejnovějším vývojem v tlumočnických a překladatelských technikách a zvyklostech</li>
+                    <li>Jsem členem portálu <a href="https://www.proz.com/">ProZ</a> a dobročinné organizace <a href="https://trommons.org/">Translators Without Borders</a></li>
                     <li>Proč ne?</li>
                     <!--TODO: Fix this, it's ugly <a href="/oMne">Více o mně</a>--> 
                 </ul>
@@ -263,7 +263,7 @@
             </obrazky>
         </obrazkyWrapper>
         <content>
-            <h1 class="fullwidth fullWidthNadpis">Pár mých projektů</h1>
+            <h1 class="fullWidth fullWidthNadpis">Pár mých projektů</h1>
             <article id="whoami" class="sectionArticle sectionFulltext linkList" style="margin-top: 5vh; margin-bottom: 10vh;">
                 <text>
                     <h4>Webové stránky</h4>
@@ -271,6 +271,7 @@
                         <li><a href="https://plastika.cz">Plastika a.s.</a></li>
                         <li><a href="https://kpgalvano.cz">KP Galvano</a></li>
                         <li><a href="https://l10n.gnome.org/users/buresdv/">Musescore</a></li>
+                        <li><a href="https://davidbures.cz/en">Tlumočení a překlad Bureš</a></li>
                     </ul>
 
                     <h4>Software</h4>
@@ -372,7 +373,7 @@
                 </section>
             </karta>-->
             <article id="cenikGrid" class="sectionArticle">
-                <h1 class="fullwidth">Ceník</h1>
+                <h1 class="fullWidth">Ceník</h1>
                 <popisSluzby>
                     <h2>Překlad</h2>
                     <p class="dodatek">Webové stránky jsou účtovány podle počtu objednaných stránek a obtížnosti obsahu. Přesnou cenu se dozvíte po analýze objednaných stránek.</p><p class="dodatek">Grafická úprava dokumentů není v ceně zahrnuta.</p>

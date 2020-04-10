@@ -6,11 +6,6 @@ article {
     margin: 10vh unset;
 }
 
-article text a {
-    display: inline-block;
-    margin-bottom: 1rem;
-}
-
 .atd {
     position: relative;
     display: inline-block;
@@ -338,9 +333,6 @@ gridpage li, #whoami li {
 gridpage li {
     margin-top: var(--paddingMini);
 }
-#whoami li {
-    margin-bottom: var(--padding);
-}
 gridpage li:before, #whoami li:before {
     content: ""; 
     display: inline-block;
@@ -597,6 +589,9 @@ buttonContainer a {
 /* MOBILIZACE KONEC */
 
 @media screen and (max-device-width: 800px) {
+    header {
+        padding-left: var(--paddingMini2x);
+    }
     obrazky * {
         max-height: 1.5rem;
     }

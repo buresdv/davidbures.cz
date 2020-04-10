@@ -181,6 +181,9 @@ bar .jazykKratky {
 }
 
 /* Často používané elementy */
+li {
+    margin-bottom: var(--paddingMini2x);
+}
 .tlacitkoKontrast, bar .tlacitkoKontrast::before, input[type="submit"] {
     background: linear-gradient(45deg, rgba(255, 93, 115, 1) 0%, rgba(255, 115, 134, 1) 100%);
 }
@@ -262,7 +265,6 @@ article {
 }
 .linkList li {
     list-style-type: none;
-    margin-bottom: 0 !important;
 }
 .linkList ul {
     margin: 0;
@@ -274,7 +276,7 @@ article {
     padding: 0 !important;
 }
 
-.fullwidth {
+.fullWidth {
     width: 100vw;
     margin-left: calc(50% - 50vw);
 }
@@ -775,6 +777,13 @@ transformer {
 }
 
 @media screen and (max-device-width: 1070px) {
+    bar a, bar .tlacitkoKontrast {
+        padding: 3vw;
+    }
+    bar .tlacitkoKontrast::before {
+        display: none;
+    }
+
     article titulek img {
         top: 0;
         left: 0;
@@ -825,9 +834,6 @@ transformer {
 
     bar {
         padding: 0 0.5vw;
-    }
-    bar a {
-        padding: 3vw;
     }
 
     bar .jazykFull {
