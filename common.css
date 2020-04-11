@@ -3,6 +3,8 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700&display=swap&subset=latin-ext');
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,400i,600,600i,700,700i&display=swap&subset=latin-ext');
 
+@import url('https://rsms.me/inter/inter.css');
+
 /* Barvy */
 :root {
     --themeMain: #2196f3;
@@ -43,7 +45,15 @@
     --stin: 0 7px 30px rgba(15, 71, 113, 0.28);
 
     --gridConstant: 10;
+
+    --hlavniFont: 'IBM Plex Sans', sans-serif;
 }
+
+/*@supports (font-variation-settings: normal) {
+    :root { 
+        --hlavniFont: 'Inter var', sans-serif; 
+    }
+}*/
 
 /* Důležité resety */
 * {
@@ -99,7 +109,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
 
     background-color: var(--mainPozadi);
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: var(--hlavniFont);
     color: var(--theme);
     font-size: 1.2rem;
     line-height: 1.5;
@@ -206,23 +216,29 @@ li {
     transform: translateY(-0.2rem);
 }
 .tlacitko, button {
-    padding: 0.8rem;
+    font-family: var(--hlavniFont);
+    font-size: 0.9rem;
     color: var(--theme2) !important;
     text-decoration: none !important;
     font-weight: 600;
-    border-radius: 10px;
+
+    padding: var(--paddingMini) var(--paddingMini2x);
+
+    border-radius: 5px;
+
     background: linear-gradient(45deg, rgba(64,166,245,1) 0%, rgba(33,150,243,1) 100%);
-    box-shadow: 0 7px 15px rgba(15, 71, 113, 0.25);
+    box-shadow: 0px 5px 21px 0px rgba(15, 71, 113, 0.05), 0px 3px 25px 0px rgba(15, 71, 113, 0.20);
+    
     cursor: pointer;
 }
 .tlacitko:hover, button:hover {
-    box-shadow: 0 8px 20px rgba(15, 71, 113, 0.40);
-    transform: translateY(-3px)
+    box-shadow: 0 8px 20px rgba(15, 71, 113, 0.27);
+    transform: translateY(-2px);
 }
 .tlacitko:active, button:active {
-    box-shadow: 0 7px 15px rgba(15, 71, 113, 0.25);
+    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
     transform: translateY(-1px) !important;
-    transition: 0.2s var(--transSmooth);
+    transition: 0.1s var(--transSmooth);
 }
 
 h1, h2, h3 {
