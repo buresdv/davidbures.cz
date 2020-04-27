@@ -1,0 +1,33 @@
+header {
+    padding: 0;
+    padding-top: calc(var(--paddingLayout) * 2);
+
+    margin-top: 0;
+}
+
+.jazykFull, .jazykKratky {
+    margin-left: auto;
+}
+
+section {
+    margin-top: var(--paddingLayout);
+}
+
+section a {
+    display: inline;
+}
+
+obrazkyWrapper h2 {
+    width: 100%;
+    text-align: unset;
+    font-weight: 700;
+
+    margin-bottom: 0;
+}
+obrazkyWrapper p {
+    color: var(--themeMain);
+    margin-top: var(--paddingMini);
+}
+obrazky a {
+    margin: 0;
+}

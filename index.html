@@ -34,16 +34,22 @@
         <script src="pluginy/EasyAutocomplete-1.3.5/jquery.easy-autocomplete.min.js"></script>
         
         <link rel="stylesheet" href="common.css">
+        <link rel="stylesheet" href="darkMode.css">
         <link rel="stylesheet" href="stylesheet.css" type="text/css">
         <link rel="stylesheel" href="pluginy/EasyAutocomplete-1.3.5/easy-autocomplete.css">
         <script src="cenik.js"></script>
         <script src="form.js"></script>
         <script src="script.js"></script>
+        <script src="darkMode.js"></script>
     </head>
     <body>
         <bar>
             <a href="https://blog.davidbures.cz">Blog</a>
             <a href="/oMne/">O mně</a>
+            <colorswitch>
+                <div id="dark"><p>Tmavý motiv</p></div>
+                <div id="white"><p>Světlý motiv</p></div>
+            </colorswitch>
             <a class="tlacitkoKontrast tlacitkoKontakt" style="margin-left: auto;">Kontaktujte mě</a>
             <a href="en/" class="jazykFull">English</a>
             <a href="en/" class="jazykKratky">EN</a>
@@ -149,7 +155,7 @@
         <transformer>
         <header>
             <h1 id="hlavniTitulek">Jazykové služby pro všechny</h1>
-            <p id="jaz">Čeština, Angličtina, Slovinština</p>
+            <p id="jaz">Čeština, Angličtina, Slovinština, Japonština</p>
             <p>Konečně kvalitní překlad<br>Mé služby </p>
             <a class="tlacitkoKontrast tlacitkoKontakt">KONTAKTUJTE MĚ</a>
             <cenikContainer>
@@ -203,7 +209,7 @@
                             <li>I can't wait to marry her</li>
                         </ul>
                         <button>Objednat si</button>
-                        <a href="google.com">Více informací</a>
+                        <a href="weboveStranky.html">Více informací</a>
                     </itemText>
                 </gridPage>
                 <gridPage>
@@ -245,6 +251,7 @@
                 <ul style="margin: 0;">
                     <li>Jako překladatel a korektor vědeckých článků, webů a technických textů působím už od roku 2014</li>
                     <li>O mé jazykové služby měly zájem instituce jako <a href="https://www.microsoft.com/cs-cz/">Microsoft</a>, <a href="https://www.lionbridge.com/">Lionbridge</a> a <a href="https://www.utb.cz/">Univerzita Tomáše Bati ve Zlíně</a></li>
+                    <li>Patřím do <a href="https://www.jtpunion.org">Jednoty tlumočníků a překladatelů</a></li>
                     <li>Při překladu používám špičkové překladatelské prostředí SDL Trados Studio</li>
                     <li>Třetím rokem tlumočím mezinárodní konference</li>
                     <li>Jsem členem portálu <a href="https://www.proz.com/">ProZ</a> a dobročinné organizace <a href="https://trommons.org/">Translators Without Borders</a></li>
@@ -253,7 +260,7 @@
                 </ul>
             </text>
         </article>
-        <obrazkyWrapper>
+        <obrazkyWrapper class="transformovat">
             <a class="tlacitko" href="/zakaznici">Mí zákazníci</a>
             <obrazky>
                 <img src="utb_logo.png">
@@ -322,56 +329,6 @@
                     </ul>
                 </text>
             </article>
-            <!--<karta class="pak">
-                <kartaThumb></kartaThumb>
-                <h1>Překladatel a korektor</h1>
-                <section>
-                    <h2>Vědecké články</h2>
-                    <a href="http://www.sciencedirect.com/science/article/pii/S002364381630010X">The comparison of the effect of sodium caseinate, calcium caseinate, carboxymethyl cellulose and xanthan gum on rice-buckwheat dough rheological characteristics and textural and sensory quality of bread</a>
-                    <a href="http://www.sciencedirect.com/science/article/pii/S0023643817302311">The effect of Chios mastic gum addition on the characteristics of rice dough and bread</a>
-                    <a href="http://www.sciencedirect.com/science/article/pii/S0733521014001246">The relationship between rheological characteristics of gluten-free dough and the quality of biologically leavened bread</a>
-                    <a href="http://onlinelibrary.wiley.com/doi/10.1111/jtxs.12176/abstract">The Behavior of Amaranth, Chickpea, Millet, Corn, Quinoa, Buckwheat and Rice Doughs Under Shear Oscillatory and Uniaxial Elongational Tests Simulating Proving and Baking</a>
-                    <a href="http://kvasnyprumysl.cz/artkey/kpr-201701-0002_Porovnani_schopnosti_bezlepkoveho_testa_produkovat_kyprici_plyn_behem_peceni_a_jeho_vliv_na_kvalitu_peciva.php">Porovnání schopnosti bezlepkového těsta produkovat kypřící plyn během pečení a jeho vliv na kvalitu pečiva</a>
-                    <div class="atd">
-                        <p>a další...</p>
-                        <atd>
-                            <p>The Effect of Dietary Zinc Nanoparticles on Intestinal Microbiome of Piglets</p>
-                            <p>The effect of rice flour particle size and the content of damaged starch on rheological characteristics of dough and bread texture</p>
-                            <p>The continued effect of human activity on the environment</p>
-                        </atd>
-                    </div>
-                    </p>
-                </section>
-                <section id="software">
-                    <h2>Software</h2>
-                    <a href="https://github.com/buresdv/Keka" id="softwareKeka">Keka</a>
-                    <a href="https://github.com/buresdv/MultiMC5-translate" id="softwareMultiMC">MultiMC</a>
-                    <a href="https://l10n.gnome.org/users/buresdv/" id="softwareGnome">GNOME</a>
-                    <a href="https://www.transifex.com/user/profile/buresdv/" id="softwareDeepin">Deepin Desktop Environment</a>
-                    <a href="" id="softwareAntergos" style="cursor: not-allowed; color: var(--theme);">Antergos <span class="konec">2017-2019</span></a>
-                </section>
-            </karta>
-            <karta id="tl" style="width: auto; flex-grow: 2;">
-                <kartaThumb></kartaThumb>
-                <h1>Tlumočník</h1>
-                <section style="width: 100%;">
-                    <h2>Společenské akce</h2>
-                    <a href="tlu/index.htm">UTB Noc vědců 2019</a>
-                    <h2>Konference</h2>
-                    <a href="tlu/index.htm">Waze Česko-Slovenský Meetup 2018</a>
-                    <a href="tlu/index.htm">Waze Česko-Slovenský Meetup 2017</a>
-                    <a href="tlu/index.htm">Waze Česko-Slovenský Meetup 2016</a>
-                </section>
-            </karta>
-            <karta style="width: 30%; flex-grow: 1; align-self: flex-start;">
-                <h1>A další</h1>
-                <section style="width: 100%;">
-                    <h2>Moje knihy</h2>
-                    <a href="/psani/index.html#dynastieFeng">Dynastie Feng</a>
-                    <a href="/psani/index.html#czechTheNormalWay">Czech the Normal Way</a>
-                    <a href="/psani/index.html#sbirkaNahodneho">Sbírka náhodného</a>
-                </section>
-            </karta>-->
             <article id="cenikGrid" class="sectionArticle">
                 <h1 class="fullWidth">Ceník</h1>
                 <popisSluzby>

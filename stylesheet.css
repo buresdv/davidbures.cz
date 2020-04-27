@@ -88,7 +88,7 @@ b {
     color: #212121;
     font-weight: 500;
 }
-h2 {
+#cenikGrid h2 {
     font-weight: 600;
     font-size: 1.25rem;
 }
@@ -175,7 +175,7 @@ header h1 {
     -ms-transform: translateX(-15vw);
     -o-transform: translateX(-15vw);
 
-    background-image: radial-gradient(#ebecfe 20%, #f6fafd 20%);
+    background-image: radial-gradient(var(--themeKulicky) 20%, var(--mainPozadi) 20%);
     background-position: 0 0;
     background-size: 2rem 2rem;
 
@@ -197,13 +197,13 @@ cenikContainer {
 }
 #cenik-menu {
 	position: absolute;
-    background-color: #fff;
+    background-color: var(--theme2);
     max-height: 100%;
     max-width: 100%;
     top: 0;
     left: 0;
     padding: 0;
-    color: #fff;
+    color: var(--theme2);
     
     border-radius: 0.5rem;
     -webkit-box-shadow: 0 7px 65px rgba(15, 71, 113, 0.12);
@@ -332,15 +332,6 @@ gridpage li, #whoami li {
 }
 gridpage li {
     margin-top: var(--paddingMini);
-}
-gridpage li:before, #whoami li:before {
-    content: ""; 
-    display: inline-block;
-    margin-left: -1.3em; 
-    width: 1.3em; 
-    height: 1rem;
-    background: url(check-circle-solid.svg);
-    background-repeat: no-repeat;
 }
 whoami img {
     margin-right: 1rem;
@@ -475,7 +466,7 @@ obrazkyWrapper {
     display: block;
     position: relative;
 }
-obrazkyWrapper a {
+obrazkyWrapper.transformovat a {
     position: absolute;
     left: 50%;
     bottom: 0;
@@ -485,11 +476,11 @@ obrazkyWrapper a {
     transition: 0.75s var(--transSmooth) !important;
     z-index: 10;
 }
-obrazkyWrapper:hover obrazky {
+obrazkyWrapper.transformovat:hover obrazky {
     filter: blur(0.5rem);
     transform: scale(0.85);
 }
-obrazkyWrapper:hover a {
+obrazkyWrapper.transformovat:hover a {
     opacity: 1;
     bottom: 25%;
     transition: 0.75s var(--transSmooth);

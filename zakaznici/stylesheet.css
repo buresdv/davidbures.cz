@@ -12,9 +12,6 @@ h1 + p {
 a {
     color: #1924ba;
 }
-b {
-    font-weight: 500;
-}
 
 flexing {
     display: grid;
@@ -89,6 +86,8 @@ header {
 section {
     display: flex;
     flex-direction: column;
+    
+    width: 100%;
 }
 .centered {
     align-items: center;
@@ -119,6 +118,7 @@ podpis * {
     margin-bottom: 0;
 }
 podpis h4 {
+    margin: 0 !important;
     grid-area: jmeno;
 }
 podpis p {

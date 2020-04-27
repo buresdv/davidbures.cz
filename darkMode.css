@@ -1,0 +1,35 @@
+.darkMode {
+    --themeMain: #1870b3;
+    --theme: #f5fafe;
+    --theme2: #414b52;
+    --mainPozadi: #384046;
+
+    --themeKulicky: #405a6c;
+
+    --themeGray: #93a1ac;
+    --themeGrayInverted: #dde1e5;
+    --themeGrayInverted2: #1f8ee2;
+
+    --themeHighlight: #ff7088;
+    --themeLightMain: #e5f3fd;
+
+    --themeGradientTlacitko: linear-gradient(45deg, var(--themeGrayInverted2) 0%, var(--themeMain) 100%);
+
+    --themeHoverBackground: #ffedf0;
+
+    --themeHighlightDark: #fcc5c9;
+
+    --checkIkona: url(check-circle-solid_dark.svg);
+}
+
+.darkMode .tlacitkoKontrast, .darkMode tlacitko, .darkMode button, .darkMode obrazkyWrapper a {
+    color: #f9f9fa !important;
+}
+
+.darkMode objednaniModal pravaStrana, .darkMode pravaStrana tr td:nth-child(n + 1) {
+    color: #f9f9fa
+}
+
+.darkMode kartyList itemText:before, .darkMode bar, .darkMode objednaniModal {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 7px 15px rgba(15, 71, 113, 0.05);
+}
