@@ -17,6 +17,16 @@ section a {
     display: inline;
 }
 
+article titulek img {
+    width: 27rem;
+    height: 27rem;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    box-shadow: none;
+}
+
 obrazkyWrapper h2 {
     width: 100%;
     text-align: unset;
