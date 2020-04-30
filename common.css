@@ -7,7 +7,7 @@
 
 /* Barvy */
 :root {
-    --themeMain: rgb(33, 150, 243);
+    --themeMain: #2196f3;
     --theme: #384046;
     --theme2: #FFFFFF;
     --mainPozadi: #f6fafd;
@@ -45,6 +45,7 @@
     --paddingTlacitko: var(--paddingMini) var(--paddingMini2x);
 
     --iconSize: 10rem;
+    --iconSizeMini: calc(var(--iconSize) * 0.8);
 
     --hoverOffset: 1px;
 
