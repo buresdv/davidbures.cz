@@ -61,7 +61,7 @@ gridKarta h3 {
 }
 gridItem:hover gridKarta {
     background-color: var(--theme2);
-    box-shadow: var(--stin);
+    box-shadow: var(--themeStinVelky);
     transform: translate(1rem, -1rem);
     border-radius: 10px;
 }

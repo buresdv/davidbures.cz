@@ -31,7 +31,8 @@
 
     --themeHighlightDark: #7f1119;
 
-    --themeStin: rgba(15, 71, 113, 0.28);
+    --themeStinStredni: 0 7px 15px rgba(15, 71, 113, 0.05);
+    --themeStinVelky: 0 7px 30px rgba(15, 71, 113, 0.28);
 }
 
 /* Konstanty */
@@ -44,8 +45,7 @@
 
     --paddingTlacitko: var(--paddingMini) var(--paddingMini2x);
 
-    --iconSize: 10rem;
-    --iconSizeMini: calc(var(--iconSize) * 0.8);
+    --iconSize: 10rem; /* Mini verze: --iconSize * 0.8 */
 
     --hoverOffset: 1px;
 
@@ -55,8 +55,6 @@
 
     --tlacitkoTransform: 0.3s var(--transSmooth);
 
-    --stin: 0 7px 30px var(--themeStin);
-
     --gridConstant: 10;
 
     --hlavniFont: 'Inter', sans-serif;
@@ -65,6 +63,8 @@
 /* Ostatní */
 :root {
     --checkIkona: url(check-circle-solid.svg);
+
+    --zvyrazneniVyska: 1px;
 }
 
 @supports (font-variation-settings: normal) {
@@ -91,6 +91,9 @@
 }
 ::placeholder {
     color: var(--themeGrayInverted2);
+}
+.tlacitko::-moz-focus-inner, button::-moz-focus-inner {
+    border: 0;
 }
 input[type="submit"], input[type="reset"] {
 	background: none;
@@ -146,8 +149,15 @@ b {
     background-color: var(--themeLightMain);
     border-radius: 2px;
 }
+/*b.zvyrazneni {
+    font-weight: 450;
+}*/
 
 /* Kosmetické věci */
+.miniIkony {
+    --iconSize: 8rem;
+}
+
 a:not(.tlacitko), a:not(.kontaktTlacitko) {
     text-decoration: underline; 
     color: var(--themeHighlight);
@@ -168,12 +178,12 @@ bar {
 
     padding: 0 15vw;
     background-color: var(--theme2);
-    box-shadow: 0 7px 15px rgba(15, 71, 113, 0.05);
+    box-shadow: var(--themeStinStredni);
     z-index: 100;
 }
 bar a {
     display: inline;
-    padding: 1rem;
+    padding: var(--paddingMini2x);
 }
 bar a:not(.tlacitkoKontrast):hover {
     background-color: var(--themeHoverBackground);
@@ -208,7 +218,6 @@ bar .jazykKratky {
     background-size: 2rem 2rem;
     height: 100%;
     width: 100%;
-    z-index: -5;
 }
 .dodatek {
     color: var(--themeGray);
@@ -230,6 +239,38 @@ gridpage li:before, #whoami li:before, checkmarkList {
 }
 
 /* Často používané elementy */
+footer {
+    position: relative;
+    text-align: center;
+    width: 100%;
+
+    margin-top: 30vh;
+    padding: var(--paddingMedium);
+
+    border-top: 1px dashed var(--themeGrayInverted);
+
+    /*background: var(--themeKulicky);*/
+}
+footer:after {
+    content: "2014-2020";
+    position: absolute;
+    right: var(--paddingMini2x);
+    top: var(--paddingMedium);
+    margin: 0;
+
+    font-size: 300%;
+    font-weight: bold;
+    line-height: 1;
+
+    color: var(--themeGrayInverted);
+}
+footer h2 {
+    margin-top: 0;
+}
+footer a {
+    margin: 0 var(--paddingMini2x);
+}
+
 .tlacitkoKontrast, bar .tlacitkoKontrast::before, input[type="submit"] {
     background: var(--themeGradientTlacitkoKontrast);
 }
@@ -237,14 +278,15 @@ gridpage li:before, #whoami li:before, checkmarkList {
     font-weight: 700 !important;
     letter-spacing: 0.05rem;
 
-    padding: 1rem;
-
     cursor: pointer;
 
     color: var(--theme2) !important;
     text-decoration: none !important;
 
     background-attachment: fixed;
+}
+.tlacitkoKontrast:not(.barTlacitkoKontrast) {
+    padding: 1rem !important;
 }
 .tlacitkoKontrast:first-of-type, .tlacitko, button {
     transition: var(--tlacitkoTransform);
@@ -267,6 +309,7 @@ gridpage li:before, #whoami li:before, checkmarkList {
     box-shadow: 0px 5px 21px 0px rgba(15, 71, 113, 0.05), 0px 3px 25px 0px rgba(15, 71, 113, 0.20);
 
     cursor: pointer;
+    outline: none;
 }
 .tlacitko:hover, button:hover {
     box-shadow: 0 8px 20px rgba(15, 71, 113, 0.27);
@@ -278,7 +321,7 @@ gridpage li:before, #whoami li:before, checkmarkList {
     transition: 0.1s var(--transSmooth);
 }
 
-h1, h2, h3 {
+h1, h2, h3, footer:after {
     font-family: "Nunito", sans-serif;
 }
 h1 {
@@ -357,7 +400,7 @@ article titulek img {
     max-width: 70%;
     max-height: 27rem;
     z-index: -1;
-    box-shadow: var(--stin);
+    box-shadow: var(--themeStinVelky);
 }
 article titulek * {
     margin: 0;
@@ -429,7 +472,7 @@ kartyList itemText:before {
 
     border-radius: 10px;
     z-index: -10;
-    box-shadow: 0 7px 15px rgba(15, 71, 113, 0.05);
+    box-shadow: var(--themeStinStredni);
 }
 kartyList itemText p {
     margin-top: var(--paddingMini);
@@ -455,11 +498,11 @@ tr:not(.popisky):after {
     content: "E";
     position: absolute;
     width: 150vw;
-    height: 100%;
+    height: var(--zvyrazneniVyska);
     left: -50vw;
     transform: translateY(1rem);
     background-color: var(--theme2);
-    box-shadow: 0 7px 15px rgba(15, 71, 113, 0.05);
+    box-shadow: var(--themeStinStredni);
     z-index: -1;
 
     opacity: 0;
@@ -523,6 +566,9 @@ objednaniModalOverlay {
     width: 100%;
     height: 100%;
 
+    max-width: 100vw;
+    max-height: 100vh;
+
     z-index: 1000;
     -webkit-transform: scale(0);
             transform: scale(0);
@@ -541,8 +587,8 @@ objednaniModal {
     background-color: var(--theme2);
     border-radius: 10px;
     overflow: hidden;
-    -webkit-box-shadow: var(--stin);
-            box-shadow: var(--stin);
+    -webkit-box-shadow: var(--themeStinVelky);
+            box-shadow: var(--themeStinVelky);
 }
 objednaniModal h1 {
     margin: 0;
@@ -982,8 +1028,47 @@ colorSwitch p {
 }
 
 @media screen and (max-device-width: 500px) {
-    itemText .dodatek {
+    itemText .dodatek, itemText h3 {
         display: block;
         text-align: center;
+    }
+}
+
+/* Tmavý režim */
+
+@media (prefers-color-scheme: dark) {
+    body {
+        --themeMain: #1870b3;
+        --theme: #f5fafe;
+        --theme2: #414b52;
+        --mainPozadi: #384046;
+
+        --themeKulicky: #405a6c;
+
+        --themeGray: #93a1ac;
+        --themeGrayInverted: #dde1e5;
+        --themeGrayInverted2: #1f8ee2;
+
+        --themeHighlight: #ff7088;
+        --themeLightMain: #e5f3fd;
+
+        --themeGradientTlacitko: linear-gradient(45deg, var(--themeGrayInverted2) 0%, var(--themeMain) 100%);
+
+        --themeHoverBackground: #ffedf0;
+
+        --themeHighlightDark: #fcc5c9;
+
+        --checkIkona: url(check-circle-solid_dark.svg);
+    }
+
+    .tlacitkoKontrast, tlacitko, button, obrazkyWrapper a {
+        color: #f9f9fa !important;
+    }
+    objednaniModal pravaStrana, pravaStrana tr td:nth-child(n + 1) {
+        color: #f9f9fa;
+    }
+
+    kartyList itemText:before, bar, objednaniModal {
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 7px 15px rgba(15, 71, 113, 0.05);
     }
 }

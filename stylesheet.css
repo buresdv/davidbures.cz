@@ -307,7 +307,7 @@ cena table tr td {
     text-align: right;
 }
 
-whoami, links {
+whoami {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -535,20 +535,7 @@ container {
 container h2 {
     text-align: center;
 }
-odkazy {
-    width: 100%;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-}
 
-footer {
-    font-size: 0.9rem;
-    width: 100%;
-    margin-top: 30vh;
-}
-footer h1 {
-    text-align: center;
-}
 .subtitle {
     margin-top: 0;
     color: var(--themeGray);

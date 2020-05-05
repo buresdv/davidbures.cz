@@ -39,18 +39,17 @@
         <link rel="stylesheel" href="pluginy/EasyAutocomplete-1.3.5/easy-autocomplete.css">
         <script src="cenik.js"></script>
         <script src="form.js"></script>
-        <script src="script.js"></script>
         <script src="darkMode.js"></script>
     </head>
     <body>
         <bar>
             <a href="https://blog.davidbures.cz">Blog</a>
             <a href="/oMne/">O mně</a>
-            <colorswitch>
+            <!--<colorswitch>
                 <div id="dark"><p>Tmavý motiv</p></div>
                 <div id="white"><p>Světlý motiv</p></div>
-            </colorswitch>
-            <a class="tlacitkoKontrast tlacitkoKontakt" style="margin-left: auto;">Kontaktujte mě</a>
+            </colorswitch>-->
+            <a class="tlacitkoKontrast tlacitkoKontakt barTlacitkoKontrast" style="margin-left: auto;">Kontaktujte mě</a>
             <a href="en/" class="jazykFull">English</a>
             <a href="en/" class="jazykKratky">EN</a>
         </bar>
@@ -197,9 +196,9 @@
         </header>
         <nabidka class="dotBackground">
             <h1>Co pro vás můžu udělat?</h1>
-            <kartyList>
+            <kartyList class="miniIkony">
                 <gridPage>
-                    <img src="/img/ikony/web.svg">
+                    <img src="/img/ikony/web2.svg">
                     <itemText>
                         <h3>Překlad webových stránek <span class="dodatek">od 300 Kč/<span class="ns">stránka</span></span></h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae eos ad, soluta tempore suscipit.</p>
@@ -213,7 +212,7 @@
                     </itemText>
                 </gridPage>
                 <gridPage>
-                    <img src="/android-chrome-512x512.png">
+                    <img src="/img/ikony/veda.svg">
                     <itemText>
                         <h3>Překlad vědeckých textů <span class="dodatek">od 400 Kč/<span class="ns">ns</span></span></h3>
                         <p>Blanditiis perferendis magnam itaque necessitatibus autem doloribus, voluptatum quasi quia aperiam, commodi eaque quaerat? Quibusdam, esse.</p>
@@ -249,13 +248,13 @@
             </titulek>
             <text>
                 <ul style="margin: 0;">
-                    <li>Jako překladatel a korektor vědeckých článků, webů a technických textů působím už od roku 2014</li>
+                    <li>Jako <b>překladatel a korektor</b> vědeckých článků, webů a technických textů působím už <b class="zvyrazneni">od roku 2014</b></li>
                     <li>O mé jazykové služby měly zájem instituce jako <a href="https://www.microsoft.com/cs-cz/">Microsoft</a>, <a href="https://www.lionbridge.com/">Lionbridge</a> a <a href="https://www.utb.cz/">Univerzita Tomáše Bati ve Zlíně</a></li>
                     <li>Patřím do <a href="https://www.jtpunion.org">Jednoty tlumočníků a překladatelů</a></li>
-                    <li>Při překladu používám špičkové překladatelské prostředí SDL Trados Studio</li>
-                    <li>Třetím rokem tlumočím mezinárodní konference</li>
+                    <li>Při překladu používám <b>špičkové překladatelské prostředí</b> SDL Trados Studio</li>
+                    <li><b>Třetím rokem tlumočím</b> mezinárodní konference</li>
                     <li>Jsem členem portálu <a href="https://www.proz.com/">ProZ</a> a dobročinné organizace <a href="https://trommons.org/">Translators Without Borders</a></li>
-                    <li>Proč ne?</li>
+                    <li><b>Proč ne?</b></li>
                     <!--TODO: Fix this, it's ugly <a href="/oMne">Více o mně</a>--> 
                 </ul>
             </text>
@@ -371,20 +370,14 @@
                 </cena>
             </article>
         </content>
-        <links>
-            <container>
-                <h2>Najdete mě i jinde</h2>
-                <odkazy>
-                    <a href="https://anglicka-zachranka.cz">Anglická záchranka</a>
-                    <a href="https://www.linkedin.com/in/buresdv/?locale=cs_CZ">LinkedIn</a>
-                    <a href="http://blog.davidbures.cz">Blog</a>
-                    <a href="https://www.youtube.com/channel/UCvxjzslUwAaWGvG3UyK-64g/">YouTube</a>
-                </odkazy>
-            </container>
-            <footer>
-                <h1>2014-2020</h1>
-            </footer>
-        </links>
+        <footer>
+            <h2>Najdete mě i jinde</h2>
+            <a href="https://twitter.com/davidbures">Twitter</a>
+            <a href="https://www.linkedin.com/in/buresdv/?locale=cs_CZ">LinkedIn</a>
+            <a href="http://blog.davidbures.cz">Blog</a>
+            <a href="https://www.youtube.com/channel/UCvxjzslUwAaWGvG3UyK-64g/">YouTube</a>
+        </footer>
     </transformer>
     </body>
 </html>
+<script src="script.js"></script>

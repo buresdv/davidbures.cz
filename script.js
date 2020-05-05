@@ -1,4 +1,4 @@
-$(document).ready(function () {
+/*$(document).ready(function () {
     function convertRemToPixels(rem) {    
         return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
     }
@@ -36,12 +36,26 @@ $(document).ready(function () {
                     break;
             }
     
-            /*$(":root").get(0).style.setProperty("--hoverOffset", rozdilVysek);*/
             $(thumbKarty).get(0).style.setProperty("top", rozdilVysekMarginFix + "px");
         });
     });
     $('karta').on('mouseleave', function(){
         $(thumbKarty).get(0).style.setProperty("top", "2rem");
         $(thumbKarty).get(0).style.setProperty("background", puvodniThumb);
+    });
+
+    $('tr').on('mouseenter', function() {
+        console.log('Myš vevnitř tr');
+        var vyska = $(this).outerHeight();
+        console.log(vyska);
+
+        $("body").get(0).style.setProperty("--zvyrazneniVyska", vyska + "px");
+    });
+});*/
+
+[...document.querySelectorAll('tr')].forEach(function(item) {
+    item.addEventListener('mouseenter', function (event) {
+        var vyska = this.offsetHeight;
+        $("body").get(0).style.setProperty("--zvyrazneniVyska", vyska + "px");
     });
 });
