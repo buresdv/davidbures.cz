@@ -63,6 +63,7 @@
 /* Ostatní */
 :root {
     --checkIkona: url(check-circle-solid.svg);
+    --moznaIkona: url(check-maybe.svg);
 
     --zvyrazneniVyska: 1px;
 }
@@ -161,6 +162,54 @@ b {
     --iconSize: 8rem;
 }
 
+.dropdownToggle:before, inlineContainer:before {
+    content: "";
+    position: absolute;
+
+    width: calc(100% + 2 * var(--paddingMini));
+    height: calc(100% + var(--paddingMini));
+
+    left: calc(-1 * var(--paddingMini));
+    top: calc(-1 * var(--paddingMini) / 2);
+
+    border-radius: 1rem;
+
+    z-index: -1;
+
+    transition: 0.3s var(--transSmooth);
+}
+.dropdownToggle:hover:before, inlineContainer:hover:before {
+    background-color: var(--mainPozadi);
+}
+.dropdownToggle, inlineContainer {
+    display: flex;
+    position: relative;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    cursor: pointer;
+}
+.dropdownToggle:after {
+    content: "";
+    display: inline-block;
+
+    margin-left: var(--paddingMini);
+
+    width: 1.2rem;
+    height: 1.2rem;
+
+    background-image: url("/dropdownIkona.svg");
+
+    transition: 0.5s var(--transSmooth);
+}
+.dropdownExpanded:after {
+    transform: rotate(180deg);
+}
+.dropdownToggle + * {
+    display: none;
+}
+
 a:not(.tlacitko), a:not(.kontaktTlacitko) {
     text-decoration: underline; 
     color: var(--themeHighlight);
@@ -244,6 +293,10 @@ gridpage li:before, #whoami li:before, checkmarkList {
     background: var(--checkIkona);
     background-repeat: no-repeat;
 }
+.mozna li:before, li.mozna:before {
+    background: var(--moznaIkona);
+    background-repeat: no-repeat;
+}
 
 /* Často používané elementy */
 footer {
@@ -256,7 +309,6 @@ footer {
 
     border-top: 1px dashed var(--themeGrayInverted);
 
-    /*background: var(--themeKulicky);*/
 }
 footer:after {
     content: "2014-2020";
@@ -466,6 +518,10 @@ kartyList gridPage * {
     margin: 0;
 }
 kartyList itemText {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
     position: relative;
     padding: 2rem;
 }
@@ -692,25 +748,19 @@ input[type="checkbox"] {
 
     cursor: pointer;
 }
-inlineContainer:hover input[type="checkbox"] {
-    transform: scale(1.25);
-}
 .vybrat {
     display: none;
     margin-top: var(--paddingMedium);
 }
 .vybrano {
-    display: block;
+    display: flex;
     position: relative;
+
+    flex-direction: column;
+    align-items: flex-start;
 }
 inlineContainer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin-bottom: 0.4rem;
+    margin-bottom: var(--paddingMini);
 }
 inlineContainer * {
     display: inline;
@@ -1039,9 +1089,15 @@ colorSwitch p {
 }
 
 @media screen and (max-device-width: 500px) {
+    kartyList h3, .dropdownToggle, inlineContainer {
+        align-self: center;
+    }
     itemText .dodatek, itemText h3 {
         display: block;
         text-align: center;
+    }
+    .dropdownToggle, inlineContainer {
+        margin-top: var(--paddingMini2x);
     }
 }
 
