@@ -1,0 +1,93 @@
+:root {
+    --saturace: 0;
+}
+bar {
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    display: flex;
+    padding: 0 10vw;
+    background-color: var(--theme2);
+    box-shadow: 0 7px 15px rgba(15, 71, 113, 0.05);
+}
+bar a {
+    padding: 1rem;
+}
+h1 {
+    z-index: 100;
+}
+h1 + p {
+    width: 100%;
+    text-align: center;
+    background-color: #f6fafd;
+    margin: 0;
+    padding: 1rem;
+    box-shadow: 0px 0px 0px 1rem #f6fafd;
+}
+cara {
+    position: absolute;
+    width: 0.5rem;
+    height: 100%;
+    left: 50%;
+    background-color: #616e78;
+    border-radius: 10rem;
+}
+krok {
+    width: 100%;
+}
+krok h3 {
+    text-align: center;
+    padding: 1rem;
+}
+krok:first-of-type h3 {
+    background-color: var(--theme2);
+}
+krok {
+    display: grid;
+    grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: min-content;
+}
+krok:nth-child(2n) {
+    grid-template-areas: 
+    'titulek titulek'
+    'obrazek text';
+}
+krok:nth-child(2n + 1) {
+    grid-template-areas: 
+    'titulek titulek'
+    'text obrazek';
+}
+krok h3 {
+    grid-area: titulek;
+    margin: 0;
+}
+krok video {
+    grid-area: obrazek;
+    width: 30vw;
+    /* TODO: Když poscrollují moc daleko, desaturovat video filter: saturate(0); */
+    z-index: -1;
+}
+krok video:hover {
+    transform: matrix3d(1,0,0.00,0,0.00,1,0.00,0,0,0,1,0,0,0,0,1);
+    -webkit-transform: matrix3d(1,0,0.00,0,0.00,1,0.00,0,0,0,1,0,0,0,0,1);
+}
+krok:nth-child(2n) video {
+    justify-self: end;
+    transform: matrix3d(1,0,0.00,0.001,0.00,1,0.00,0,0,0,1,0,0,0,0,1);
+    -webkit-transform: matrix3d(1,0,0.00,0.001,0.00,1,0.00,0,0,0,1,0,0,0,0,1);
+}
+krok:nth-child(2n + 1) video {
+    justify-self: start;
+    transform: matrix3d(1,0,0.00,-0.001,0.00,1,0.00,0,0,0,1,0,0,0,0,1);
+    -webkit-transform: matrix3d(1,0,0.00,-0.001,0.00,1,0.00,0,0,0,1,0,0,0,0,1);
+}
+krok text {
+    grid-area: text;
+    align-self: center;
+}
+krok:nth-child(2n) text {
+    text-align: left;
+}
+krok:nth-child(2n + 1) text {
+    text-align: right;
+    justify-self: end;
+}

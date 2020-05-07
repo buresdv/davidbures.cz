@@ -1,0 +1,15 @@
+[
+    {
+        "cena": "800",
+        "sluzba": "Úřední komunikaci"
+    }, {
+        "cena": "800",
+        "sluzba": "Koferenci"
+    }, {
+        "cena": "1000",
+        "sluzba": "Policejní"
+    }, {
+        "cena": "700",
+        "sluzba": "Prezentací"
+    }
+]

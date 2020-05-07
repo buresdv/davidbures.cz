@@ -1,0 +1,54 @@
+.muz, .zena {
+    color: #2e2e2e;
+    position: relative;
+    border-radius: 0.5rem;
+    padding: 0.2rem;
+    overflow: hidden;
+}
+/*.muz:before, .zena:before {
+    color: #2e2e2e;
+    margin-right: 0.3rem;
+}*/
+
+.muz {
+    border: 2px solid #c62828;
+}
+/*.muz:before {
+    content: "♂";
+}*/
+
+.zena {
+    color: #000;
+    border: 2px solid #f9a825;
+}
+/*.zena:before {
+    content: "♀";
+}*/
+
+/*#tituly li {
+    position: relative;
+}
+#tituly li:after {
+    position: absolute;
+    
+    padding: 0.3rem 0.6rem;
+    transform: translateX(0rem);
+    top: -35%;
+    opacity: 0;
+    
+    color: #fff;
+    
+    border-radius: 1rem;
+    
+    box-shadow: 0 2px 30px rgba(0, 0, 0, 0.28);
+    
+    transition: 1s ease;
+}
+tituly li:hover:after {
+    opacity: 1;
+}
+
+.hodnostDebug:after {
+    content: "★";
+    background-color: #c7d428;
+}*/

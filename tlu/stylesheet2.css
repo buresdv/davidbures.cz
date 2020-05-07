@@ -1,0 +1,66 @@
+h1 + p {
+    margin-top: 0;
+}
+h1 {
+    margin-bottom: 0;
+}
+.rokDivider {
+    color: var(--themeGray);
+    font-size: 150%;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: right;
+}
+.rokDivider::before {
+    content: '';
+    border-top: 2px dashed;
+    margin: 0 20px 0 0;
+    flex: 1 0 20px;
+}
+kategorie::before {
+    content: "·";
+    font-weight: 900;
+    margin: 0 0.3rem;
+}
+kategorie p {
+    display: inline;
+    font-size: 75%;
+
+    color: #1870b3;
+
+    padding: 0.2rem;
+    background-color: #dff0fd;
+
+    border: 1px solid;
+    border-radius: 0.5rem;
+}
+nazev {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+nazev h3 {
+    margin: 0;
+}
+karta {
+    flex-flow: column;
+}
+.obrazek {
+    display: inline-block;
+    margin: 0 auto;
+    background-size: cover !important;
+    background-color: #000;
+    -webkit-box-shadow: 0 7px 30px rgba(0, 0, 0, 0.28);
+    box-shadow: 0 7px 30px rgba(0, 0, 0, 0.28);
+    border-radius: 0.8rem !important;
+    z-index: 100;
+    -webkit-border-radius: 0.8rem !important;
+    -moz-border-radius: 0.8rem !important;
+    -ms-border-radius: 0.8rem !important;
+    -o-border-radius: 0.8rem !important;
+}
+.obrazek img {
+    max-width: 25vw;
+}
