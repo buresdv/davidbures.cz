@@ -176,7 +176,7 @@ bar {
 
     align-items: center;
 
-    padding: 0 15vw;
+    padding: 0 calc(15vw - var(--paddingMini2x));
     background-color: var(--theme2);
     box-shadow: var(--themeStinStredni);
     z-index: 100;
@@ -205,10 +205,14 @@ bar .tlacitkoKontrast::before {
 bar .tlacitkoKontrast:hover {
     transform: translateY(0.5rem);
 }
-bar .jazykFull {
+.jazykFull {
     display: inline;
 }
-bar .jazykKratky {
+.jazykyFull {
+    display: block;
+}
+
+.jazykKratky, .jazykyKratke {
     display: none;
 }
 
@@ -438,7 +442,6 @@ kartyList {
     margin-top: var(--paddingMedium);
     padding: 0 8vw;
     gap: 2vw;
-    padding-bottom: 2rem;
     align-items: start;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-template-rows: min-content;
@@ -453,6 +456,8 @@ kartyList gridPage {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+    padding-bottom: var(--paddingMedium);
 }
 kartyList gridPage * {
     margin: 0;
@@ -1015,11 +1020,14 @@ colorSwitch p {
         padding: 0 0.5vw;
     }
 
-    bar .jazykFull {
+    .jazykFull, .jazykyFull {
         display: none;
     }
-    bar .jazykKratky {
+    .jazykKratky {
         display: inline;
+    }
+    .jazykyKratke {
+        display: block;
     }
 
     kartyList {

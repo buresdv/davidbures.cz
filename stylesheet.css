@@ -569,6 +569,7 @@ buttonContainer a {
 @media screen and (max-device-width: 800px) {
     header {
         padding-left: var(--paddingMini2x);
+        padding-right: var(--paddingMini2x);
     }
     obrazky * {
         max-height: 1.5rem;
