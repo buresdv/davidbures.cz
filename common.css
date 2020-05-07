@@ -152,6 +152,9 @@ b {
 /*b.zvyrazneni {
     font-weight: 450;
 }*/
+.hidden {
+    display: none;
+}
 
 /* Kosmetické věci */
 .miniIkony {
