@@ -38,7 +38,7 @@
             require "odeslano.html";
         }
     }*/
-    header('Content-type: text/html; charset=utf-8');
+    header("Content-type: text/html; charset=utf-8");
 
     $email = $_POST["email"];
     $sluzba = array_filter($_POST["sluzba"]);
@@ -68,10 +68,12 @@
 
     $headers = 'From: David Bureš <ja@davidbures.cz>' . PHP_EOL .
     'Reply-To: David Bureš <buresdv@gmail.com>' . PHP_EOL .
+    'Content-Type: text/plain; charset=UTF-8' . PHP_EOL .
     'X-Mailer: PHP/' . phpversion();
 
     $headersZakaznik = 'From: davidbures.cz <buresdv@gmail.com>' . PHP_EOL .
     'Reply-To: David Bureš <buresdv@gmail.com>' . PHP_EOL .
+    'Content-Type: text/plain; charset=UTF-8' . PHP_EOL .
     'X-Mailer: PHP/' . phpversion();
 
     $zprava = "E-mail: " . $email . "\n\n"
@@ -88,7 +90,10 @@
         . 'Přeji pěkný zbytek dne,' . "\n\n"
         . 'David Bureš';
     
-    mail($email, "davidbures.cz: Informace o vaší objednávce", $zpravaZakaznik, $headersZakaznik);
+
+    $subject = "davidbures.cz: Informace o vaší objednávce";
+    $sub = '=?UTF-8?B?'.base64_encode($subject).'?=';
+    mail($email, $sub, $zpravaZakaznik, $headersZakaznik);
 
     /*echo "Elčaaaa 💗💗💗💗💗💗";
     echo "I seriously love you so so so much... You're just... perfect... 💗💗💗💗💗💗 >___<";

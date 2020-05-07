@@ -55,10 +55,10 @@
         <objednaniModalOverlay>
             <objednaniModal>
                 <levaStrana>
-                    <form method="POST" action="/formularZP.php">
+                    <form method="POST" action="/formularZP.php" accept-charset='UTF-8'>
                         <input type="hidden" name="cenaHack" id="cenaHack">
                         Váš email:
-                        <input type="email" name="email" placeholder="vas@email.cz" required>
+                        <input type="email" name="email" placeholder="vas@email.cz">
     
                         <paneSwitcher>
                             <p class="dodatek">Vyberte si službu</p> 
@@ -70,9 +70,9 @@
                         </paneSwitcher>
                         <vybranPreklad class="vybrat">
                             Co chcete přeložit?
-                            <input type="text" name="sluzba[]" class="sluzbaVyhledavani preklad" placeholder="Vědecký text, rodný list apod." class="hledani" required>                                
+                            <input type="text" name="sluzba[]" class="sluzbaVyhledavani preklad" placeholder="Vědecký text, rodný list apod." class="hledani">                                
                             Kolik normostran? <span class="normostrana">Normostrana = 250 slov</span>
-                            <input type="number" name="stranky[]" placeholder="0-900" required>
+                            <input type="number" name="stranky[]" placeholder="0-900">
     
                             <inlineContainer>
                                 <input type="checkbox" name="zahrnoutKorekturu[]" value="zahrnoutKorekturu">Zahrnout korekturu
@@ -83,7 +83,7 @@
                         </vybranPreklad>
                         <vybranaKorektura class="vybrat">
                             Čeho chcete provést korekturu?
-                            <input type="text" name="sluzba[]" class="sluzbaVyhledavani korektura" placeholder="Vědecký text, rodný list apod." class="hledani" required>
+                            <input type="text" name="sluzba[]" class="sluzbaVyhledavani korektura" placeholder="Vědecký text, rodný list apod." class="hledani">
                             Kolik normostran? <span class="normostrana">Normostrana = 250 slov</span>
                             <input type="number" name="stranky[]" placeholder="0-900">
     
@@ -93,9 +93,9 @@
                         </vybranaKorektura>
                         <vybranoTlumoceni class="vybrat">
                             Co chcete přetlumočit?
-                            <input type="text" name="sluzba[]" class="sluzbaVyhledavani tlumoceni" placeholder="Konferenci, úřední komunikaci apod." class="hledani" required>
+                            <input type="text" name="sluzba[]" class="sluzbaVyhledavani tlumoceni" placeholder="Konferenci, úřední komunikaci apod." class="hledani">
                             Kolik hodin bude vaše zakázka přibližně trvat?
-                            <input type="number" name="stranky[]" placeholder="0-900" required>
+                            <input type="number" name="stranky[]" placeholder="0-900">
                             <inlineContainer>
                                 <input type="checkbox" name="mimoStandardniHodiny[]" value="mimoStandardniHodiny">Zakázka mimo 9:00 - 17:00
                             </inlineContainer>
@@ -153,7 +153,7 @@
             <h1 id="hlavniTitulek">Jazykové služby pro všechny</h1>
             <p id="jaz" class="jazykyFull">Čeština, Angličtina, Slovinština, Japonština</p>
             <p id="jaz" class="jazykyKratke">ČJ, AJ, SI, JP</p>
-            <p>Neztrapňujte se nechutnou angličtinou.<br>Mé služby </p>
+            <p>Už se dál neztrapňujte se nechutnou angličtinou.</p>
             <a class="tlacitkoKontrast tlacitkoKontakt">KONTAKTUJTE MĚ</a>
             <cenikContainer>
                 <p id="cenik">CENÍK</p>
