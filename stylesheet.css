@@ -99,9 +99,6 @@ header {
     width: 100%;
     height: 80%;
 }
-.odesilani {
-    width: calc(100% - 3rem) !important;
-}
 
 spinner, spinnerUnder {
     position: absolute;

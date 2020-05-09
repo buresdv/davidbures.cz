@@ -49,12 +49,13 @@
 
     $sluzba = implode("I", $sluzba);
     $stranky = implode("I", $stranky);
+    $arrayPointer = $_POST["typSluzbyHack"];
     
     $vypocitanaCena = $_POST["cenaHack"];
 
     $zahrnoutKorekturuMail = "❌ <b>Korektura</b> nezahrnuta";
     $zahrnoutGrafickouUpravuMail = "❌ <b>Grafická úrava</b> nezahrnuta";
-    $mimoStandardniHodinyMail = "❌ <b>Zakázka mimo standardní hodiny</b> NE";
+    $mimoStandardniHodinyMail = "❌ <b>Zakázka mimo standardní hodiny</b>";
 
     if (!empty($zahrnoutKorekturu)) {
         $zahrnoutKorekturuMail = "✔ Zahrnuta <b>korektura</b>";
@@ -66,14 +67,22 @@
         $mimoStandardniHodinyMail = "✔ Zakázka <b>mimo standardní hodiny</b>";
     }
 
+    $doporuceni = array(
+        'uceleneTexty' => 'text, který chcete přeložit, ve formátech Word .docx, OpenOffice .odt, nebo .pdf.',
+        'appleAplikace' => 'lokalizační soubory, které budete chtít přeložit (např. složku cs.lproj nebo soubory .strings).',
+        'weboveStranky' => 'všechny .html soubory, které budete chtít přeložit, a jakékoliv další soubory, které jsou třeba k tomu, aby vaše stránka správně vypadala (např. relevantní .css soubory).',
+        'tlumoceni' => 'pár informací o vaší zakázce, například co přesně chcete přetlumočit, v jakém prostředí (budova, venkovní prostory apod.) a v jakém časovém rozmezí.'
+    );
+    $doplnekDoZpravy = $doporuceni[0][$arrayPointer];
+
     $headers = 'From: David Bureš <ja@davidbures.cz>' . PHP_EOL .
     'Reply-To: David Bureš <buresdv@gmail.com>' . PHP_EOL .
-    'Content-Type: text/plain; charset=UTF-8' . PHP_EOL .
+    'Content-Type: text/html; charset=UTF-8' . PHP_EOL .
     'X-Mailer: PHP/' . phpversion();
 
     $headersZakaznik = 'From: davidbures.cz <buresdv@gmail.com>' . PHP_EOL .
     'Reply-To: David Bureš <buresdv@gmail.com>' . PHP_EOL .
-    'Content-Type: text/plain; charset=UTF-8' . PHP_EOL .
+    'Content-Type: text/html; charset=UTF-8' . PHP_EOL .
     'X-Mailer: PHP/' . phpversion();
 
     $zprava = "E-mail: " . $email . "\n\n"
@@ -82,7 +91,8 @@
         . "Cena: " . $vypocitanaCena . "\n\n"
         . $zahrnoutKorekturuMail . "\n\n"
         . $zahrnoutGrafickouUpravuMail . "\n\n"
-        . $mimoStandardniHodinyMail . "\n\n";
+        . $mimoStandardniHodinyMail . "\n\n"
+        . $doplnekDoZpravy;
 
     mail("buresdv@icloud.com", "Test " . $sluzba, $zprava, $headers);
 

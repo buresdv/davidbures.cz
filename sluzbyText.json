@@ -2,42 +2,52 @@
     {
         "cena": "400",
         "korektura": "300",
-        "sluzba": "Vědecký text"
+        "sluzba": "Vědecký text",
+        "typSluzby": "uceleneTexty"
     }, {
         "cena": "400",
         "korektura": "300",
-        "sluzba": "Interní dokumentaci"
+        "sluzba": "Interní dokumentaci",
+        "typSluzby": "uceleneTexty"
     }, {
         "cena": "400",
         "korektura": "400",
-        "sluzba": "Rodný list"
+        "sluzba": "Rodný list",
+        "typSluzby": "uceleneTexty"
     }, {
         "cena": "400",
         "korektura": "300",
-        "sluzba": "Program"
+        "sluzba": "Program",
+        "typSluzby": "appleAplikace"
     }, {
         "cena": "400",
         "korektura": "300",
-        "sluzba": "Aplikaci pro macOS nebo iOS"
+        "sluzba": "Aplikaci pro macOS nebo iOS",
+        "typSluzby": "appleAplikace"
     }, {
         "cena": "300",
         "korektura": "250",
-        "sluzba": "Webové stránky"
+        "sluzba": "Webové stránky",
+        "typSluzby": "weboveStranky"
     }, {
         "cena": "300",
         "korektura": "250",
-        "sluzba": "Odborný text"
+        "sluzba": "Odborný text",
+        "typSluzby": "uceleneTexty"
     }, {
         "cena": "300",
         "korektura": "235",
-        "sluzba": "Knihu"
+        "sluzba": "Knihu",
+        "typSluzby": "uceleneTexty"
     }, {
         "cena": "300",
         "korektura": "250",
-        "sluzba": "Novinový článek"
+        "sluzba": "Novinový článek",
+        "typSluzby": "uceleneTexty"
     }, {
         "cena": "250",
         "korektura": "200",
-        "sluzba": "Obyčejný text"
+        "sluzba": "Obyčejný text",
+        "typSluzby": "uceleneTexty"
     }
 ]

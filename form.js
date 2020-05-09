@@ -85,12 +85,15 @@ $(document).ready(function(){
             onClickEvent: function() {
                 vychoziCena = $(".sluzbaVyhledavani.preklad").getSelectedItemData().cena;
                 korekturaCena = Number($(".sluzbaVyhledavani.preklad").getSelectedItemData().korektura);
+                typSluzby = $(".sluzbaVyhledavani.preklad").getSelectedItemData().typSluzby;
+
                 console.log(korekturaCena);
                 $(".konecnaCenaValue").html(vychoziCena);
                 $('#vychoziCenaValue').html(vychoziCena);
                 prepocitatCenu();
                 pridatNormostrany();
                 console.log(vychoziCena);
+                console.log(typSluzby);
             }
         }
     };
@@ -115,10 +118,14 @@ $(document).ready(function(){
 
             onClickEvent: function() {
                 vychoziCena = $(".sluzbaVyhledavani.korektura").getSelectedItemData().korektura;
+                typSluzby = $(".sluzbaVyhledavani.preklad").getSelectedItemData().typSluzby;
+
                 $(".konecnaCenaValue").html(vychoziCena);
                 $('#vychoziCenaValue').html(vychoziCena);
                 prepocitatCenu();
                 pridatNormostrany();
+
+                console.log(typSluzby);
             }
         }
     };
@@ -225,7 +232,7 @@ $(document).ready(function(){
     $('form').on("submit", function(e) {
         e.preventDefault();
         $('spinner').removeClass('skryto');
-        $('input[type="submit"]').addClass("odesilani");
+        $('#typSluzbyHack').val(typSluzby);
 
         $.ajax({
             type: "POST",
