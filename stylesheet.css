@@ -209,12 +209,12 @@ cenikContainer {
     z-index: 10;
     overflow: hidden;
     white-space: nowrap;
-
-    will-change: transform;
     
     -webkit-transition: 1s var(--transSmooth);
     
     transition: 1s var(--transSmooth);
+
+    will-change: max-height, max-width, padding, transform, color;
 }
 #cenik-menu a {
     margin-top: 1rem;
@@ -496,6 +496,7 @@ obrazky h1 {
 }
 obrazky img, obrazky svg {
     height: 50%;
+    will-change: filter, transform;
 }
 
 .konec {

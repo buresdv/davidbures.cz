@@ -1,15 +1,19 @@
 [
     {
         "cena": "800",
-        "sluzba": "Úřední komunikaci"
+        "sluzba": "Úřední komunikaci",
+        "typSluzby": "tlumoceni"
     }, {
         "cena": "800",
-        "sluzba": "Koferenci"
+        "sluzba": "Koferenci",
+        "typSluzby": "tlumoceni"
     }, {
         "cena": "1000",
-        "sluzba": "Policejní"
+        "sluzba": "Policejní",
+        "typSluzby": "tlumoceni"
     }, {
         "cena": "700",
-        "sluzba": "Prezentací"
+        "sluzba": "Prezentací",
+        "typSluzby": "tlumoceni"
     }
 ]

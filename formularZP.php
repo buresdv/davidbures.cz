@@ -1,43 +1,4 @@
 <?php
-    /*header('Content-type: text/html; charset=utf-8');
-
-    $jmeno = $_POST["jmeno"];
-    $email = $_POST["email"];
-    $zvolenaPomoc = $_POST["bezpecnostniOtazka"];
-
-
-    $zvolenaPomocBezCisel = preg_replace('/[0-9]+/', '', $zvolenaPomoc);
-    $kontrolniCislo = round(6.6);
-    if ($zvolenaPomocBezCisel . $kontrolniCislo !== $zvolenaPomoc) {
-        require "index.html";
-        echo "
-            <chyba>
-                <h2>Špatně jste přepsali slovo do poslední kolonky.</h2>
-                <button>Zavřít</button>
-            </chyba>";
-        $nepokracovat = true;
-    }
-
-    if (!isset($jmeno) || !isset($email) || !isset($zvolenaPomoc)) {
-        require "index.html";
-        echo "
-            <chyba>
-                <h2>Nevyplnili jste všechna políčka.</h2>
-                <button>Zavřít</button>
-            </chyba>";
-        $nepokracovat = true;
-    }
-
-    if (!$nepokracovat) {
-        $zprava = "Anglická záchranka: nový pacient\n\n"
-        . "Zvolená pomoc: " . $zvolenaPomocBezCisel . "\n\n"
-        . "Jméno: " . $jmeno . "\n\n"
-        . "E-mail: " . $email . "\n\n";
-
-        if (mail("buresdv@icloud.com", "A-Z: Nový uchazeč o " . $zvolenaPomocBezCisel, $zprava)) {
-            require "odeslano.html";
-        }
-    }*/
     header("Content-type: text/html; charset=utf-8");
 
     $email = $_POST["email"];
@@ -73,14 +34,14 @@
         'weboveStranky' => 'všechny .html soubory, které budete chtít přeložit, a jakékoliv další soubory, které jsou třeba k tomu, aby vaše stránka správně vypadala (např. relevantní .css soubory).',
         'tlumoceni' => 'pár informací o vaší zakázce, například co přesně chcete přetlumočit, v jakém prostředí (budova, venkovní prostory apod.) a v jakém časovém rozmezí.'
     );
-    $doplnekDoZpravy = $doporuceni[0][$arrayPointer];
+    $doplnekDoZpravy = $doporuceni[$arrayPointer];
 
     $headers = 'From: David Bureš <ja@davidbures.cz>' . PHP_EOL .
     'Reply-To: David Bureš <buresdv@gmail.com>' . PHP_EOL .
     'Content-Type: text/html; charset=UTF-8' . PHP_EOL .
     'X-Mailer: PHP/' . phpversion();
 
-    $headersZakaznik = 'From: davidbures.cz <buresdv@gmail.com>' . PHP_EOL .
+    $headersZakaznik = 'From: davidbures.cz <ja@davidbures.cz>' . PHP_EOL .
     'Reply-To: David Bureš <buresdv@gmail.com>' . PHP_EOL .
     'Content-Type: text/html; charset=UTF-8' . PHP_EOL .
     'X-Mailer: PHP/' . phpversion();
@@ -91,14 +52,43 @@
         . "Cena: " . $vypocitanaCena . "\n\n"
         . $zahrnoutKorekturuMail . "\n\n"
         . $zahrnoutGrafickouUpravuMail . "\n\n"
-        . $mimoStandardniHodinyMail . "\n\n"
-        . $doplnekDoZpravy;
+        . $mimoStandardniHodinyMail . "\n\n";
 
     mail("buresdv@icloud.com", "Test " . $sluzba, $zprava, $headers);
 
-    $zpravaZakaznik = 'Vaši objednávku jsem přijal a brzy vám poušlu e-mail s dalšími informacemi' . "\n\n"
-        . 'Přeji pěkný zbytek dne,' . "\n\n"
-        . 'David Bureš';
+    $zpravaZakaznik = 
+    '
+    <html>
+    <head>
+        </head>
+    <body>
+        <!--[if mso]>
+        <style type="text/css">
+        h1, h2, h3, h4, h5, h6, p, a, span, td, strong {
+            font-family: Helvetica, Arial, Verdana, sans-serif !important;
+        }
+        </style>
+        <![endif]-->
+        <table width="800" style="border-collapse:collapse">
+            <tr>
+    <td width="50" style="color:#384046; font-family:Inter, Helvetica, Arial, Verdana, sans-serif; font-size:16px; font-weight:500; line-height:1.7; padding:15px; height:50px; padding-right:0; width:50px" height="50" width="50"><img width="50" height="50" style="height: 50px; width: 50px; display: block;" src="https://davidbures.cz/apple-touch-icon.png" alt="Logo"></td>
+    <td style="color:#384046; font-family:Inter, Helvetica, Arial, Verdana, sans-serif; font-size:16px; font-weight:500; line-height:1.7; padding:15px">Překlad<br>Tlumočení</td>
+    <td style="color:#384046; font-family:Inter, Helvetica, Arial, Verdana, sans-serif; font-size:16px; font-weight:500; line-height:1.7; padding:15px; width:160px" width="160">
+    <span class="secondary" style="color:#7A8B98">IČO: </span>08097941<br><span class="secondary" style="color:#7A8B98">DIČ: </span>CZ9806014768</td>
+    </tr>
+            <tr><td colspan="3" style="color:#384046; font-family:Nunito, Helvetica, Arial, Verdana, sans-serif; font-size:20px; font-weight:bold; line-height:1.7; padding:15px; padding-bottom:10px; padding-top:10px">Potvrzení přijetí objednávky</td></tr>
+            <tr><td colspan="3" style="color:#384046; font-family:Inter, Helvetica, Arial, Verdana, sans-serif; font-size:16px; font-weight:500; line-height:1.7; padding:15px; padding-top:10px">
+                <p>Dobrý den,<br>
+                    vaši objednávku jsem přijal a brzy vám poušlu e-mail s dalšími informacemi.</p>
+                <p>Než se vám ozvu, můžete si připravit ' . $doplnekDoZpravy . '
+                </p>
+                <p>
+                    <br>Těším se na naši spolupráci a přeji pěkný zbytek dne,<br><br><span style="font-family: Nunito, Helvetica, Arial, Verdana, sans-serif; font-weight:500;">David Bureš<br><span class="modra" style="color:#2196F3; font-family:Nunito, Helvetica, Arial, Verdana, sans-serif; font-weight:500;">Tlumočení a překlad Bureš</span><br><a style="color:#384046 !important; text-decoration:none; font-weight:500;" href="https://davidbures.cz">https://davidbures.cz</a></span>
+                </p>
+            </td></tr>
+        </table>
+    </body>
+    </html>';
     
 
     $subject = "davidbures.cz: Informace o vaší objednávce";

@@ -118,7 +118,7 @@ $(document).ready(function(){
 
             onClickEvent: function() {
                 vychoziCena = $(".sluzbaVyhledavani.korektura").getSelectedItemData().korektura;
-                typSluzby = $(".sluzbaVyhledavani.preklad").getSelectedItemData().typSluzby;
+                typSluzby = $(".sluzbaVyhledavani.korektura").getSelectedItemData().typSluzby;
 
                 $(".konecnaCenaValue").html(vychoziCena);
                 $('#vychoziCenaValue').html(vychoziCena);
@@ -150,6 +150,7 @@ $(document).ready(function(){
 
             onClickEvent: function() {
                 vychoziCena = $(".sluzbaVyhledavani.tlumoceni").getSelectedItemData().cena;
+                typSluzby = $(".sluzbaVyhledavani.tlumoceni").getSelectedItemData().typSluzby;
                 $(".konecnaCenaValue").html(vychoziCena);
                 $('#vychoziCenaValue').html(vychoziCena);
                 prepocitatCenu();
@@ -233,6 +234,7 @@ $(document).ready(function(){
         e.preventDefault();
         $('spinner').removeClass('skryto');
         $('#typSluzbyHack').val(typSluzby);
+        console.log(typSluzby);
 
         $.ajax({
             type: "POST",
