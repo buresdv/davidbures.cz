@@ -104,6 +104,7 @@ spinner, spinnerUnder {
     position: absolute;
     color: var(--theme2);
     text-align: center;
+    line-height: 1.9;
     right: 0;
     bottom: 0;
     width: 3rem;
@@ -161,7 +162,7 @@ header h1 {
 #hlavniTitulek:after {
     content: "";
     position: absolute;
-    width: 150%;
+    width: 100vw;
     height: 300%;
 
     left: 0;
@@ -184,7 +185,7 @@ header h1 {
 cenikContainer {
     position: relative;
     margin-left: 1.5vw;
-    padding: calc(1rem + 5px);
+    padding: 1rem;
 }
 #cenik {
     display: inline-block;
@@ -192,7 +193,7 @@ cenikContainer {
     cursor: pointer;
     z-index: 20;
 }
-#cenik-menu {
+#cenik-menu, #cenikMenuMobile {
 	position: absolute;
     background-color: var(--theme2);
     max-height: 100%;
@@ -219,13 +220,16 @@ cenikContainer {
 #cenik-menu a {
     margin-top: 1rem;
 }
-cenikContainer:hover #cenik-menu, .pinned {
+cenikContainer:hover #cenik-menu {
     max-height: 30em;
     max-width: 30vw;
     padding: 1rem;
     -webkit-transform: translate(7rem, -50%);
     transform: translate(7rem, -50%);
     color: var(--theme1);
+}
+.cenikOdkaz {
+    display: none;
 }
 
 .pinned {
@@ -252,6 +256,9 @@ nabidka h1, .fullWidthNadpis {
 }
 .fullWidthNadpis {
     margin-top: 10vh;
+}
+.fullWidthNadpis + * {
+    margin-top: 5vh;
 }
 nabidka karty {
     display: grid;
@@ -564,15 +571,40 @@ buttonContainer a {
 }*/
 /* MOBILIZACE KONEC */
 
+@media screen and (max-device-width: 1070px) {
+    .cenikOdkaz {
+        display: inline;
+    }
+    cenikContainer:first-of-type {
+        display: none;
+    }
+}
+
 @media screen and (max-device-width: 800px) {
     header {
         padding-left: var(--paddingMini2x);
         padding-right: var(--paddingMini2x);
     }
+
+    cenikContainer {
+        display: none;
+    }
+
     obrazky * {
         max-height: 1.5rem;
     }
     obrazky img {
         margin-bottom: var(--paddingMini2x);
+    }
+
+    #cenikGrid {
+        grid-auto-rows: min-content;
+        width: calc(100vw - (2 * var(--paddingMedium)));
+    }
+    popisSluzby, cena {
+        grid-column: 1 / span 2;
+    }
+    popisSluzby, .seznamSluzeb {
+        padding: var(--paddingMini);
     }
 }

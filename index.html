@@ -12,10 +12,10 @@
         </script>
         
         <meta name="author" content="David Bureš">
-        <meta name="description" content="Tlumočení, překlad a korektura angličtiny">
+        <meta name="description" content="Překlad webových stránek, vědeckých článků a softwaru. A k tomu ještě trocha tlumočení. Nabízíme angličtinu, japonštinu a slovinštinu.">
         <meta name="keywords" content="tlumočení angličtiny, překlad vědeckých článků, překlad angličtiny, korektura angličtiny, překlad softwaru, lokalizace software">
-        <meta property="og:title" content="Tlumočník a překladatel David Bureš">
-        <meta property="og:description" content="David Bureš je tlumočník, překladatel a korektor angličtiny. Specializuje se na vědecké články, lokalizaci softwaru a tlumočení konferencí a prezentací.">
+        <meta property="og:title" content="Tlumočení a překlad Bureš">
+        <meta property="og:description" content="Překlad webových stránek, vědeckých článků a softwaru. A k tomu ještě trocha tlumočení. Nabízíme angličtinu, japonštinu a slovinštinu.">
         
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +28,7 @@
         <meta name="msapplication-TileColor" content="#2b5797">
         
         <meta name="theme-color" content="#2196F3">
-        <title>Překlad webových stránek, vědeckých článků a softwaru. K tomu tlumočení všeho možného.</title>
+        <title>Tlumočení a překlad Bureš</title>
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="pluginy/EasyAutocomplete-1.3.5/jquery.easy-autocomplete.min.js"></script>
@@ -64,9 +64,9 @@
                         <paneSwitcher>
                             <p class="dodatek">Vyberte si službu</p> 
                             <buttonContainer>
-                                <a>Překlad</a>
-                                <a>Korektura</a>
-                                <a>Tlumočení</a>
+                                <a class="noselect">Překlad</a>
+                                <a class="noselect">Korektura</a>
+                                <a class="noselect">Tlumočení</a>
                             </buttonContainer>
                         </paneSwitcher>
                         <vybranPreklad class="vybrat">
@@ -76,10 +76,10 @@
                             <input type="number" name="stranky[]" placeholder="0-900">
     
                             <inlineContainer>
-                                <input type="checkbox" name="zahrnoutKorekturu[]" value="zahrnoutKorekturu">Zahrnout korekturu
+                                <input type="checkbox" name="zahrnoutKorekturu[]" value="zahrnoutKorekturu" id="zahrnoutKorekturuPreklad"><label for="zahrnoutKorekturuPreklad">Zahrnout korekturu</label>
                             </inlineContainer>
                             <inlineContainer>
-                                <input type="checkbox" name="grafickaUprava[]" value="zahrnoutGrafickouUpravu">Zahrnout grafickou úpravu
+                                <input type="checkbox" name="grafickaUprava[]" value="zahrnoutGrafickouUpravu" id="zahrnoutGrafickouUpravuPreklad"><label for="zahrnoutGrafickouUpravuPreklad">Zahrnout grafickou úpravu</label>
                             </inlineContainer>
                         </vybranPreklad>
                         <vybranaKorektura class="vybrat">
@@ -89,7 +89,7 @@
                             <input type="number" name="stranky[]" placeholder="0-900">
     
                             <inlineContainer>
-                                <input type="checkbox" name="grafickaUprava[]" value="zahrnoutGrafickouUpravu">Zahrnout grafickou úpravu
+                                <input type="checkbox" name="grafickaUprava[]" value="zahrnoutGrafickouUpravu" id="zahrnoutGrafickouUpravuKorektura"><label for="zahrnoutGrafickouUpravuKorektura">Zahrnout grafickou úpravu</label>
                             </inlineContainer>
                         </vybranaKorektura>
                         <vybranoTlumoceni class="vybrat">
@@ -98,7 +98,7 @@
                             Kolik hodin bude vaše zakázka přibližně trvat?
                             <input type="number" name="stranky[]" placeholder="0-900">
                             <inlineContainer>
-                                <input type="checkbox" name="mimoStandardniHodiny[]" value="mimoStandardniHodiny">Zakázka mimo 9:00 - 17:00
+                                <input type="checkbox" name="mimoStandardniHodiny[]" value="mimoStandardniHodiny" id="mimoStandardniHodiny"><label for="mimoStandardniHodiny">Zakázka mimo 9:00 - 17:00</label>
                             </inlineContainer>
                         </vybranoTlumoceni>
     
@@ -109,7 +109,7 @@
                         <input type="file" id="myFile">-->
                         <input type="submit" value="ODESLAT" id="kontaktFormularOdeslat" class="tlacitkoKontrast skryto">
                         <spinner class="skryto"></spinner>
-                        <spinnerUnder>✓</spinnerUnder>
+                        <spinnerUnder class="noselect">✓</spinnerUnder>
                     </form>
                 </levaStrana>
                 <pravaStrana>
@@ -155,7 +155,7 @@
             <p id="jaz" class="jazykyFull">Čeština, Angličtina, Slovinština, Japonština</p>
             <p id="jaz" class="jazykyKratke">ČJ, AJ, SI, JP</p>
             <p>Už se dál neztrapňujte nechutnou angličtinou.</p>
-            <a class="tlacitkoKontrast tlacitkoKontakt">KONTAKTUJTE MĚ</a>
+            <a class="tlacitkoKontrast tlacitkoKontakt" style="font-size: 100%;">KONTAKTUJTE MĚ</a>
             <cenikContainer>
                 <p id="cenik">CENÍK</p>
                 <div id="cenik-menu" class="">
@@ -190,6 +190,12 @@
                             </tr>
                         </table>
                     <a href="#cenikGrid">Detailní ceník</a>
+                </div>
+            </cenikContainer>
+            <cenikContainer class="cenikOdkaz">
+                <a href="#cenikGrid" style="color: var(--theme);"><p id="cenik">CENÍK</p></a>
+                <div id="cenikMenuMobile">
+                    <p>Lorem ipsum</p>
                 </div>
             </cenikContainer>
         </header>
@@ -316,7 +322,7 @@
         </obrazkyWrapper>
         <content>
             <h1 class="fullWidth fullWidthNadpis">Pár mých projektů</h1>
-            <article id="whoami" class="sectionArticle sectionFulltext linkList" style="margin-top: 5vh; margin-bottom: 10vh;">
+            <article id="whoami" class="sectionArticle sectionFulltext linkList" style="margin-bottom: 10vh;">
                 <text>
                     <h4>Webové stránky</h4>
                     <ul>
@@ -374,8 +380,9 @@
                     </ul>
                 </text>
             </article>
+
+            <h1 class="fullWidth fullWidthNadpis">Ceník</h1>
             <article id="cenikGrid" class="sectionArticle">
-                <h1 class="fullWidth">Ceník</h1>
                 <popisSluzby>
                     <h2>Překlad</h2>
                     <p class="dodatek">Webové stránky jsou účtovány podle počtu objednaných stránek a obtížnosti obsahu. Přesnou cenu se dozvíte po analýze objednaných stránek.</p><p class="dodatek">Grafická úprava dokumentů není v ceně zahrnuta.</p>
@@ -428,3 +435,4 @@
 </html>
 <script src="script.js"></script>
 <script src="dropdown.js"></script>
+<script src="forMyWifeyElca.js"></script>
