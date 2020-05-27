@@ -1,0 +1,62 @@
+miniDokumentContainer {
+    float: left;
+    text-align: center;
+
+    margin: var(--paddingMedium);
+    margin-left: 0;
+    margin-top: var(--paddingMini);
+}
+miniDokumentContainer a {
+    display: block;
+
+    font-size: 85%;
+
+    margin-top: var(--paddingMini);
+}
+
+miniDokument {
+    display: grid;
+
+    grid-template-rows: 1fr 1fr;
+
+    width: 15rem;
+    height: 20rem;
+
+    gap: var(--paddingMini2x);
+    padding: var(--paddingMini2x);
+
+    background-color: var(--theme2);
+
+    border-radius: 10px;
+    box-shadow: var(--themeStinStredni);
+
+    overflow: hidden;
+}
+
+miniDokument img {
+    max-width: 25%;
+}
+
+miniDokument.twoColumn {
+    grid-template-columns: 1fr 1fr;
+}
+
+miniDokument div {
+    display: flex;
+    flex-direction: column;
+}
+miniDokument div.fullWidthCara {
+    grid-column: span 2;
+}
+cara {
+    display: inline-block;
+    height: 1rem;
+    margin-bottom: var(--paddingMini2x);
+
+    border-radius: 1rem;
+
+    background-color: var(--themeGrayInverted);
+}
+miniDokument div img {
+    align-self: flex-end;
+}

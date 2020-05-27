@@ -1,0 +1,39 @@
+header {
+    padding-top: 13vh;
+}
+
+.titulekTecky {
+    position: relative;
+}
+.titulekTecky:after {
+    content: "";
+    position: absolute;
+    width: 100vw;
+    height: 300%;
+
+    top: -200%;
+    transform: translateX(-65vw);
+
+    background-image: radial-gradient(var(--themeKulicky) 20%, var(--mainPozadi) 20%);
+    background-position: 0 0;
+    background-size: 2rem 2rem;
+
+    z-index: -1;
+}
+
+.hlavniTitulek {
+    margin: 5rem 0 0 0;
+}
+h1 + p {
+    color: #41a7f5;
+}
+header {
+    display: flex;
+    padding-top: 13vh;
+    flex-direction: column;
+    align-items: center;
+    z-index: 20;
+}
+h2 {
+    clear: both;
+}

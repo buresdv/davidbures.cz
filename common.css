@@ -1,8 +1,6 @@
 /* Fonty */
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,500,500i,600,700&subset=latin-ext');
-@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700&display=swap&subset=latin-ext');
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,400i,600,600i,700,700i&display=swap&subset=latin-ext');
-
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700&display=swap&subset=latin-ext');
 @import url('https://rsms.me/inter/inter.css');
 
 /* Barvy */
@@ -243,6 +241,8 @@ a:not(.tlacitko):hover, a:not(.kontaktTlacitko):hover {
 bar {
     position: fixed;
     width: 100vw;
+    top: 0;
+
     font-family: "Nunito", sans-serif;
     font-weight: 600;
     display: flex;
@@ -278,6 +278,23 @@ bar .tlacitkoKontrast::before {
 bar .tlacitkoKontrast:hover {
     transform: translateY(0.5rem);
 }
+.naDomovskouStranku {
+    display: inline-flex;
+    align-items: center;
+}
+.naDomovskouStranku:before {
+    content: "";
+    display: inline-block;
+
+    width: 0.8em;
+    height: 0.8em;
+
+    margin-right: calc(var(--paddingMini) * 0.8);
+
+    background-image: url(/backIkona.svg);
+    background-repeat: no-repeat;
+}
+
 .jazykFull {
     display: inline;
 }
@@ -412,6 +429,9 @@ h1 {
     font-size: 300%;
     margin: 5rem 0 0 0;
 }
+h2 {
+    margin-top: var(--paddingMedium);
+}
 
 /* Rozložení */
 article {
@@ -431,6 +451,7 @@ article {
 }
 .sectionFulltext {
     grid-template-areas: unset;
+    padding: 0 15vw;
 }
 .sectionFulltext text {
     grid-area: unset;
@@ -488,9 +509,14 @@ article titulek img {
 article titulek * {
     margin: 0;
 }
+text, .linkList text {
+    width: 45ch;
+}
 text {
     grid-area: text;
-    width: 45ch;
+}
+.sectionFulltext:not(.linkList) text {
+    width: 100%;
 }
 article text h4 {
     color: #616e78;
@@ -825,6 +851,60 @@ inlineContainer * {
     align-self: center;
     padding: 1rem 2rem;
     margin-top: var(--paddingMedium);
+}
+spinner, spinnerUnder {
+    position: absolute;
+    color: var(--theme2);
+    text-align: center;
+    line-height: 1.9;
+    right: 0;
+    bottom: 0;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 10rem;
+    background: var(--themeMain);
+    -webkit-border-radius: 10rem;
+    -moz-border-radius: 10rem;
+    -ms-border-radius: 10rem;
+    -o-border-radius: 10rem;
+    border: 0.5rem solid #f8f9fa;
+}
+spinner {
+    animation: spinnerAnim 1s;
+    animation-iteration-count: infinite;
+    -webkit-animation: spinnerAnim 1s;
+    -webkit-animation-iteration-count: infinite;
+    animation-timing-function: var(--transSmooth);
+}
+@keyframes spinnerAnim {
+    0% {
+        border: 0.5rem solid #f8f9fa;
+    }
+    50% {
+        border: 1rem solid #f8f9fa;
+    }
+    100% {
+        border: 0.5rem solid #f8f9fa;
+    }
+}
+spinnerUnder {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transition: 1s var(--transSmooth);
+    -webkit-transition: 1s var(--transSmooth);
+    -moz-transition: 1s var(--transSmooth);
+    -ms-transition: 1s var(--transSmooth);
+    -o-transition: 1s var(--transSmooth);
+}
+.spinnerUspech {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
 }
 
 pravaStrana {
