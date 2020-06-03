@@ -1,5 +1,5 @@
 <!doctype HTML>
-<html>
+<html lang="cs">
     <head>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124054612-1"></script>
@@ -81,6 +81,9 @@
                             <inlineContainer>
                                 <input type="checkbox" name="grafickaUprava[]" value="zahrnoutGrafickouUpravu" id="zahrnoutGrafickouUpravuPreklad"><label for="zahrnoutGrafickouUpravuPreklad">Zahrnout grafickou úpravu</label>
                             </inlineContainer>
+                            <!--<inlineContainer>
+                                <input type="checkbox" name="studentskaSleva[]" value="zahrnoutStudentskouSlevu" id="zahrnoutStudentskouSlevu"><label for="zahrnoutStudentskouSlevu">Jsem student</label>
+                            </inlineContainer>-->
                         </vybranPreklad>
                         <vybranaKorektura class="vybrat">
                             Čeho chcete provést korekturu?
@@ -203,7 +206,7 @@
             <h1>Co pro vás můžu udělat?</h1>
             <kartyList class="miniIkony">
                 <gridPage>
-                    <img src="/img/ikony/web2.svg">
+                    <img src="/img/ikony/web2.svg" alt="Ikona pro weby">
                     <itemText>
                         <h3>Překlad webových stránek <span class="dodatek">od 300 Kč/<span class="ns">stránka</span></span></h3>
                         <p>Přilákejte miliardy možných zákazníků a zničte konkurenci. Málo stránek má dobrou angličtinu. Buďte jednou z nich.</p>
@@ -211,8 +214,8 @@
                         <ul>
                             <li>Nejlepší anglický překlad na trhu</li>
                             <li>Lokalizaci jmen souborů a jejich vzájemné propojení</li>
-                            <li>Bezstarostné doručení. Pošlete mi vaši stránku a text si z ní vytáhnu sám. Doručený překlad pak stačí jenom přetáhnout na server.</li>
-                            <li>Použití vaší terminologie, jestli ji poskytnete ve formátech .sdltb nebo .txt</li>
+                            <li>Bezstarostné doručení<br><span class="dodatek">Pošlete mi vaši stránku a text si z ní vytáhnu sám. Doručený překlad pak stačí jenom přetáhnout na server</span></li>
+                            <li>Použití vaší terminologie<br><span class="dodatek">Podporuji formáty .sdltb a .txt</span> </li>
                             <li>Základní korekturu, například opravu překlepů a chybějících teček</li>
                         </ul>
                         <p class="dropdownToggle">Za co si můžete připlatit?</p>
@@ -226,7 +229,7 @@
                     </itemText>
                 </gridPage>
                 <gridPage>
-                    <img src="/img/ikony/veda.svg">
+                    <img src="/img/ikony/veda.svg" alt="Ikona pro vědecké články">
                     <itemText>
                         <h3>Překlad vědeckých textů <span class="dodatek">od 400 Kč/<span class="ns">ns</span></span></h3>
                         <p>Bezchybná angličtina je jednou z podmínek publikace článků. Neriskujte, že kvůli špatnému překladu bude ten váš odmítnutý.</p>
@@ -250,7 +253,7 @@
                     </itemText>
                 </gridPage>
                 <gridPage>
-                    <img src="/img/ikony/apple.svg">
+                    <img src="/img/ikony/apple.svg" alt="Ikona pro apple aplikace">
                     <itemText>
                         <h3>Překlad macOS a iOS aplikací</h3>
                         <p>Američani si můžou dovolit mnohem víc Apple zařízení než my. A na špatnou angličtinu jsou dost náchylní. Neztrapněte se na tom největším trhu.</p>
@@ -297,7 +300,7 @@
         <article id="whoami" class="sectionArticle" style="margin-top: 10vh; margin-bottom: 10vh;">
             <titulek>
                 <h3>Proč já?</h3>
-                <img src="Tomo.jpg">
+                <img src="Tomo.jpg" alt="Fotka kocoura Toma, maskora téhle společnosti">
             </titulek>
             <text>
                 <ul style="margin: 0;">
@@ -312,12 +315,12 @@
             </text>
         </article>
         <obrazkyWrapper class="transformovat">
-            <a class="tlacitko">Mí zákazníci</a>
+            <a href="/zakaznici/" class="tlacitko">Mí zákazníci</a>
             <obrazky>
-                <img src="utb_logo.png">
-                <img src="muni.png">
-                <img src="img/microsoftDesat.png">
-                <img src="lionbridge.png">
+                <img src="utb_logo.png" alt="Logo UTB">
+                <img src="muni.png" alt="Logo MUNI">
+                <img src="img/microsoftDesat.png" alt="Logo Microsoftu">
+                <img src="lionbridge.png" alt="Logo Lionbridge">
             </obrazky>
         </obrazkyWrapper>
         <content>
@@ -326,31 +329,33 @@
                 <text>
                     <h4>Webové stránky</h4>
                     <ul>
-                        <li><a href="https://plastika.cz">Plastika a.s.</a></li>
-                        <li><a href="https://kpgalvano.cz">KP Galvano</a></li>
-                        <li class="hidden"><a href="https://l10n.gnome.org/users/buresdv/">Musescore</a></li>
-                        <li><a href="https://davidbures.cz/en">Tlumočení a překlad Bureš</a></li>
+                        <li><a href="https://azure.microsoft.com/cs-cz/solutions/" target="_blank">Microsoft Azure</a></li>
+                        <li><a href="https://plastika.cz" target="_blank">Plastika a.s.</a></li>
+                        <li><a href="https://kpgalvano.cz" target="_blank">KP Galvano</a></li>
+                        <li class="hidden"><a href="https://l10n.gnome.org/users/buresdv/" target="_blank">Musescore</a></li>
+                        <li><a href="https://davidbures.cz/en" target="_blank">Tlumočení a překlad Bureš</a></li>
                     </ul>
 
                     <h4>Software</h4>
                     <ul>
+                        <li><a href="https://github.com/buresdv/Keka" id="softwareKeka" target="_blank">Dynamics 365 Commerce</a></li>
                         <li><a href="https://github.com/buresdv/Keka" id="softwareKeka">Keka</a></li>
-                        <li><a href="https://github.com/buresdv/Amphetamine_Localization" id="softwareAmphetamine">Amphetamine</a></li>
-                        <li><a href="https://github.com/buresdv/RoseLocalizations" id="softwareRose">Rose</a></li>
-                        <li><a href="https://github.com/buresdv/MultiMC5-translate" id="softwareMultiMC">MultiMC</a></li>
-                        <li><a href="https://l10n.gnome.org/users/buresdv/" id="softwareGnome">GNOME</a></li>
-                        <li><a href="https://www.transifex.com/user/profile/buresdv/" id="softwareDeepin">Deepin Desktop Environment</a></li>
+                        <li><a href="https://github.com/buresdv/Amphetamine_Localization" id="softwareAmphetamine" target="_blank">Amphetamine</a></li>
+                        <li><a href="https://github.com/buresdv/RoseLocalizations" id="softwareRose" target="_blank">Rose</a></li>
+                        <li><a href="https://github.com/buresdv/MultiMC5-translate" id="softwareMultiMC" target="_blank">MultiMC</a></li>
+                        <li><a href="https://l10n.gnome.org/users/buresdv/" id="softwareGnome" target="_blank">GNOME</a></li>
+                        <li><a href="https://www.transifex.com/user/profile/buresdv/" id="softwareDeepin" target="_blank">Deepin Desktop Environment</a></li>
                         <li><a href="" id="softwareAntergos" style="cursor: not-allowed; color: var(--theme);">Antergos <span class="konec">2017-2019</span></a></li>
                     </ul>
                 </text>
                 <text>
                     <h4>Vědecké články</h4>
                     <ul>
-                        <li><a href="http://www.sciencedirect.com/science/article/pii/S002364381630010X">The comparison of the effect of sodium caseinate, calcium caseinate, carboxymethyl cellulose and xanthan gum on rice-buckwheat dough rheological characteristics and textural and sensory quality of bread</a></li>
-                        <li><a href="http://www.sciencedirect.com/science/article/pii/S0023643817302311">The effect of Chios mastic gum addition on the characteristics of rice dough and bread</a></li>
-                        <li><a href="http://www.sciencedirect.com/science/article/pii/S0733521014001246">The relationship between rheological characteristics of gluten-free dough and the quality of biologically leavened bread</a></li>
-                        <li><a href="http://onlinelibrary.wiley.com/doi/10.1111/jtxs.12176/abstract">The Behavior of Amaranth, Chickpea, Millet, Corn, Quinoa, Buckwheat and Rice Doughs Under Shear Oscillatory and Uniaxial Elongational Tests Simulating Proving and Baking</a></li>
-                        <li><a href="http://kvasnyprumysl.cz/artkey/kpr-201701-0002_Porovnani_schopnosti_bezlepkoveho_testa_produkovat_kyprici_plyn_behem_peceni_a_jeho_vliv_na_kvalitu_peciva.php">Porovnání schopnosti bezlepkového těsta produkovat kypřící plyn během pečení a jeho vliv na kvalitu pečiva</a></li>
+                        <li><a href="http://www.sciencedirect.com/science/article/pii/S002364381630010X" target="_blank">The comparison of the effect of sodium caseinate, calcium caseinate, carboxymethyl cellulose and xanthan gum on rice-buckwheat dough rheological characteristics and textural and sensory quality of bread</a></li>
+                        <li><a href="http://www.sciencedirect.com/science/article/pii/S0023643817302311" target="_blank">The effect of Chios mastic gum addition on the characteristics of rice dough and bread</a></li>
+                        <li><a href="http://www.sciencedirect.com/science/article/pii/S0733521014001246" target="_blank">The relationship between rheological characteristics of gluten-free dough and the quality of biologically leavened bread</a></li>
+                        <li><a href="http://onlinelibrary.wiley.com/doi/10.1111/jtxs.12176/abstract" target="_blank">The Behavior of Amaranth, Chickpea, Millet, Corn, Quinoa, Buckwheat and Rice Doughs Under Shear Oscillatory and Uniaxial Elongational Tests Simulating Proving and Baking</a></li>
+                        <li><a href="http://kvasnyprumysl.cz/artkey/kpr-201701-0002_Porovnani_schopnosti_bezlepkoveho_testa_produkovat_kyprici_plyn_behem_peceni_a_jeho_vliv_na_kvalitu_peciva.php" target="_blank">Porovnání schopnosti bezlepkového těsta produkovat kypřící plyn během pečení a jeho vliv na kvalitu pečiva</a></li>
                         <div class="atd">
                             <p>a další...</p>
                             <atd>
@@ -425,10 +430,10 @@
         </content>
         <footer>
             <h2>Najdete mě i jinde</h2>
-            <a href="https://twitter.com/davidbures">Twitter</a>
-            <a href="https://www.linkedin.com/in/buresdv/?locale=cs_CZ">LinkedIn</a>
-            <a href="http://blog.davidbures.cz">Blog</a>
-            <a href="https://www.youtube.com/channel/UCvxjzslUwAaWGvG3UyK-64g/">YouTube</a>
+            <a href="https://twitter.com/davidbures" target="_blank">Twitter</a>
+            <a href="https://www.linkedin.com/in/buresdv/?locale=cs_CZ" target="_blank">LinkedIn</a>
+            <a href="http://blog.davidbures.cz" target="_blank">Blog</a>
+            <a href="https://www.youtube.com/channel/UCvxjzslUwAaWGvG3UyK-64g/" target="_blank">YouTube</a>
         </footer>
     </transformer>
     </body>

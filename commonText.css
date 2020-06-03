@@ -34,6 +34,44 @@ header {
     align-items: center;
     z-index: 20;
 }
+h2, h3 {
+    margin-bottom: var(--paddingMini2x);
+}
 h2 {
     clear: both;
+}
+
+section.twoColumn {
+    display: grid;
+    grid-template-columns: min-content auto;
+    grid-template-rows: auto;
+}
+section.twoColumn .spanFull {
+    grid-column: 1/-1;
+}
+
+article text ikony {
+    display: block;
+    padding-top: var(--paddingMini);
+    margin-bottom: var(--paddingMini2x);
+    border-top: var(--themePrerusovanaCara);
+}
+article text ikony img {
+    max-height: 2rem;
+    margin-right: 1rem;
+}
+
+@media screen and (max-device-width: 1350px) {
+    article titulek img {
+        width: 100%;
+
+        min-width: 100%;
+        max-height: unset;
+        max-width: 10rem;
+    }
+}
+@media screen and (max-device-width: 1070px) {
+    h1 {
+        text-align: center;
+    }
 }

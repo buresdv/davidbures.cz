@@ -31,6 +31,8 @@
 
     --themeStinStredni: 0 7px 15px rgba(15, 71, 113, 0.05);
     --themeStinVelky: 0 7px 30px rgba(15, 71, 113, 0.28);
+
+    --themePrerusovanaCara: 1px dashed var(--themeGrayInverted);
 }
 
 /* Konstanty */
@@ -345,7 +347,7 @@ footer {
     margin-top: 30vh;
     padding: var(--paddingMedium);
 
-    border-top: 1px dashed var(--themeGrayInverted);
+    border-top: var(--themePrerusovanaCara);
 
 }
 footer:after {
@@ -457,7 +459,7 @@ article {
     grid-area: unset;
 }
 .sectionFulltext text:nth-of-type(odd) {
-    justify-self: end;
+    /* justify-self: end; */
 }
 
 .linkList h4 {
@@ -510,7 +512,7 @@ article titulek * {
     margin: 0;
 }
 text, .linkList text {
-    width: 45ch;
+    max-width: 45ch;
 }
 text {
     grid-area: text;
@@ -530,16 +532,6 @@ article text h4 + p:first-of-type {
 }
 article text p {
     margin-top: 0;
-}
-article text ikony {
-    display: block;
-    padding-top: var(--paddingMini);
-    margin-bottom: var(--paddingMini2x);
-    border-top: 1px solid var(--themeGray);
-}
-article text ikony img {
-    max-height: 2rem;
-    margin-right: 1rem;
 }
 
 kartyList {
@@ -1102,21 +1094,9 @@ colorSwitch p {
 }
 
 /* Tablet */
-@media screen and (min-device-width: 1070px) {
-
-}
-
 @media screen and (max-device-width: 1350px) {
     footer:after {
         display: none;
-    }
-
-    article titulek img {
-        width: 100%;
-
-        min-width: 100%;
-        max-height: unset;
-        max-width: 10rem;
     }
 }
 
@@ -1155,8 +1135,8 @@ colorSwitch p {
     }
 
     text {
-        justify-self: center !important;
-        width: 100%;
+        justify-self: start !important;
+        max-width: 100%;
         padding: 0 var(--paddingMedium);
     }
     article text h4 {
@@ -1221,6 +1201,16 @@ colorSwitch p {
     kartyList {
         padding: 0 var(--paddingMini2x);
     }
+    kartyList itemText {
+        padding: var(--paddingMini2x);
+    }
+
+    text {
+        padding: 0 var(--paddingMini2x);
+    }
+    .sectionFulltext {
+        padding: var(--paddingMini2x);
+    }
 }
 
 @media screen and (max-device-width: 500px) {
@@ -1233,6 +1223,8 @@ colorSwitch p {
     }
     itemText .dodatek, itemText h3 {
         display: block;
+    }
+    itemText dodatek:first-of-type, itemText h3 {
         text-align: center;
     }
     .dropdownToggle, inlineContainer {

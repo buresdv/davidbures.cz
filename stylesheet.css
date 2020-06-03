@@ -10,7 +10,6 @@ article {
     position: relative;
     display: inline-block;
     text-align: right;
-    margin-top: 1rem;
     z-index: 20000;
 }
 .atd > p {
@@ -544,7 +543,8 @@ buttonContainer a {
 
     #cenikGrid {
         grid-auto-rows: min-content;
-        width: calc(100vw - (2 * var(--paddingMedium)));
+        width: 100%;
+        padding: 0 calc(var(--paddingMini2x) + var(--paddingMini));
     }
     popisSluzby, cena {
         grid-column: 1 / span 2;

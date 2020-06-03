@@ -7,7 +7,7 @@ miniDokumentContainer {
     margin-top: var(--paddingMini);
 }
 miniDokumentContainer a {
-    display: block;
+    display: inline-block;
 
     font-size: 85%;
 
@@ -30,7 +30,6 @@ miniDokument {
     border-radius: 10px;
     box-shadow: var(--themeStinStredni);
 
-    overflow: hidden;
 }
 
 miniDokument img {
@@ -59,4 +58,10 @@ cara {
 }
 miniDokument div img {
     align-self: flex-end;
+}
+
+.zvyrazneniBorder {
+    animation: wobble 5s;
+    animation-iteration-count: infinite;
+    transform: translate(0, 0);
 }
